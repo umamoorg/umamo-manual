@@ -9,7 +9,21 @@ Command Line
 
 	dump
 	extract
-	atlas
-	mesh
 	convert
 	diff
+	atlas
+	mesh
+
+Running the Tool
+================
+
+Conventions
+===========
+
+Accepted Inputs
+===============
+
+.. seealso::
+
+	* :doc:`/files/format_support`
+	* :doc:`/files/cubism_interchange`

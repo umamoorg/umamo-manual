@@ -7,10 +7,24 @@ Modeling
 .. toctree::
 	:maxdepth: 1
 
+	parts_and_drawables
 	modes
 	selecting
 	transforming
 	snapping
 	proportional_editing
 	meshes
-	parts_and_drawables
+	generate_mesh
+	blending_and_masking
+
+Parts, Drawables, and Deformers
+===============================
+
+Where Modeling Happens
+======================
+
+.. seealso::
+
+	* :doc:`/editors/viewport_2d/index`
+	* :doc:`/editors/outliner`
+	* :doc:`/rigging/index`

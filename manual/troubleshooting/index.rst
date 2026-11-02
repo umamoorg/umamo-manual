@@ -10,3 +10,5 @@ Troubleshooting
 	reporting_bugs
 	performance_and_memory
 	platform_notes
+	backups_and_data_safety
+	common_messages

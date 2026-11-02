@@ -8,6 +8,7 @@ Appendices
 	:maxdepth: 1
 
 	glossary
+	default_shortcuts
 	faq
 	release_notes
 	credits

@@ -7,8 +7,10 @@ Getting Started
 .. toctree::
 	:maxdepth: 1
 
+	system_requirements
 	installing
 	verifying_downloads
 	first_launch
-	configuration
 	coming_from_cubism
+	configuration
+	updating

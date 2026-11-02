@@ -27,7 +27,7 @@ The `Makefile` uses `.venv/bin/sphinx-build`.  On Windows, `make.bat` does the s
 | `.readthedocs.yaml`     | The Read the Docs build.                                                    |
 | `.editorconfig`         | Editor settings: reStructuredText is indented with tabs.                    |
 
-Pages are written in reStructuredText.  MyST Markdown (`.md`) is also enabled.  Each chapter is a folder holding an `index.rst` with its table of contents.  A page that is not written yet holds a `.. todo::` that says what it will cover.  The heading and indentation conventions are in the manual's Writing Guide (`manual/about/contribute/writing_guide.rst`).
+Pages are written in reStructuredText.  MyST Markdown (`.md`) is also enabled.  Each chapter is a folder holding an `index.rst` with its table of contents.  A page that is not written yet holds a `.. todo::` that says what it will cover, and the empty headings it will be written under.  The heading, indentation, Reference block, and See also conventions are in the manual's Writing Guide (`manual/about/contribute/writing_guide.rst`).
 
 The version in `manual/conf.py` is written by hand: keep it in step with `VERSION` in Umamo's `ProjectInfo.kt`.
 

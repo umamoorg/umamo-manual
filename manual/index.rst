@@ -16,9 +16,9 @@ Welcome to the manual for Umamo, an open-source, cross-platform modeling editor 
 	getting_started/index
 	interface/index
 	editors/index
+	artwork/index
 	modeling/index
 	rigging/index
-	artwork/index
 	files/index
 	command_line/index
 	troubleshooting/index

@@ -9,10 +9,11 @@ Interface
 
 	window_system
 	workspaces
+	menus
 	status_bar
 	operation_strip
 	command_palette
 	pie_menus
 	keymap
-	preferences
+	settings
 	pen_and_touch
