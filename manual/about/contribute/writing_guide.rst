@@ -40,6 +40,36 @@ Every page starts as an outline: a title, a ``todo`` that says what the page cov
 
 Use the name the Umamo window shows for anything on screen, such as a menu row, a button, or a section of the Properties editor.  The strings are in ``module/ui/src/commonMain/composeResources/values/strings.xml`` in the Umamo repository.
 
+Roles for Keys, Menus, and Labels
+=================================
+
+Use these standard roles, so that keys, menus, and labels look the same on every page:
+
+.. code-block:: rst
+
+	:kbd:`Ctrl-Shift-S`
+	:menuselection:`File --> Import --> Artwork…`
+	:guilabel:`Language`
+	``settings.json``
+
+``kbd``
+	A key or a shortcut.  See the Reference blocks below for how to write the keys.
+
+``menuselection``
+	A path through the menus.  Separate the levels with ``-->``, and write each label as the menu shows it.
+
+``guilabel``
+	The label of a button, a field, or a setting, written as the window shows it.
+
+Double backquotes
+	File names, folder names, commands, and code.
+
+Write an external link with two underscores after it.  A link with one underscore creates a name that clashes with any other link that has the same text.
+
+.. code-block:: rst
+
+	`Umamo <https://umamo.org>`__
+
 Reference Blocks
 ================
 
@@ -81,4 +111,4 @@ Pages Not Yet Available
 
 Some pages describe a feature that Umamo does not have yet.  They start with a ``Not yet available`` admonition and outline Current Status, What Works Today, and Planned.  A page for a feature that works, but not completely, ends with a Current Limitations section instead.
 
-.. todo:: Write the rest of the guide: figures and screenshots, other cross-references, and tone.
+.. todo:: Write the rest of the guide: figures and screenshots, and tone.
