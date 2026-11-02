@@ -1,0 +1,4 @@
+root = true
+
+[*.rst]
+indent_style = tab

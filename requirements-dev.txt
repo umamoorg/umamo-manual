@@ -1,0 +1,4 @@
+# Everything needed to build the manual locally, plus authoring and translation tools.
+-r requirements.txt
+sphinx-autobuild~=2025.8
+sphinx-intl~=2.4
