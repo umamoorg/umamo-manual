@@ -41,7 +41,7 @@ Some things are the same for every export:
 * An export is not a save.  The document is not marked as saved, its title does not change, and the UMA file is not touched.
 * The file picker suggests the name of the document's UMA file without its extension, or else the name of the file that the document came from, or ``Untitled``.  The picker adds the extension.
 * The status bar shows ``Exporting model…`` or ``Exporting image…`` while the file is written, and ``Exported`` with the name of the file when it is done.  You can keep working in the meantime.
-* Only one model export runs at a time.  Asking for another CMO3 or MOC3 export shows the notice ``An export is already in progress.``  New, Open, and Save wait for a running model export to finish, and say ``Waiting on export to finish…``
+* Only one model export runs at a time.  Asking for another CMO3 or MOC3 export shows the notice ``An export is already in progress.``  New, Open, and quitting wait for a running model export to finish, and say ``Waiting on export to finish…``
 * A CMO3 and an image are written to a temporary file first and moved into place when they are complete, so a failed export leaves the old file as it was.  The files of a MOC3 are written straight into place.
 * The native file picker asks before it replaces the file you picked.  A MOC3 export also writes other files beside it, and has a warning of its own for those.  See `Overwrite Warning`_.
 
