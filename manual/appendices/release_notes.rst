@@ -2,28 +2,33 @@
 Release Notes
 *************
 
-.. todo:: What changed in each release.
+0.5.0
+=====
 
-Unreleased
-==========
 
 0.4.0
 =====
 
+
 0.3.0-dev
 =========
+
 
 0.2.1-dev
 =========
 
+
 0.2.0-dev
 =========
+
 
 0.1.0-dev
 =========
 
+
 Pre-release (July 2026)
 =======================
+
 
 .. seealso::
 

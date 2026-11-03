@@ -10,7 +10,7 @@ author = "Umamo Project Contributors"
 # Keep these in step with VERSION in the Umamo repository's
 # module/ui/src/commonMain/kotlin/org/umamo/ui/help/ProjectInfo.kt.
 version = "0.5"
-release = "0.5.0-dev"
+release = "0.5.0"
 
 # -- General configuration ---------------------------------------------------
 
