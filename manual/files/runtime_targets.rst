@@ -2,39 +2,34 @@
 Runtime Targets and Cubism Versions
 ***********************************
 
-Every Cubism runtime can play a different set of features.  A model that uses a feature that an older runtime lacks plays wrongly there, or not at all.  The Runtime Target of a document says which runtime you mean the model to play on.  Umamo then hides the controls for the features that runtime cannot play, and when you export a MOC3 it writes the version of that runtime.
+Every target runtime version can play a different set of features.  A model that uses a feature that an older runtime lacks may play incorrectly there or not at all.  The Runtime Target of a document says which runtime the model is intended to play on.  When a runtime target is select Umamo will hide the features and controls that the runtime cannot play.  When you exporting to MOC3 it writes the format version for that runtime.
 
 What a Runtime Target Is
 ========================
 
-The Runtime Target is a setting of the document, and it is saved with it.  It is the same idea as the "Model target version selection" of the Cubism Editor.
+The Runtime Target is a document setting and is saved into it.  This is the same as the "Select Target Version" in the Cubism Editor.
 
-A target limits what you can *author*.  It does not take anything away:
+A target limits what you can *author*.  It does not deleted any existing author features:
 
-* It hides or limits controls only.  A model that already uses a feature the target lacks keeps that feature, and it keeps rendering in Umamo.
-* A UMA file and a CMO3 file always carry every feature.
-* Only a MOC3 export leaves features out, and it does so in the copy that it writes.  The document keeps them, so exporting again with a higher target brings them back.
+* It only hides or limits controls.  A model that already uses a feature the target lacks keeps the feature and keeps rendering in Umamo.
+* An UMA file and a CMO3 file always carry every feature.
+* Only a MOC3 export will strip features that are incompatible with the selected runtime target and only in the exported files.
 
 Choosing a Target
 =================
 
 The :guilabel:`Target` list is in the :guilabel:`Runtime` section of the Document tab of the Properties editor.  See :doc:`/editors/properties/document_tab`.  Changing it is an undoable step that the History editor labels ``Set Runtime Target``.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
+.. figure:: /images/files/runtime_target.png
 
-	:Show: The Runtime section of the Document tab, with the Target list open and the target Cubism 4.0 chosen behind it, and the Restricted features list below it.  At least one entry must show ``CURRENTLY IN USE``.
-	:Setup: Use a model that has a blend shape or a multiply color on a drawable, choose Cubism 4.0, and open the Properties editor on its Document tab.
-	:Crop: The Properties editor only.
-	:Save as: ``images/files/runtime_target.png``
-	:Caption: The Runtime section of the Document tab.
+	The Runtime section of the Document tab.
 
 The starting target depends on where the document came from:
 
 * A CMO3 starts with the target the file was saved for, or with :guilabel:`No Target (All Features)` when it was saved for the latest Cubism.
 * A MOC3 starts with the target that matches its version.
-* A UMA file starts with the target that it was saved with.
-* A new document, and a document made from artwork, start with :guilabel:`No Target (All Features)`.
+* An UMA file starts with the target that it was saved with.
+* A new document and a document made from artwork starts with :guilabel:`No Target (All Features)`.
 
 Below the list, Umamo names the features that the chosen target restricts, or says ``All features are available.``  A restricted feature that your document already uses is marked ``CURRENTLY IN USE``, so that you can see what a MOC3 export would remove.
 
@@ -46,45 +41,45 @@ Target List
 
 	* - Target
 	  - MOC3 version written
-	  - Written by the Cubism Editor
+	  - Cubism Editor Version
 	  - Notes
 	* - No Target (All Features)
-	  - 6
-	  - 5.3
-	  - Nothing is restricted.  A CMO3 records it as ``Latest Cubism``, with no version.
+	  - 6 (Latest Version)
+	  - —
+	  - No restrictions.  The MOC3 version is written out as the latest.
 	* - Ayagami (Cubism 5.0 Equivalent)
 	  - 5
 	  - 5.0
-	  - Ayagami is a runtime made by someone else, and it is not part of Umamo.  It plays what Cubism 5.0 plays.  A CMO3 records it as Cubism 5.0, so a CMO3 that is reopened shows Cubism 5.0.  A UMA file keeps it.
+	  - Free, Open Source Runtime - `Ayagami <https://github.com/AyagamiDev/ayagami>`__
 	* - Cubism 3.0
 	  - 1
 	  - 3.0 to 3.2
-	  - —
+	  - Proprietary Runtime - `Requires a Live2D SDK License <https://www.live2d.com/en/sdk/license/>`__
 	* - Cubism 3.3
 	  - 2
 	  - 3.3
-	  - —
+	  - Proprietary Runtime - `Requires a Live2D SDK License <https://www.live2d.com/en/sdk/license/>`__
 	* - Cubism 4.0
 	  - 3
 	  - 4.0
-	  - —
+	  - Proprietary Runtime - `Requires a Live2D SDK License <https://www.live2d.com/en/sdk/license/>`__
 	* - Cubism 4.2
 	  - 4
 	  - 4.2
-	  - —
+	  - Proprietary Runtime - `Requires a Live2D SDK License <https://www.live2d.com/en/sdk/license/>`__
 	* - Cubism 5.0
 	  - 5
 	  - 5.0
-	  - —
+	  - Proprietary Runtime - `Requires a Live2D SDK License <https://www.live2d.com/en/sdk/license/>`__
 	* - Cubism 5.3
 	  - 6
 	  - 5.3
-	  - The newest runtime that Umamo models.
+	  - Proprietary Runtime - `Requires a Live2D SDK License <https://www.live2d.com/en/sdk/license/>`__
 
 Gated Features
 ==============
 
-Each feature is available from the target that is listed.  The names are the ones that the Properties editor shows.
+Each feature is available starting with the listed target.  The names here are the ones shown in the Properties editor.
 
 .. list-table::
 	:header-rows: 1
@@ -109,46 +104,42 @@ Each feature is available from the target that is listed.  The names are the one
 	  - The multiply color of drawables, deformers, and part composites.
 	* - Screen Color
 	  - Cubism 4.2
-	  - The screen color of the same.
+	  - The screen color of the same objects.
 	* - Blend Shapes (Part, Rotation Deformer, Glue)
 	  - Cubism 5.0
 	  - Blend shapes beyond drawables and warp deformers.
 	* - Motion-sync
 	  - Cubism 5.0
-	  - The motion-sync files.  Umamo does not model them, so this entry only informs.
+	  - Umamo does not support the Cubism Motion-sync feature so this is for informational purposes only.
 	* - Blend Mode
 	  - Cubism 5.3
-	  - The blend modes added in 5.3, and the alpha blend modes.
+	  - The blend modes added in 5.3 and the alpha blend modes.
 	* - Part Composite (Offscreen Drawing)
 	  - Cubism 5.3
-	  - Isolated parts, which draw into an offscreen.
+	  - Isolated parts, which draw into an offscreen buffer.
 	* - Parameter Repeat
 	  - Cubism 5.3
 	  - Parameters that repeat.
 	* - Art Path
-	  - No target
-	  - Vector lines of the Cubism Editor.  Umamo carries them in a CMO3 but does not model them, so this entry only informs.
+	  - No Target
+	  - Umamo does not support this feature and it is for informational purposes only.  This is an editor only feature from the Cubism Editor and is not supported by any runtime.
 
 What Gating Does and Does Not Do
 ================================
 
 What a restricted target does in the editor:
 
-* A control for a whole feature is hidden.  The Multiply Color and Screen Color rows, the invert-mask row, the bilinear option of a warp deformer, and the composite rows of an isolated part are not shown.  :guilabel:`Add Blend Shape Parameter` is missing from the Parameters editor's menus.
-* A list of choices is cut down to what the target supports.  The blend modes and alpha blend modes drop to the older ones, and :guilabel:`Isolated` is no longer offered as a group mode.
+* Controls for a whole feature are hidden.  The Multiply Color and Screen Color rows, the invert-mask row, the bilinear option of a warp deformer, and the composite rows of an isolated part are not shown.  :guilabel:`Add Blend Shape Parameter` is also missing from the Parameters editor's menus.
+* Lists of choices are reduced to what the target supports.  The blend modes and alpha blend modes are limited to the older ones and :guilabel:`Isolated` is no longer offered as a group mode.
 * A new warp deformer is created with the older method.
-* The value that a control holds right now always stays visible and selectable, even if the target lacks it.  A model never loses its own setting from view, and the only way forward from it is to something the target supports.
+* When the model has a value selected that is not supported by the current runtime, a control that would normally be hidden will remain visible.  Changing the value from an unsupported value will then hide the control.  For example, if :guilabel:`Group Mode` :guilabel:`Isolated` is selected while a runtime target lower than 5.3 is selected, the :guilabel:`Isolated` value will remain visible until changing it to another supported value.
 
 What it does not do:
 
-* It never stops a model from rendering.  A document that goes beyond the target keeps rendering all of it.
-* It never removes anything from the document, and it never stops a save to UMA or an export to CMO3.
+* It never stops a model from rendering.  A document that uses features beyond the target still renders in full.
+* It never removes anything from the document and it never stops a save to UMA or an export to CMO3.
 
-A MOC3 export is where a target removes things.  It writes the version of the target, strips from its copy every feature that version cannot hold, and then lists them in the export report: ``Multiply Color is not available for the target runtime version, so it was removed from:`` and the names of up to eight objects, followed by the number of the rest.  See :doc:`/files/export_notices`.
-
-.. note::
-
-	The export decides what the version can hold from the file format itself, and the Document tab follows the Cubism Editor's own list.  The two differ in a few places.  Reversed masks and repeating parameters are marked as restricted below Cubism 4.0 and 5.3, but the MOC3 versions below those can hold them, so the export keeps them.  The Document tab can therefore warn about more than an export removes.  The export report is the final word.
+A MOC3 export is the only place where a target removes anything.  It writes a file compatible with the target version and strips any unavailable features.  The export report will list anything that was removed from the export.  For example, a line of the report reads ``Multiply Color is not available for the target runtime version, so it was removed from:`` followed by a list of the items it was removed from.  See :doc:`/files/export_notices`.
 
 .. seealso::
 
