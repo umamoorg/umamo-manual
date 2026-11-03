@@ -80,14 +80,7 @@ Umamo is tested on Ubuntu 22 and 26 and on Fedora 44.
 
 To upgrade, install the new package over the old one.  :doc:`/getting_started/installing` has the commands.
 
-**Registering the archive by hand.**  Put ``umamo/bin/umamo`` on your ``PATH``, or edit the ``Exec=`` line of ``umamo.desktop`` to its full path, and register the two files for your user:
-
-.. code-block:: bash
-
-	xdg-mime install --novendor umamo/lib/app/resources/umamo-uma.xml
-	xdg-desktop-menu install --novendor umamo/lib/app/resources/umamo.desktop
-
-``xdg-mime uninstall`` and ``xdg-desktop-menu uninstall`` with the same files undo it.  If you registered the archive by hand and then install the ``.deb`` or the ``.rpm``, undo the registration first, or the menu will show Umamo twice.
+**Registering the archive by hand.**  The archive registers no menu entry and no file type.  The two ``xdg`` commands that do it for your user are in :doc:`/getting_started/installing`, and the same files with ``uninstall`` undo it.  If you registered the archive by hand and then install the ``.deb`` or the ``.rpm``, undo the registration first, or the menu will show Umamo twice.
 
 **The log folder.**  :menuselection:`Help --> Open Log Folder…` uses ``xdg-open`` when Java cannot open the folder itself.  If it does not, the alert gives the folder, and you can open it yourself.
 
