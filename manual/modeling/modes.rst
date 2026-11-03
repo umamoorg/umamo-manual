@@ -68,7 +68,7 @@ Pose Mode shapes the lattice of a warp deformer at the pose the parameters are a
 
 You drag the lattice points as you would in Edit Mode, and the shape is an edit that is **not keyed** yet.  The key, :kbd:`I`, or Insert Key by Type, :kbd:`K`, stores it.  Pose Mode is dealt with in full in :doc:`/rigging/posing_warps`.
 
-Pose Mode opens on the selected warp deformers that the pose draws.  If there is none, it still opens with nothing to shape, and you can still move the parameters and key.
+Pose Mode opens on the selected warp deformers that the pose draws.  If none of them is selected, it opens on the warp you posed last, or on the first warp that is drawn, and selects it.  If no warp is drawn at all, it still opens with nothing to shape, and you can still move the parameters and key.
 
 Switching Modes
 ===============
@@ -107,7 +107,7 @@ Toggle Pose Mode
 	:Menu: Command palette
 	:Shortcut: :kbd:`Ctrl-Tab`
 
-Enters Pose Mode, and in Pose Mode goes back to the mode it was entered from.  :kbd:`Ctrl-Tab` is the same in all three presets.
+Enters Pose Mode from Object Mode or Edit Mode, and leaves it for Object Mode.  Unlike :kbd:`Tab`, it does not remember where it came from.
 
 When a Mode Refuses to Open
 ===========================
