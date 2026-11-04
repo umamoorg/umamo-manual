@@ -35,9 +35,9 @@ Support Table
 	  - —
 	  - Photoshop.
 	* - CLIP (``.clip``)
-	  - Partial, as artwork
+	  - Yes, as artwork
 	  - —
-	  - Clip Studio Paint.  Implemented, but not fully tested, and it has known blending issues.
+	  - Clip Studio Paint.
 	* - KRA (``.kra``)
 	  - Yes, as artwork
 	  - —
@@ -53,13 +53,13 @@ Support Table
 
 Artwork is added to the open document with :menuselection:`File --> Import --> Artwork…`.  See :doc:`/artwork/supported_formats` for how each artwork format is read.
 
-The file pickers only offer the files that their command can use:
+Each file picker operation is filtered to only show the files that it supports:
 
 .. list-table::
 	:header-rows: 1
 
 	* - Command
-	  - Files offered
+	  - Files Offered
 	* - :menuselection:`File --> Open…`
 	  - ``.uma``
 	* - :menuselection:`File --> Import --> CMO3…`
@@ -69,24 +69,13 @@ The file pickers only offer the files that their command can use:
 	* - :menuselection:`File --> Import --> Artwork…`
 	  - ``.psd``, ``.clip``, ``.kra``, ``.png``, ``.bmp``, ``.jpg``, ``.jpeg``, ``.webp``, ``.tif``, and ``.tiff``
 
-Detection
-=========
-
-Umamo recognizes a file by what is inside it before it looks at the name.  Every format starts with a signature of its own, so a file with the wrong extension still opens as what it really is.  A UMA and a KRA are both ZIP archives, and each is told apart by the marker it keeps at the start, so neither is mistaken for the other.
-
-When the contents match no format, Umamo goes by the extension.  It is there for formats where a tool may have removed the marker, such as a KRA.  Extensions are matched without regard to case.  A file that matches neither is reported with ``is not a file format Umamo recognizes``.
-
-Dragging files onto the window chooses the way in from the extension of the first file alone: artwork is added, and anything else is opened.  The real format is then found from the contents.  See :doc:`/files/uma`.
-
-The command line tool recognizes files in the same way, and reads the same formats.  See :doc:`/command_line/index`.
-
 Platform Notes
 ==============
 
 * Windows, macOS, and Linux read and write every format in the table.
 * The ``.uma`` file type is registered by the installers.  See :doc:`/getting_started/installing`.
-* A MOC3 is a group of files, so reading or writing one needs a folder that Umamo can see into.  Android gives an application only the single file that was picked, so a MOC3 cannot be imported there yet, and a MOC3 export writes the ``.moc3`` file alone.
-* Large models and large artwork files take much memory to read and to export.  See :doc:`/troubleshooting/performance_and_memory`.
+* A MOC3 is a group of files, so reading or writing one needs access to the whole folder.  Android and iPadOS only gives the application the single file that was picked so MOC3 import and export is not supported on mobile platforms.
+* Large models and large artwork files use a lot of memory to read and export.  See :doc:`/troubleshooting/performance_and_memory`.
 
 If you need a format or a newer version that is not supported, open an issue.  See :doc:`/troubleshooting/reporting_bugs`.
 
