@@ -116,7 +116,7 @@ Contribution Provenance Rule
 
 Umamo's CMO3, MOC3, and CLIP support is a clean-room implementation.  It was built by observing what the files contain and from documentation that others wrote independently, and not from the code of the official Live2D software.  Anyone who contributes to Umamo affirms that:
 
-#. They used no official Live2D or Cubism source code, and no decompiled binaries, as a basis.  What they know comes from looking at files and from public, independently written documentation.
+#. They used no official Live2D or Cubism source code, and no decompiled binaries, as a basis. What they do comes from looking at files and from public, independently written documentation.
 #. They are not bound by an agreement with Live2D that their contribution would break, and they will say so before they contribute if they are.
 #. They are not, and have not been, an employee of Live2D or Cybernoids.
 
