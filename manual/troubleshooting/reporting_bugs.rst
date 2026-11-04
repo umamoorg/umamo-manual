@@ -2,7 +2,7 @@
 Reporting Bugs
 **************
 
-A good report lets the developer see the problem you saw.  This page says what to check first, how to find the log file, and what to put in an issue.  Umamo is early alpha software, so reports are welcome and bugs are expected.
+A good report lets the developer see the problem you saw.  This page says what to check first, how to find the log file, and what to include in a bug report.  Umamo is early alpha software, so reports are welcome and bugs are expected.
 
 Before Reporting
 ================
@@ -11,7 +11,7 @@ Before Reporting
 #. **Search the issues.**  The `issue list <https://github.com/umamoorg/umamo/issues>`__ may have your problem already.  Add what you know to the issue that is there, rather than opening a second one.
 #. **Use the newest release.**  The problem may be fixed.  :menuselection:`Help --> Check for Updates…` tells you.  See :doc:`/getting_started/updating`.
 #. **Try again.**  Restart Umamo and repeat the steps.  A problem that happens every time is much easier to find than one that happened once.
-#. **Protect your work.**  Save a copy of your document under a new name before you try anything else.  See :doc:`/troubleshooting/backups_and_data_safety`.
+#. **Protect your work.**  Save a copy of your puppet file under a new name before you try anything else.  See :doc:`/troubleshooting/backups_and_data_safety`.
 
 Collecting Information
 ======================

@@ -42,7 +42,7 @@ Windows 10 and 11 are tested.
 
 **The installer.**  The ``.msi`` installs for your own user, in ``%LOCALAPPDATA%\Programs\umamo``, so it needs no administrator rights.  It adds a Start menu entry and registers the ``.uma`` file type.  It has no final screen: when it is finished it just closes.  To remove Umamo, use :menuselection:`Windows Settings --> Apps`.
 
-**The portable archive.**  Extract the ``.zip`` anywhere and run ``Umamo\Umamo.exe``.  It registers nothing, so a double-click on a ``.uma`` file does not open it in Umamo.
+**The portable archive.**  Extract the ``.zip`` anywhere and run ``Umamo\Umamo.exe``.  It registers nothing, so double clicking a ``.uma`` file does not open it in Umamo.
 
 macOS
 =====

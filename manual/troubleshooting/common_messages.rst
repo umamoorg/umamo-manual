@@ -10,27 +10,40 @@ How to Read a Message
 A message comes in one of four forms, and the form says how much it matters.
 
 Notices in the status bar
-	A line in the status bar at the bottom of the window, which disappears by itself after about four seconds.  They report the result of something that took a while, such as saving, adding artwork, or generating meshes, and a few explain a problem.  See :doc:`/interface/status_bar`.
+A line in the status bar at the bottom of the window, which disappears by itself after about four seconds.  They report the result of something that took a while, such as saving, adding artwork, or generating meshes, and a few explain a problem.  See :doc:`/interface/status_bar`.
+
+
+.. image:: ./img/debugmessagebottomwindow.png
+   :width: 100%
+   :align: center
+   :alt: the status bar at the bottom of the Umamo Editor window with the notice.
+
+
+
+
 
 Notices next to the pointer
-	A small label that follows the pointer for about three seconds.  It explains why a gesture did nothing, such as ``Merge needs two or more selected vertices (vertex mode).``  You do not need to dismiss it.
+A small label that follows the pointer for about three seconds.  It explains why a gesture did nothing, such as ``Merge needs two or more selected vertices (vertex mode).``  You do not need to dismiss it.
+
+.. image:: ./img/pointer_notice.png
+   :width: 100%
+   :align: center
+   :alt: a notice near the pointer for recent actions.
 
 Alerts
-	A dialog in the middle of the window that stays until you press its button.  Failures that cost you something, such as a file that cannot be opened or saved, and the export report, are alerts.  The text of an alert can be selected and copied.
+A dialog in the middle of the window that stays until you press its button.  Failures that cost you something, such as a file that cannot be opened or saved, and the export report, are alerts.  The text of an alert can be selected and copied.
 
 Questions
-	A dialog with two or more buttons, which waits for your answer, such as ``The document has unsaved changes.  Save them first?``
+A dialog with two or more buttons, which waits for your answer, such as ``The document has unsaved changes.  Save them first?``
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
 
-	:Show: The bottom of the window with a notice in the status bar, such as ``Saved name.uma.``, and next to it, in a second picture, a label by the pointer in the 2D Viewport, such as ``Merge needs two or more selected vertices (vertex mode).``
-	:Setup: Save a document.  Then enter Edit Mode, select one vertex, and run Merge Vertices.  Two pictures may be needed.
-	:Crop: The status bar and its surroundings for the first, and the viewport with the label for the second.
-	:Save as: ``images/troubleshooting/notices.png``
-	:Caption: A notice in the status bar, and a notice by the pointer.
+.. image:: ./img/dialog.png
+   :width: 100%
+   :align: center
+   :alt: a dialog box asking for user-input to confirm actions.
 
 When a message says ``See the log``, there is more detail in the log.  Open the Logs editor, or the log file.  See :doc:`/troubleshooting/reporting_bugs`.
+
 
 Opening Files
 =============
@@ -43,15 +56,15 @@ Opening, importing, and dropping a file report in the status bar while they run.
 	* - Message
 	  - What it means
 	* - Opening *name*…
-	  - A document is being read.  It shows in the status bar with a progress bar, and you can keep working.
-	* - Another document is still opening.
+	  - A puppet file is being read.  It shows in the status bar with a progress bar, and you can keep working.
+	* - Another file is still opening.
 	  - You asked for New or another open while one is still running.  Wait for the first one.
 	* - Could not read *name*.  *name* is not a file format Umamo recognizes.  Could not open *name*.  The file may be damaged.  A model3.json manifest or a texture was missing.  *name* has no layers with pixels to import.  *name* was made by a newer version of Umamo.
-	  - Alerts.  The open document is not changed.  :ref:`uma-open-failures` lists each one and what to do.
+	  - Alerts.  The open puppet file is not changed.  :ref:`uma-open-failures` lists each one and what to do.
 	* - *name* opened read-only.  It holds entries this version of Umamo cannot interpret, so Save is unavailable.
-	  - An alert.  The document opened, and you can edit and export it, but you cannot save it.  See :ref:`uma-open-failures`.
-	* - The document has unsaved changes.  Save them first?  Discard them?  Save them before quitting?  Quit without saving?
-	  - Questions.  Umamo asks before it replaces or ends a document with unsaved changes.  See :doc:`/troubleshooting/backups_and_data_safety`.
+	  - An alert. The puppet file opened, and you can edit and export it, but you cannot save it.  See :ref:`uma-open-failures`.
+	* - The puppet file has unsaved changes.  Save them first?  Discard them?  Save them before quitting?  Quit without saving?
+	  - Questions.  Umamo asks before it replaces or ends a puppet file with unsaved changes.  See :doc:`/troubleshooting/backups_and_data_safety`.
 
 Saving and Exporting
 ====================
@@ -68,13 +81,13 @@ These are shown in the status bar unless they say otherwise.
 	* - Saved *name*.
 	  - The file is written.
 	* - Saved as UMA.  The CMO3's physics, guides, keyform notes, random pose, model state sets, user data, and other editor settings are not carried in this file.  CMO3 exports from this session still keep them, but a CMO3 exported after reopening the file will not.
-	  - The first save of a document that came from a CMO3.  Keep the CMO3 if you need that data.  See :doc:`/files/uma`.
+	  - The first save of a puppet file that came from a CMO3.  Keep the CMO3 if you need that data.  See :doc:`/files/uma`.
 	* - Saved as UMA.  Physics, motions, expressions, user data, and pose from the MOC3 family are not carried in this file.
-	  - The same, for a document that came from a MOC3.
+	  - The same, for a puppet file that came from a MOC3.
 	* - A save is already in progress.
 	  - You asked to save while a save was running.  Nothing was done.
 	* - Waiting on save to finish…
-	  - You asked to quit or to replace the document while a save was running.  Umamo goes on once it is written.
+	  - You asked to quit or to replace the file while a save was running.  Umamo goes on once it is written.
 	* - Exporting model…  Exporting image…
 	  - An export is being written.  You can keep working.
 	* - Exported *name*.
@@ -86,14 +99,14 @@ These are shown in the status bar unless they say otherwise.
 	* - Could not save *name*.  *reason*
 	  - An alert.  The file was not written, and the old file is as it was.  The reason is the message of the system, such as a full disk or a folder that cannot be written to.
 	* - Could not export *name*.  *reason*
-	  - An alert.  The open document is not affected.  See :doc:`/files/exporting`.
+	  - An alert.  The open puppet file is not affected.  See :doc:`/files/exporting`.
 	* - The file was exported, but the following could not be carried into CMO3:  The file was exported, but the following could not be carried into MOC3:
 	  - The export report, an alert.  The file has been written.  See :doc:`/files/export_notices`.
 	* - Exporting will overwrite *N* existing file(s): *names*
 	  - A question, before a MOC3 export.  Overwrite replaces them, and Cancel writes nothing.
 	* - The viewport renderer could not draw the image.  Nothing is visible to capture.  *width* × *height* px is past the 16384 px limit.
 	  - Image export problems.  See :doc:`/files/exporting`.
-	* - Something unexpected stopped it; the details are in the log.  The open document is unaffected.
+	* - Something unexpected stopped it; the details are in the log.  The open puppet file is unaffected.
 	  - An export failed in a way Umamo did not expect.  Report it with the log.
 
 Modes and Editing
@@ -111,7 +124,7 @@ Most of these appear by the pointer, because they explain why a gesture did noth
 	* - Can't transform while mesh is deformed.  Reset all parameters first.
 	  - The parameters are away from their defaults, so the art is deformed.  Reset them in the Parameters editor and try again.
 	* - Pose mode needs a deformer to pose.
-	  - The document has no deformers.  Create a warp deformer first.  See :doc:`/rigging/posing_warps`.
+	  - The puppet file has no deformers.  Create a warp deformer first.  See :doc:`/rigging/posing_warps`.
 	* - Moving the pose discarded *N* unkeyed lattice edit(s).  Undo to bring them back.
 	  - You changed a parameter in Pose Mode while lattice edits were not keyed yet.  Undo restores them.
 	* - Point at a keyable property to insert a keyframe.  Select a parameter to key on.
@@ -174,9 +187,9 @@ Adding Artwork
 	  - It worked.
 	* - Artwork imported with notes.  See the log.
 	  - The artwork was added, and the import has things to tell you, such as a layer that was skipped.  The log lists them.
-	* - The document changed while the artwork was being added; nothing was applied.
-	  - You edited the document during the import, and Umamo dropped the result rather than mix them.  Add the artwork again.
-	* - Artwork can't be added to documents created from imported MOC3 files.  Export it as CMO3 first and then import the artwork into that file.
+	* - The puppet file changed while the artwork was being added; nothing was applied.
+	  - You edited the puppet file during the import, and Umamo dropped the result rather than mix them.  Add the artwork again.
+	* - Artwork can't be added to puppet files created from imported MOC3 files.  Export it as CMO3 first and then import the artwork into that file.
 	  - A MOC3 has only baked atlas pages.  See :doc:`/files/cubism_interchange`.
 	* - The file has no layers with pixels to add.
 	  - Every layer of the file is empty, or has no pixels.
@@ -200,14 +213,14 @@ Reloading, Relinking, and Matching
 	* - *N* artwork file(s) changed on disk.  Press Reload to take the changes.
 	  - The watcher noticed the change.  See :doc:`/artwork/source_watcher`.
 	* - *N* artwork file(s) changed since they were last read.  Press Reload to take the changes.
-	  - The same, found when the document was opened.
-	* - *name* is no longer where the document read it.
+	  - The same, found when the puppet file was opened.
+	* - *name* is no longer where the puppet file read it.
 	  - The file was moved or deleted.  Relink or replace it.
-	* - Art relinked and reloaded.  Art relinked; its file could not be read, so the art did not change.  Art relinked from the art this document holds, since its file could not be read.
+	* - Art relinked and reloaded.  Art relinked; its file could not be read, so the art did not change.  Art relinked from the art this puppet file holds, since its file could not be read.
 	  - The result of a relink.  The last two mean that the file was not read.
 	* - *N* layer(s) matched, *N* left for review.
 	  - The result of Match Automatically.
-	* - No artwork could be read, from its file or from this document; nothing was matched.
+	* - No artwork could be read, from its file or from this puppet file; nothing was matched.
 	  - There was nothing to match with.  Check the files.
 	* - No binding matched confidently enough; the suggestions are on the rows that need review.
 	  - The suggestions are on the rows that need review in the Sources editor.
@@ -244,7 +257,7 @@ These appear in the status bar and by the pointer.
 	  - Nothing could be generated.
 	* - Nothing was generated: The atlas has no room for the larger meshes.
 	  - A larger mesh needs more room on its atlas page than there is.
-	* - The document changed while the meshes were being generated; nothing was applied.
+	* - The puppet file changed while the meshes were being generated; nothing was applied.
 	  - You edited during the run.  Run it again.
 	* - Select a drawable with a mesh to generate one from its art.
 	  - Select the drawables first.
@@ -278,7 +291,7 @@ Memory
 	  - What it means
 	* - Umamo has been allocated to use at most *limit* of memory.  Large files, especially exports, can cause Umamo to run out of memory and crash.
 	  - An alert at launch, for a ``.jar`` that could not be given enough.  It gives a command that allows half of your memory.
-	* - Could not export *name*: Umamo ran out of memory.  The open document is unaffected.
+	* - Could not export *name*: Umamo ran out of memory.  The open puppet file is unaffected.
 	  - An alert.  The export stopped.  For a ``.jar`` it also gives the limit and the command.
 	* - There was not enough memory for a *width* × *height* px image.  Try a smaller scale.
 	  - An alert from Export Image.

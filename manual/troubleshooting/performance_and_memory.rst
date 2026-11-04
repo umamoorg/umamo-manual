@@ -2,20 +2,20 @@
 Performance and Memory
 **********************
 
-Umamo is written in Java and Kotlin, so it can use only as much memory as its Java runtime allows, which is a limit set when it starts.  A large model with many layers and large texture atlases needs a lot of it, and an export needs more than editing does.  This page explains where the limit comes from, what Umamo does when it runs out, and what you can change to make Umamo run better.
+Umamo is written in Java and Kotlin, so it can use only as much memory as its Java runtime allows.  A large model with many layers and large texture atlases needs a lot of memory, and an export takes more memory than editing does.  This page explains where the limit is specified, what Umamo does when it runs out, and how you can change resource limits.
 
 How Much Memory Umamo Gets
 ==========================
 
 .. list-table::
-	:header-rows: 1
+    :header-rows: 1
 
-	* - How you run Umamo
-	  - The memory limit
-	* - An installer, or a portable archive (``.msi``, ``.dmg``, ``.deb``, ``.rpm``, ``.zip``, ``.tar.gz``)
-	  - Half of the memory of the computer.
-	* - The ``.jar``
-	  - Java's own default is a quarter of the memory of the computer.  When that would give Umamo less than 3 GB, the ``.jar`` starts itself again with half of the memory.  Otherwise it keeps Java's default.
+    * - How you run Umamo
+      - The memory limit
+    * - An installer, or a portable archive (``.msi``, ``.dmg``, ``.deb``, ``.rpm``, ``.zip``, ``.tar.gz``)
+      - Half of the memory of the computer.
+    * - The ``.jar``
+      - Java's own default is a quarter of the memory of the computer.  When that would give Umamo less than 3 GB, the ``.jar`` starts itself again with half of the memory.  Otherwise it keeps Java's default.
 
 The second start happens before the window opens.  It does not happen when you started the ``.jar`` with a memory limit of your own, such as ``-Xmx8g``, when a debugger is attached, or when Java does not say which program is running it.  A limit that you give is always kept.
 
@@ -23,11 +23,11 @@ To start the ``.jar`` with half of your memory yourself, use a terminal:
 
 .. code-block:: bash
 
-	java -XX:MaxRAMPercentage=50 -jar umamo-<target>-<version>.jar
+    java -XX:MaxRAMPercentage=50 -jar umamo-<target>-<version>.jar or java -Xms512m -Xmx2g -jar  umamo-<target>-<version>.jar (with your own limits for the -Xms and -Xmx options)
 
-The log records the limit that a session got.  Near the top is a line such as ``started from the jar umamo-linux-x64-0.5.0.jar; the heap may grow to 8192 MiB``.  See :doc:`/troubleshooting/reporting_bugs`.
+The log records the limit that every session got.  Near the top is a line such as ``started from the jar umamo-linux-x64-0.5.0.jar; the heap may grow to 8192 MiB``.  See :doc:`/troubleshooting/reporting_bugs`.
 
-How much do you need?  The web site gives 16 GB as the minimum for the computer and 32 GB or more as the recommended amount.  8 GB has been tested, but heavy models with many layers and large atlases can run out of memory on it.  A model with three 8192 by 8192 pixel atlas pages needs about 1.3 GB just to export.  The document that is open, the viewport, and everything else take room on top of that.  See :doc:`/getting_started/system_requirements`.
+How much memory do you need?  The web site gives 16 GB as the minimum and 32 GB or more as the recommended amount.  8 GB has been tested, but heavy models with many layers and large atlases can run out of memory.  A model with three 8192 by 8192 pixel atlas pages needs about 1.3 GB just to export.  The document that is open, the viewport, and everything else need memory on top of that.  See :doc:`/getting_started/system_requirements`.
 
 Out-of-Memory Alerts
 ====================
@@ -36,18 +36,15 @@ Two alerts are about memory.
 
 **At launch**, a ``.jar`` that could not be given enough memory shows an alert once it has started:
 
-``Umamo has been allocated to use at most 2.0 GB of memory.  Large files, especially exports, can cause Umamo to run out of memory and crash.  To allocate up to 50% of the system memory for Umamo: Quit and run this command from a terminal:`` and the command, which has the name of your ``.jar`` in it.
+``Umamo has been allocated at most 2.0 GB of memory.  Large files, especially exports, can cause Umamo to run out of memory and crash.  To allocate up to 50% of the system memory for Umamo: run this command from a terminal:`` and the command, which has the name of your ``.jar`` in it.
 
-This happens when Umamo could not start itself again.  Use the command.  :guilabel:`Don't Show Again` turns the alert off for good.  The installed versions already use half of your memory, so they never show it.
+This happens when Umamo could not start itself again.  Use the command.  :guilabel:`Don't Show Again` turns the alert off for good.  The installed versions already use up to half of your computer's installed memory, so they never show it.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
 
-	:Show: The low-memory alert at launch, with its message, the command, and the Okay and Don't Show Again buttons.
-	:Setup: Start the ``.jar`` build with ``-Xmx1g`` (``java -Xmx1g -jar umamo-<target>-<version>.jar``).
-	:Crop: The alert and a little of the window around it.
-	:Save as: ``images/troubleshooting/low_memory_alert.png``
-	:Caption: The alert for a ``.jar`` that has too little memory.
+.. image:: ./img/not_enough_ram.png
+   :width: 100%
+   :align: center
+   :alt: A standard out of memory message when launching Umamo.
 
 **During an export**, a CMO3 or MOC3 export that runs out of memory stops and tells you so:
 
@@ -67,13 +64,15 @@ When an export runs out of memory:
 Viewport Cost
 =============
 
-The viewport is drawn by the graphics card, and the model is drawn at twice the resolution of the screen and scaled down, so that its edges are smooth.  On a computer with a weak graphics card, or with only software rendering, such as WSL2 without a GPU, turn that off.
+The viewport is drawn by the graphics card, and the model is drawn at twice the resolution of the screen and scaled down, so that its edges are smooth.
+You can turn off the default Supersampling toggle To preserve performance, especially on a computer with a weak graphics card, or with only software rendering, such as Windows subsystem for Linux.
+
 
 :guilabel:`Supersampling (2x Render Quality)`
-	In :menuselection:`Edit --> Settings…`, in the :guilabel:`Viewport` category.  It is on by default.  With it off, the viewport is drawn at its own size, which is cheaper and a little rougher.
+    In :menuselection:`Edit --> Settings…`, in the :guilabel:`Viewport` category.  It is on by default.  With it off, the viewport is drawn at its own size, which is cheaper and a little rougher.
 
 :guilabel:`Keep supersampling while resizing panels`
-	Only when supersampling is on.  Turn it off to draw at the plain size while you drag a splitter, so that resizing stays smooth, and the smooth edges return when you stop.
+    Only when supersampling is on.  Turn it off to draw at the plain size while you drag a splitter, so that resizing stays smooth, and the smooth edges return when you stop.
 
 See :doc:`/interface/settings`.
 
@@ -86,18 +85,19 @@ Other things that help:
 Large Documents
 ===============
 
-Umamo is built for large models.  It reads and writes a document, draws the viewport, and builds meshes without freezing the window, and the status bar shows each running task and how far along it is.  A document of hundreds of thousands of vertices stays responsive when you edit it.  The things to watch are these:
+Umamo is built for large models.  It reads and writes a puppet file, draws the viewport, and builds meshes without freezing the window, and the status bar shows each running task and how far along it is.  A document of hundreds of thousands of vertices stays responsive when you edit it.
+Some things to keep in mind:
 
-* **Opening, saving, and exporting take time.**  Umamo does one at a time.  Another open, or New, while one is running is refused with a notice, and New, Open, and quitting wait while a CMO3 or MOC3 export runs.
-* **Texture atlases are a large share of the cost.**  Pages that are 8192 pixels wide take four times the memory of pages that are 4096 wide.  The atlas options of :doc:`/artwork/atlas_packing` set the page size.
+* **Opening, saving, and exporting take time.**  Umamo does this one-by-one.  Another open, or New, while one is running is refused with a notice, and New, Open, and quitting wait while a CMO3 or MOC3 export runs.
+* **Texture atlases are a large part of the cost.**  Pages that are 8192 pixels wide take four times the memory of pages that are 4096 wide.  The atlas options of :doc:`/artwork/atlas_packing` set the page size.
 * **Artwork larger than the graphics card can hold** is scaled down for the viewport, and not refused.
 * **Save before you start something large**, such as reloading all artwork, repacking the atlas, or generating meshes for the whole document.  Each one can take a while on a big model.
-* **A MOC3 has limits** that a document does not.  A mesh with more than 65,536 vertices is left out of a MOC3 export.  See :doc:`/files/export_notices`.
+* **A MOC3 has limits** that a .UMA file does not.  A mesh with more than 65,536 vertices is left out of a MOC3 export.  See :doc:`/files/export_notices`.
 
 If a particular model is slow or fails, report it with the model if you may share it.  See :doc:`/troubleshooting/reporting_bugs`.
 
 .. seealso::
 
-	* :doc:`/interface/settings`
-	* :doc:`/troubleshooting/platform_notes`
-	* :doc:`/getting_started/installing`
+    * :doc:`/interface/settings`
+    * :doc:`/troubleshooting/platform_notes`
+    * :doc:`/getting_started/installing`
