@@ -2,9 +2,9 @@
 atlas
 *****
 
-``atlas`` packs the layers of an artwork file into texture atlas pages, the way a model's textures are built.  It writes the pages and a report of where every layer went, and then proves that the pages are right by reading each packed layer back out of its page and comparing it with the pixels it came from.
+``atlas`` packs the layers of an artwork file into a texture atlas, an atlas page consists of model textures packed together to reduce overall dimensions. This command writes atlas pages and includes a report of where every layer went, and then verifies every page by reading each packed layer back out of its page and comparing it with the original texture layers pixel-by-pixel.
 
-It is the packer on its own, with nothing else around it.  Inside the editor the same packer is behind :doc:`/artwork/atlas_packing`.
+The atlas command invokes the atlas packer with no additional features, inside the Umamo editor, the same packer is behind :doc:`/artwork/atlas_packing`.
 
 Synopsis
 ========
@@ -13,7 +13,7 @@ Synopsis
 
 	atlas <file> [<directory>] [options]
 
-``file`` is a PSD, CLIP, or KRA file, or a flat image.  The command stops with a usage error for a model.  For example:
+``file`` is a PSD, CLIP, or KRA file, or a flat image. The command stops with a usage error for non-image data ( eg. a Live2D model ).  For example:
 
 .. code-block:: bash
 
@@ -52,9 +52,27 @@ Options
 	  - Also writes ``preview.png``.  See below.
 	  - Off
 
-The command does not offer the packer's other settings.  Pages are always square, and a page that is cut down rounds up to a power of two.  A pixel counts as art when it has any opacity.
+Pages are always square, and a page that is cut down rounds up to a power of two.  A pixel counts as art when it has any opacity.
 
 Layers that carry no pixels, such as text and adjustment layers, are not packed.  The command prints a note with how many there were.
+
+Example
+========
+
+I've tested the following .PSD image, with multiple layers:
+
+.. image:: ./img/full-image.png
+   :width: 100%
+   :align: center
+   :alt: Original image with textures in different layers - for a L2D model.
+
+The packed texture atlas looks like :
+
+.. image:: ./img/page_00.png
+   :width: 100%
+   :align: center
+   :alt: The packed texture atlas for the L2D model pictured above.
+
 
 Output Files
 ============
@@ -133,7 +151,7 @@ A file where every layer is skipped is not an error.  The command writes ``place
 Verification and Exit Codes
 ===========================
 
-A page that does not reproduce the art it was built from is worthless however good it looks, so the check is the reason that the command exists.  Once the pages are written, ``atlas`` reads every packed tile back out of the page that it is on, undoing any turn, and compares it with the layer's pixels, byte for byte.
+A page that does not reproduce the art it was built from is worthless however good it looks, so the output has to be checked against the original.  Once the pages are written, ``atlas`` reads every packed tile back out of the page that it is on, undoing any rotation, and compares it with the layer's pixels, byte for byte.
 
 .. list-table::
 	:header-rows: 1

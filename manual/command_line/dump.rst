@@ -25,7 +25,7 @@ Output by Format
 MOC3
 ----
 
-Without options, ``dump`` prints the static rig of a MOC3 file.  This includes the parameters, the parts, and the drawables exactly as they are stored.   Nothing is evaluated, so there are no posed positions or opacities.
+Without options, ``dump`` prints the static rig of a MOC3 file.  This includes the parameters, the parts, and the drawables exactly as they are stored. Nothing is evaluated, so there are no posed positions or opacities.
 
 .. code-block:: text
 
@@ -55,7 +55,7 @@ The lines that start with ``#`` are the header.  They give the MOC3 version, the
 	* - ``D``
 	  - A drawable: Its index, ``id``, its constant flags (``cflag``, in hexadecimal), the index of its texture page (``tex``), its parent part (``part``), its vertex count (``vtx``), the number of triangle indices (``idx``), and the number of drawables that mask it (``masks``).
 
-``--sections`` prints the structure of the file instead: The MOC3 version, how many sections it has, the counts that the file declares, and one ``S`` line for each section that is present with its number of elements.
+``--sections`` prints the structure of the file instead: The MOC3 version, the number of sections, the counts for each section that the file declares, and one ``S`` line for each section that is present with its number of elements.
 
 .. code-block:: text
 
@@ -156,7 +156,7 @@ Options
 
 An option on a kind of file that it does not apply to is a usage error.
 
-``--puppet`` prints the model after the normal output, as Umamo imports it.  This is the import that the editor and ``convert`` use, so it is the place to look first when a conversion is not what you expected.
+``--puppet`` prints the model after the normal output, as Umamo imports it.  This is the import that the editor and ``convert`` use, so use this option to investigate when a conversion is not what you expected.
 
 .. code-block:: text
 

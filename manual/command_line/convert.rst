@@ -2,7 +2,7 @@
 convert
 *******
 
-``convert`` converts a model from one Cubism format to another, or reads a model and writes it again in the same format.
+``convert`` converts a model from one Cubism format to another (.cmo3 to .moc3 and vice-versa), it can also read a model and rewrite it in the same format.
 
 Synopsis
 ========
@@ -35,20 +35,20 @@ The direction comes from the kind of the input file and the extension of ``out``
 	  - A resave.  A model that has not been edited writes its ``main.xml`` out byte for byte as it was read.  Only the archive around it is written afresh.
 	* - MOC3
 	  - ``.moc3``
-	  - A rebake.  The model is written again from scratch and is not byte for byte the same as the source, by design.  Only the ``.moc3`` file is written.
+	  - A rebake.  The model is written again from scratch and is not byte for byte the same as the source.  Only the ``.moc3`` file is written.
 	* - CMO3
 	  - ``.moc3``
-	  - The whole MOC3 family, as described below.
+	  - The whole MOC3 model and it's associated files - the model, manifest, display information and texture atlas pages.
 	* - MOC3
 	  - ``.cmo3``
 	  - A new CMO3 is built from the model and its texture pages.  The Cubism Editor can open it.
 
-Any other pair is a usage error, and so is a file that is not a model.
+Any other pair is a usage error, and so is a file that is not a valid L2D model.
 
 CMO3 to MOC3
 ------------
 
-The command writes a MOC3 model with its other files, in the folder of ``out``.  When ``out`` is ``Model.moc3``, they are:
+The command writes a MOC3 model with associated files, in the folder of ``out``.  When ``out`` is ``Model.moc3``, they are:
 
 .. list-table::
 	:header-rows: 1
@@ -64,14 +64,15 @@ The command writes a MOC3 model with its other files, in the folder of ``out``. 
 	* - ``Model.4096/texture_00.png``
 	  - One file for each texture page, in a folder named after the width of the page.
 
-The command prints a line for each file that it writes.  A texture page that cannot be decoded is left out, and the conversion goes on without it.
+The command prints a line for each file that it writes.  A texture page that cannot be decoded is skipped, and the conversion goes on without it.
 
 MOC3 to CMO3
 ------------
 
-The texture pages are the ones that the manifest lists.  Without a manifest next to the MOC3 file, or with a page that is missing on disk, the command warns and goes on, so the CMO3 has fewer textures or none.
+The texture pages are the ones that the manifest lists.  Without a manifest next to the MOC3 file, or with a page that is missing on disk, the command warns about missing textures, but proceeds with the conversion, the resulting CMO3 has fewer textures or none.
 
-The MOC3 file holds only the packed texture pages and not the artwork they were made from.  The CMO3 is built around a stand-in for the artwork, whose layers are slices of those pages.  Because of that the command always reports a ``no source artwork`` notice.  The file opens and renders in the Cubism Editor, but its layers are not the original layers.  Reloading the original layered artwork into the model replaces them.
+The MOC3 file holds only the packed texture pages and not the artwork they were made from.  The CMO3 is built around a stand-in for the artwork, whose layers are slices of those pages.  Because of that the command always reports a ``no source artwork`` notice.
+The converted file opens and renders in the Cubism Editor, but its layers are not the original layers.  Reloading the original layered artwork into the model replaces them.
 
 Overwrites Without Confirmation
 ===============================

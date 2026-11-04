@@ -2,7 +2,7 @@
 diff
 ****
 
-``diff`` imports two models and prints how they differ, one thing at a time.  It compares what the models mean, not how the files are laid out, so it works across formats: you can compare a CMO3 file with the MOC3 file that was exported from it.
+``diff`` imports two models and prints how they differ, one thing at a time.  It compares the model's contents, not how the files are formatted, so it works across formats: you can compare a CMO3 file with the MOC3 file that was exported from it.
 
 Synopsis
 ========
@@ -20,13 +20,13 @@ Synopsis
 Output Format
 =============
 
-Two models that match print one word:
+Two models that match print:
 
 .. code-block:: text
 
 	identical
 
-Otherwise ``diff`` prints one section for each kind of thing that differs, in this order: ``[parameters]``, ``[parameterGroups]``, ``[parts]``, ``[deformers]``, ``[drawables]``, ``[glues]``, and ``[document]``.  A kind with no differences has no section.  Under a heading there is a line for each thing that differs, and the first character says how:
+Otherwise ``diff`` prints one section for each type of data that differs, in this order: ``[parameters]``, ``[parameterGroups]``, ``[parts]``, ``[deformers]``, ``[drawables]``, ``[glues]``, and ``[document]``.  A type with no differences has no section.  Under a heading there is a line for each data item that differs, and the first character says how:
 
 .. list-table::
 	:header-rows: 1
@@ -34,11 +34,11 @@ Otherwise ``diff`` prints one section for each kind of thing that differs, in th
 	* - Line
 	  - Meaning
 	* - ``+ id``
-	  - The thing is only in ``b``.
+	  - The data is only in ``b``.
 	* - ``- id``
-	  - The thing is only in ``a``.
+	  - The data is only in ``a``.
 	* - ``~ id [FIELD, ...]``
-	  - The thing is in both, and the listed fields are different.
+	  - The data is in both, and the listed fields are different.
 
 .. code-block:: text
 
@@ -50,7 +50,7 @@ Otherwise ``diff`` prints one section for each kind of thing that differs, in th
 
 The ``id`` is the id of the parameter, group, part, deformer, or drawable.  A glue has no id of its own, so it is named by the two drawables it joins and its number among the glues that join the same two, as in ``MeshA~MeshB#0``.  Under ``[document]`` there is no ``id``, because the differences are in the model as a whole.
 
-A changed thing lists the names of what differs.  They are always listed in the same order, which is the order of the tables below.
+A changed data item lists the names of what differs.  They are always listed in the same order, which is the order of the tables below.
 
 .. list-table::
 	:header-rows: 1
@@ -80,9 +80,9 @@ A difference is not a failure.  ``diff`` exits with 0 whether the models match o
 Inputs
 ======
 
-Both files are imported the way the editor imports them, and both are compared in the same canvas space.  A model in the CMO3 format and a model in the MOC3 format are therefore comparable with each other.
+Both files are imported the way the editor imports them, and are compared in the same canvas space.  A model in the CMO3 format and a model in the MOC3 format are comparable to each other.
 
-Names, parameter groups, and linked parameters of a MOC3 model come from its ``.cdi3.json``.  Without one, those differ from a CMO3 model that has them, and the command warns.
+Names, parameter groups, and linked parameters of a MOC3 model come from its ``.cdi3.json``.  Without one, those differ from a CMO3 model that has them, and a warning is generated.
 
 ``diff`` needs a rig, so an artwork file is a usage error.
 

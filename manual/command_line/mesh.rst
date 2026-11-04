@@ -2,7 +2,9 @@
 mesh
 ****
 
-``mesh`` runs the art mesher over the layers of an artwork file and shows what it made: for each layer, how many vertices and triangles the mesh has, how good the triangles are, and how long it took.  It is the mesher on its own, so it is the place to try settings out on a whole document before you commit to them in the editor.  The editor's :doc:`/modeling/generate_mesh` command uses the same mesher.
+``mesh`` runs the art mesher over the layers of an artwork file and previews the meshes: for each layer, the number of vertices and triangles for each mesh, the quality of the triangles, and duration.
+It is the mesher on its own, so it is the place to experiment with different settings on your artwork before you commit to them in the editor.  The editor's :doc:`/modeling/generate_mesh` command uses the same mesher.
+
 
 Synopsis
 ========
@@ -31,10 +33,10 @@ Options
 	  - Effect
 	  - Default
 	* - ``--layer=NAME``
-	  - Meshes only the layer that has exactly this name.  Put a name that contains spaces in quotes.  It is a usage error when the file has no such layer.
+	  - Meshes only the layer that has exactly this name.  Put a name that contains spaces in quotes.  It throws a usage error when the file has no such layer.
 	  - Every layer
 	* - ``--preset=NAME``
-	  - ``standard``, ``fine``, or ``coarse``.  This is the set of settings that the overrides below start from.  The name is not case sensitive.
+	  - ``standard``, ``fine``, or ``coarse``.  This are settings that the overrides below start from.  The name is not case sensitive.
 	  - ``standard``
 	* - ``--visible-only``
 	  - Leaves out the layers that are hidden by their own eye or by the eye of a group that holds them.

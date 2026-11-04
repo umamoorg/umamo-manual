@@ -2,9 +2,9 @@
 Command Line
 ************
 
-Umamo comes with a headless command line tool for looking inside model and artwork files without opening the editor.  It can print what a file contains, unpack a CMO3 archive, convert between the Cubism formats, compare two models, pack artwork layers into texture atlas pages, and run the art mesher over a layer.
+Umamo comes with a headless command line tool for reading model and artwork files without opening the editor.  It can print a file's contents, unpack a CMO3 archive, convert between the Cubism formats (cmo3 to moc3 and vice-versa ), compare two models, pack artwork layers into texture atlas pages, and run the art mesher over a layer.
 
-The tool uses the same readers, writers, and conversion code as the editor.  What it reports is what the editor sees, so it is a good place to look when a file imports or converts in a way you did not expect.
+The tool uses the same readers, writers, and conversion code as the editor and has access to the same data. It is ideal to preview and debug, especially when a file imports or converts in a way you did not expect.
 
 .. toctree::
 	:maxdepth: 1
@@ -47,9 +47,9 @@ Commands
 Running the Tool
 ================
 
-The tool is part of Umamo's source code.  It is not included in the downloads on the `Releases page <https://github.com/umamoorg/umamo/releases>`__.  To use it you need a copy of the `source code <https://github.com/umamoorg/umamo>`__ and JDK 21.  The README in the source code repository has the details of setting up the build.
+The tool is part of Umamo's source code.  It is not included in the downloads on the `Releases page <https://github.com/umamoorg/umamo/releases>`__.  To use it you need a copy of the `source code <https://github.com/umamoorg/umamo>`__ and JDK 21.  The README in the source code repository has details on how to set it up.
 
-Run it with the Gradle wrapper in the root of the source code, and pass the command and its arguments in a single ``--args`` value:
+you should run it with the Gradle wrapper in the root of the source code, and pass the command and its arguments in a single ``--args`` value:
 
 .. code-block:: bash
 
@@ -68,7 +68,7 @@ Conventions
 Output
 ------
 
-The tool writes its results to standard output and everything else to standard error.  Notes, warnings, notices, and error messages go to standard error, so you can redirect the standard output to capture only the results:
+The tool writes its results to standard output and everything else ( Notes, warnings, notices, and error messages ) to standard error .  You can redirect the standard output to capture only the results:
 
 .. code-block:: bash
 
@@ -84,7 +84,7 @@ Output Folders
 
 ``extract``, ``atlas``, and ``mesh`` write into a new folder that is named after the input file, without its extension.  ``mesh`` adds ``-mesh`` to the name, so that its files never mix with ``atlas`` output for the same file.  The new folder is created in the folder that you give as the last argument or beside the input file when you do not give one.
 
-If the folder already exists, the tool prints a note and writes into it anyway.  It replaces files with the same names and leaves every other file alone.  ``convert`` writes exactly where you tell it to and it does not ask before replacing a file.
+If the folder already exists, the tool overwrites files in the folder with the same names.  ``convert`` writes exactly in the destination does not ask before replacing a file.
 
 Exit Codes
 ----------
@@ -152,7 +152,7 @@ A flat image is treated as a layered artwork file with a single layer.
 MOC3 Files
 ----------
 
-A ``.moc3`` file is only part of a model.  When you give the tool a ``.moc3`` file, it looks beside it for the rest of the model for the JSON sidecar files:
+A ``.moc3`` file is only part of a model.  When you give the tool a ``.moc3`` file, it looks for the associated JSON sidecar files:
 
 #. The ``.model3.json`` manifest with the same name.  If there is none, any ``.model3.json`` in the same folder whose ``Moc`` entry names the file.
 #. The display information, ``.cdi3.json``, which holds the names, the parameter groups, and the linked parameters.  It is located from the manifest ``DisplayInfo`` entry, otherwise a ``.cdi3.json`` with the same name beside the ``.moc3`` is used.
