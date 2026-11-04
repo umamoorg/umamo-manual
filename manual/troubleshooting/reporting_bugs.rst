@@ -69,7 +69,7 @@ If Umamo will not start, or a part of it does not work at all, ask it to check i
 	umamo --self-check
 	java -jar umamo-<target>-<version>.jar --self-check
 
-A line reads ``name: OK`` with a detail, or ``name: FAILED`` with the reason.  The last line says whether every check passed, and the exit code is 0 when they did.  The checks end by themselves after 60 seconds.
+A line reads ``name: OK`` with a detail, or ``name: FAILED`` with the reason.  The last line says whether every check passed, and the exit code is 0 when all checks passed.  The checks should be finished after 60 seconds.
 
 On Windows the launcher does not print to a terminal.  Give it the name of a file, and it writes the report there:
 
@@ -88,15 +88,15 @@ What to Include
 ===============
 
 * **A short title** that says what went wrong, such as ``Export MOC3 stops with an alert when a part has no drawables``.
-* **What you did**, step by step, from a document that is open.  Say which menu rows, editors, and settings you used.
+* **What you did**, step by step, from a puppet file that is open.  Say which menu rows, editors, and settings you used.
 * **What you expected**, and **what happened instead**.  An exact message is better than a description of it.  The text of an alert can be selected and copied.
 * **Your version**, your operating system, and whether you use an installer, a portable archive, or the ``.jar``.
 * **The log file** of the session in which it happened.
 * **A sample file**, for a problem with a format or with one particular model.
-* **The export report**, for a problem with an export.  Copy its text, and say which format and which Runtime Target the document had.  See :doc:`/files/export_notices`.
+* **The export report**, for a problem with an export.  Copy its text, and say which format and which Runtime Target the puppet file had.  See :doc:`/files/export_notices`.
 * **A screenshot or recording**, for a problem that you can see.
 
-Does it also happen in a new document, or with the settings reset to their defaults?  Say so, either way.  The settings file is described in :doc:`/getting_started/configuration`.
+Does it also happen in a new puppet file, or with the settings reset to their defaults?  Say so, either way.  The settings file is described in :doc:`/getting_started/configuration`.
 
 Where to Report
 ---------------
