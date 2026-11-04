@@ -1,18 +1,38 @@
-# Minimal makefile for Sphinx documentation.
-#
-# Typical use:
-#   make venv        # once: create .venv and install the dependencies
-#   make html        # build into build/html
-#   make livehtml    # build, serve on http://127.0.0.1:8000 and rebuild on every change
 
 VENV         ?= .venv
-SPHINXBUILD  ?= $(VENV)/bin/sphinx-build
-SPHINXAUTO   ?= $(VENV)/bin/sphinx-autobuild
-SPHINXINTL   ?= $(VENV)/bin/sphinx-intl
-SPHINXOPTS   ?=
 SOURCEDIR    = manual
 BUILDDIR     = build
 LOCALEDIR    = locale
+SPHINXOPTS   ?=
+
+# -----------------------------------------------------------------------------
+# OS Detection & Environment Setup
+# -----------------------------------------------------------------------------
+ifeq ($(OS),Windows_NT)
+    PYTHON = python
+    EXE = .exe
+    VENV_PYTHON = $(VENV)/Scripts/python.exe
+    BIN_PREFIX = $(VENV)/Scripts/
+    RM_RF = if exist "$(BUILDDIR)" rmdir /s /q "$(BUILDDIR)"
+else
+    PYTHON = python3
+    EXE =
+    VENV_PYTHON = $(VENV)/bin/python
+    BIN_PREFIX = $(VENV)/bin/
+    RM_RF = rm -rf "$(BUILDDIR)"
+endif
+
+# Automatically detect whether the virtual environment exists.
+ifeq ($(wildcard $(VENV_PYTHON)),)
+    BIN_PREFIX =
+    ACTIVE_ENV = global
+else
+    ACTIVE_ENV = venv
+endif
+
+SPHINXBUILD ?= $(BIN_PREFIX)sphinx-build$(EXE)
+SPHINXAUTO  ?= $(BIN_PREFIX)sphinx-autobuild$(EXE)
+SPHINXINTL  ?= $(BIN_PREFIX)sphinx-intl$(EXE)
 
 .PHONY: help venv livehtml check gettext update-po clean Makefile
 
@@ -26,10 +46,11 @@ help:
 	@echo "  gettext       Extract translatable strings to $(BUILDDIR)/gettext"
 	@echo "  update-po     Create or update the catalogs for one language: make update-po LANG_CODE=fr"
 	@echo "  clean         Remove $(BUILDDIR)"
+	@echo "  Environment:  $(ACTIVE_ENV)"
 
 venv:
-	python3 -m venv $(VENV)
-	$(VENV)/bin/pip install -r requirements-dev.txt
+	$(PYTHON) -m venv "$(VENV)"
+	$(VENV_PYTHON) -m pip install -r requirements-dev.txt
 
 livehtml:
 	$(SPHINXAUTO) "$(SOURCEDIR)" "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
@@ -44,12 +65,11 @@ update-po: gettext
 ifndef LANG_CODE
 	$(error Set a language code: make update-po LANG_CODE=fr)
 endif
-	$(SPHINXINTL) update -p "$(BUILDDIR)/gettext" -l $(LANG_CODE) -d $(LOCALEDIR)
+	$(SPHINXINTL) update -p "$(BUILDDIR)/gettext" -l $(LANG_CODE) -d "$(LOCALEDIR)"
 
 clean:
-	rm -rf "$(BUILDDIR)"
+	$(RM_RF)
 
-# Catch-all target: route all unknown targets to Sphinx using the new "make mode" option.
-# $(O) is meant as a shortcut for $(SPHINXOPTS).
+# Catch-all target.
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
