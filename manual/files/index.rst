@@ -2,7 +2,7 @@
 Files
 *****
 
-Umamo works several different types of files and has interopability with Live2D Cubism formats.  Umamo's own native document format is the UMA file type which is used for opening and saving.  Live2D Cubism formats, CMO3 and MOC3, are also supported for import and export interchange to remain compatible with the existing Live2D ecosystem.  Layered artwork from PSD, CLIP, and KRA formats can also be added to new and existing documents.
+Umamo works with several different types of files and has interoperability with Live2D Cubism formats.  Umamo's own native document format is the UMA file type, which is used for opening and saving.  Live2D Cubism formats, CMO3 and MOC3, are also supported for import and export interchange to remain compatible with the existing Live2D ecosystem.  Layered artwork from PSD, CLIP, and KRA formats can also be added to new and existing documents.
 
 .. toctree::
 	:maxdepth: 1
@@ -42,19 +42,19 @@ Native and Interchange Formats
 	  -
 	  - :doc:`format_support`
 
-When referring to Open and Save it is referring to the UMA format and nothing else.  An UMA file is Umamo's own format and is recommended for working on puppets in Umamo.
+Open and Save refer to the UMA format and nothing else.  An UMA file is Umamo's own format and is recommended for working on puppets in Umamo.
 
-CMO3 and MOC3 are interchange formats created by the Live2D company.  They can be imported to create a new Umamo document from the file.  Umamo does not save directly into Live2D formats and requires exporting to them.  Note, exporting a file does not save the currently open Umamo document.
+CMO3 and MOC3 are interchange formats created by the Live2D company.  They can be imported to create a new Umamo document from the file.  Umamo does not save directly into Live2D formats and requires exporting to them.  Note that exporting a file does not save the currently open Umamo document.
 
 A typical session goes like this:
 
-#. Create a new document and add artowrk to it, or import a CMO3 or MOC3.
-#. Work on the model, and use :menuselection:`File --> Save As…` to save it as a UMA file.
+#. Create a new document and add artwork to it, or import a CMO3 or MOC3.
+#. Work on the model, and use :menuselection:`File --> Save As…` to save it as an UMA file.
 #. Export a CMO3 for the Cubism Editor or a MOC3 for an application runtime.
 
 .. warning::
 
-	Umamo does not save your documents automatically.  Keep your original files, and make copies of a UMA file before you try something drastic.  See :doc:`/troubleshooting/backups_and_data_safety`.
+	Umamo does not save your documents automatically.  Keep your original files, and make copies of an UMA file before you try something drastic.  See :doc:`/troubleshooting/backups_and_data_safety`.
 
 .. seealso::
 

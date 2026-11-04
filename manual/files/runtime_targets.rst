@@ -2,14 +2,14 @@
 Runtime Targets and Cubism Versions
 ***********************************
 
-Every target runtime version can play a different set of features.  A model that uses a feature that an older runtime lacks may play incorrectly there or not at all.  The Runtime Target of a document says which runtime the model is intended to play on.  When a runtime target is select Umamo will hide the features and controls that the runtime cannot play.  When you exporting to MOC3 it writes the format version for that runtime.
+Every target runtime version can play a different set of features.  A model that uses a feature that an older runtime lacks may play incorrectly there or not at all.  The Runtime Target of a document says which runtime the model is intended to play on.  When a runtime target is selected Umamo will hide the features and controls that the runtime cannot play.  When you export to MOC3 it writes the format version for that runtime.
 
 What a Runtime Target Is
 ========================
 
 The Runtime Target is a document setting and is saved into it.  This is the same as the "Select Target Version" in the Cubism Editor.
 
-A target limits what you can *author*.  It does not deleted any existing author features:
+A target limits what you can *author*.  It does not delete any existing authored features:
 
 * It only hides or limits controls.  A model that already uses a feature the target lacks keeps the feature and keeps rendering in Umamo.
 * An UMA file and a CMO3 file always carry every feature.
@@ -47,9 +47,9 @@ Target List
 	  - 6 (Latest Version)
 	  - —
 	  - No restrictions.  The MOC3 version is written out as the latest.
-	* - Ayagami (Cubism 5.0 Equivalent)
-	  - 5
-	  - 5.0
+	* - Ayagami (Cubism 5.3 Equivalent)
+	  - 6
+	  - 5.3
 	  - Free, Open Source Runtime - `Ayagami <https://github.com/AyagamiDev/ayagami>`__
 	* - Cubism 3.0
 	  - 1
@@ -132,7 +132,7 @@ What a restricted target does in the editor:
 * Controls for a whole feature are hidden.  The Multiply Color and Screen Color rows, the invert-mask row, the bilinear option of a warp deformer, and the composite rows of an isolated part are not shown.  :guilabel:`Add Blend Shape Parameter` is also missing from the Parameters editor's menus.
 * Lists of choices are reduced to what the target supports.  The blend modes and alpha blend modes are limited to the older ones and :guilabel:`Isolated` is no longer offered as a group mode.
 * A new warp deformer is created with the older method.
-* When the model has a value selected that is not supported by the current runtime, a control that would normally be hidden will remain visible.  Changing the value from an unsupported value will then hide the control.  For example, if :guilabel:`Group Mode` :guilabel:`Isolated` is selected while a runtime target lower than 5.3 is selected, the :guilabel:`Isolated` value will remain visible until changing it to another supported value.
+* When the model has a value selected that is not supported by the current runtime, a control that would normally be hidden will remain visible.  Changing the value from an unsupported value will then hide the control.  For example, if :guilabel:`Group Mode` :guilabel:`Isolated` is selected while a runtime target lower than 5.3 is selected, the :guilabel:`Isolated` value will remain visible until it is changed to another supported value.
 
 What it does not do:
 
