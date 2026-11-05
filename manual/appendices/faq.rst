@@ -2,7 +2,7 @@
 FAQ
 ***
 
-Short answers to the questions that people ask most, with a link to the page that has the whole story.
+Frequently Asked Questions and associated documentation, if you want more detailed answers.
 
 Project and Support
 ===================
@@ -125,7 +125,7 @@ Umamo is slow, or it ran out of memory.
 	A whole model is kept in memory, so large models and large artwork need much of it.  See :doc:`/troubleshooting/performance_and_memory`.
 
 Does Umamo run on WSL2?
-	Yes, but use the Windows build when you can.  See :doc:`/troubleshooting/platform_notes`.
+	Yes, but use the native Windows build when you can.  See :doc:`/troubleshooting/platform_notes`.
 
 .. seealso::
 

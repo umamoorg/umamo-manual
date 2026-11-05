@@ -83,8 +83,8 @@ Model Terms
 
 .. glossary::
 
-	Document
-		What is open in Umamo: a model, with the list of its artwork files, its texture atlas, and the state of the editor.  Saved as a UMA file.  See :doc:`/files/uma`.
+	Puppet File/Document
+		What is open in Umamo: a model, with the list of its artwork files, its texture atlas, and the state of the editor.  Saved as a UMA/MOC3/CMO3 file.  See :doc:`/files/uma`.
 
 	Model
 	Puppet

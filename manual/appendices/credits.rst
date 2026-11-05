@@ -2,7 +2,7 @@
 Credits
 *******
 
-Umamo is made with the work of many people.  This page thanks them.  It follows the ``CREDITS.md`` file in Umamo's source code repository, which is also what :menuselection:`Help --> Credits…` shows inside Umamo.  The licenses of the components are summarized on :doc:`/about/license`.
+Umamo is Open Source Software with many contributors.  This page thanks them.  It follows the ``CREDITS.md`` file in Umamo's source code repository, which is also what :menuselection:`Help --> Credits…` shows inside Umamo.  The licenses of the components are summarized on :doc:`/about/license`.
 
 Project Lead
 ============
