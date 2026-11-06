@@ -2,8 +2,7 @@
 Backups and Data Safety
 ***********************
 
-Umamo is in alpha and should not be trusted blindly. A bug can damage a puppet file (a .uma, .moc3 or a .cmo3 file ), and Umamo does not save for you.
-This page highlights what Umamo does to protect your work, what it leaves to you, and what to do when something has gone wrong.  :doc:`/files/uma` has the details of saving.
+Umamo is in alpha and should not be trusted blindly.  A bug can damage a puppet file (a UMA, MOC3, or CMO3 file), and Umamo does not save for you.  This page highlights what Umamo does to protect your work, what it leaves to you, and what to do when something has gone wrong.  :doc:`/files/uma` has the details of saving.
 
 Umamo protects your work in these ways:
 
@@ -51,23 +50,22 @@ New, Open, the imports, and Exit ask first when the puppet file has unsaved chan
 Only changes to the model count.  Moving a parameter slider, selecting something, and moving the view do not, and neither does an export.  Undoing back to the saved point clears the ``*``.  See :doc:`/files/uma`.
 
 Read-Only Puppet Files
-===================
+======================
 
-A .UMA file from a newer version of Umamo can hold extra fields that may not be read by older versions. To enforce read-compatibility, Umamo opens it as read-only.  An alert says so when it opens, and the title ends with ``(read-only)``.
-You can edit it, but Save and Save As are greyed out, so nothing can be saved over the newer file.
+An UMA file from a newer version of Umamo can hold extra fields that may not be read by older versions.  To enforce read-compatibility, Umamo opens it as read-only.  An alert says so when it opens, and the title ends with ``(read-only)``.  You can edit it, but Save and Save As are greyed out, so nothing can be saved over the newer file.
 
-To save edits, update Umamo to the version that created the file, or export the .UMA file as a CMO3, a MOC3, or an image. See :doc:`/getting_started/updating`.
+To save edits, update Umamo to the version that created the file, or export the UMA file as a CMO3, a MOC3, or an image.  See :doc:`/getting_started/updating`.
 
 What Saving to UMA Removes
-========================
+==========================
 
-A .UMA file keeps the rig, the atlas, the list of artwork files, and the state of the editor.  It does not keep:
+An UMA file keeps the rig, the atlas, the list of artwork files, and the state of the editor.  It does not keep:
 
 * The undo history.
-* Cubism-specific data.  The first time you save a .UMA file that came from a .CMO3, the status bar says that the physics, guides, keyform notes, random pose, model state sets, user data, and other settings of the Cubism Editor are not in the .UMA file.  For a MOC3 it names the physics, motions, expressions, user data, and pose.
+* Cubism-specific data.  The first time you save a UMA file that came from a CMO3, the status bar says that the physics, guides, keyform notes, random pose, model state sets, user data, and other settings of the Cubism Editor are not in the UMA file.  For a MOC3 it names the physics, motions, expressions, user data, and pose.
 * The artwork files themselves.  Keep them where the puppet file expects them.
 
-Cubism specific data is kept for as long as the .cmo3 or .moc3 puppet file stays open, so a CMO3 that you export in the same session still has it.  A CMO3 that you export after you reopen the UMA file does not.  If you need that data, keep the original Cubism files, and export from the session that imported them.
+Cubism specific data is kept for as long as the CMO3 or MOC3 puppet file stays open, so a CMO3 that you export in the same session still has it.  A CMO3 that you export after you reopen the UMA file does not.  If you need that data, keep the original Cubism files, and export from the session that imported them.
 
 .. seealso::
 

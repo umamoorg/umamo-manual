@@ -25,7 +25,7 @@ Where to Look
 	  - :doc:`performance_and_memory`
 	* - The installer is blocked, the window is blank or the viewport is empty, or something differs on your operating system.
 	  - :doc:`platform_notes`
-	* - Work was lost, a file will not open, or you want to know how Umamo protects your documents.
+	* - Work was lost, a file will not open, or you want to know how Umamo protects your puppet files.
 	  - :doc:`backups_and_data_safety`
 	* - A notice, an alert, or an error appeared and you want to know what it means.
 	  - :doc:`common_messages`

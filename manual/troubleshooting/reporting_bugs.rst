@@ -24,7 +24,7 @@ Version
 The Log File
 ------------
 
-Every time Umamo starts it opens a new log file, and writes each warning and error to it as they happen, with a full report of the cause.  The file is complete even if Umamo crashes.  This is what to attach to a report.
+Every time Umamo starts, it opens a new log file, and writes each warning and error to it as they happen, with a full report of the cause.  The file is complete even if Umamo crashes.  This is what to attach to a report.
 
 :menuselection:`Help --> Open Log Folder…` opens the folder that holds the log files in your file manager.  If it cannot, an alert tells you where the folder is.  The folders are:
 
@@ -69,7 +69,7 @@ If Umamo will not start, or a part of it does not work at all, ask it to check i
 	umamo --self-check
 	java -jar umamo-<target>-<version>.jar --self-check
 
-A line reads ``name: OK`` with a detail, or ``name: FAILED`` with the reason.  The last line says whether every check passed, and the exit code is 0 when all checks passed.  The checks should be finished after 60 seconds.
+A line reads ``name: OK`` with a detail, or ``name: FAILED`` with the reason.  The last line says whether every check passed, and the exit code is 0 when all checks pass.  The checks should be finished after 60 seconds.
 
 On Windows the launcher does not print to a terminal.  Give it the name of a file, and it writes the report there:
 
@@ -116,7 +116,7 @@ Contribution Provenance Rule
 
 Umamo's CMO3, MOC3, and CLIP support is a clean-room implementation.  It was built by observing what the files contain and from documentation that others wrote independently, and not from the code of the official Live2D software.  Anyone who contributes to Umamo affirms that:
 
-#. They used no official Live2D or Cubism source code, and no decompiled binaries, as a basis. What they do comes from looking at files and from public, independently written documentation.
+#. They used no official Live2D or Cubism source code, and no decompiled binaries, as a basis.  What they do comes from looking at files and from public, independently written documentation.
 #. They are not bound by an agreement with Live2D that their contribution would break, and they will say so before they contribute if they are.
 #. They are not, and have not been, an employee of Live2D or Cybernoids.
 

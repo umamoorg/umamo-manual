@@ -94,7 +94,7 @@ To upgrade, install the new package over the old one.  :doc:`/getting_started/in
 WSL2
 ====
 
-Umamo runs on Windows Subsystem for Linux 2 with WSLg, but you should use the Windows build when you can, which uses your graphics card directly.  Two things differ on WSL2 from a Linux computer:
+Umamo runs on Windows Subsystem for Linux 2 with WSLg, but you should use the Windows build when you can, because it uses your graphics card directly.  Two things differ between WSL2 and a Linux computer:
 
 * Mesa uses ``llvmpipe``, a software renderer, by default, so the viewport is slow.  Ask for the graphics card.
 * The interface toolkit cannot make a hardware OpenGL context under WSLg, so tell it to use software rendering for the window.
