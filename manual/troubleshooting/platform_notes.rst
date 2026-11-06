@@ -42,7 +42,7 @@ Windows 10 and 11 are tested.
 
 **The installer.**  The ``.msi`` installs for your own user, in ``%LOCALAPPDATA%\Programs\umamo``, so it needs no administrator rights.  It adds a Start menu entry and registers the ``.uma`` file type.  It has no final screen: when it is finished it just closes.  To remove Umamo, use :menuselection:`Windows Settings --> Apps`.
 
-**The portable archive.**  Extract the ``.zip`` anywhere and run ``Umamo\Umamo.exe``.  It registers nothing, so a double-click on a ``.uma`` file does not open it in Umamo.
+**The portable archive.**  Extract the ``.zip`` anywhere and run ``Umamo\Umamo.exe``.  It registers nothing, so double clicking a ``.uma`` file does not open it in Umamo.
 
 macOS
 =====
@@ -87,7 +87,7 @@ To upgrade, install the new package over the old one.  :doc:`/getting_started/in
 WSL2
 ====
 
-Umamo runs on Windows Subsystem for Linux 2 with WSLg, but you should use the Windows build when you can, which uses your graphics card directly.  Two things differ on WSL2 from a Linux computer:
+Umamo runs on Windows Subsystem for Linux 2 with WSLg, but you should use the Windows build when you can, because it uses your graphics card directly.  Two things differ between WSL2 and a Linux computer:
 
 * Mesa uses ``llvmpipe``, a software renderer, by default, so the viewport is slow.  Ask for the graphics card.
 * The interface toolkit cannot make a hardware OpenGL context under WSLg, so tell it to use software rendering for the window.
