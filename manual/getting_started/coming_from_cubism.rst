@@ -2,7 +2,7 @@
 Coming from Cubism
 ******************
 
-Umamo is built to work with Live2D Cubism.  It reads and writes the Cubism Editor's own files, and a rig means the same thing in both.  The interface is different, because it is modelled on Blender's, and a few ideas have different names.  This page is the map from what you know to where it is here.
+Umamo is built to work with Live2D Cubism.  It reads and writes the Cubism Editor's own files and a puppet means the same thing in both.  The interface is different because it is modelled on Blender's and a few ideas have different names.  This page maps what you know from Cubism to where it is in Umamo.
 
 Terminology Map
 ===============
@@ -73,7 +73,7 @@ Terminology Map
 	* - Updating a model after the artwork changed
 	  - Reload, relink, and match
 	  - The Sources editor.  Umamo can also watch the artwork files.  See :doc:`/artwork/relinking_and_reloading`.
-	* - Model target version selection
+	* - Select Target Version
 	  - Runtime Target
 	  - See `Runtime Target`_.
 	* - Animation
@@ -85,7 +85,7 @@ The terms of the whole manual are in :doc:`/appendices/glossary`.
 Keymap Presets
 ==============
 
-Umamo has three sets of shortcuts to start from, and you choose one in Quick Setup, or in the :guilabel:`Keybindings` category of Settings.  See :doc:`/interface/keymap`.
+Umamo has three sets of shortcuts to start from.  You choose one in Quick Setup or in the :guilabel:`Keybindings` category of Settings.  See :doc:`/interface/keymap`.
 
 The :guilabel:`Cubism` preset is for people who do not want to learn a new set.  It is much smaller than the default.  It keeps:
 
@@ -103,33 +103,33 @@ The shortcuts in this manual are those of the default preset.  See :doc:`/append
 File Compatibility
 ==================
 
-* **CMO3.**  Umamo imports and exports CMO3 files, and it is tested with the Cubism Editor 4.2 to 5.4.  A CMO3 that Umamo exports is made to open in the Cubism Editor.
-* **MOC3.**  Umamo imports and exports baked models together with the files beside them.  A MOC3 holds no layers, so a model that comes from one has no artwork to edit.
-* **Artwork.**  Umamo reads layered files from Photoshop, Clip Studio Paint, and Krita, as well as flat images, and keeps the model in step when the artwork changes.
-* **What Umamo keeps without editing it.**  A CMO3 holds things that Umamo does not edit yet, such as physics and the settings of the Cubism Editor.  Umamo keeps them while the document is open, and writes them back when you export a CMO3 in the same session.  A UMA file does not hold them.
+* **CMO3.**  Umamo imports and exports CMO3 files and is tested with Cubism Editor 4.2 to 5.4.  A CMO3 exported from Umamo can be opened in the Cubism Editor.
+* **MOC3.**  Umamo imports and exports baked models together with their sidecar files.  A MOC3 does not contain any layers, so a model imported from one has no artwork to edit.
+* **Artwork.**  Umamo reads layered files from Photoshop, Clip Studio Paint, and Krita, as well as flat images, and keeps the puppet in sync when the artwork changes.
+* **Data that Umamo does not edit.**  A CMO3 holds data that Umamo does not support editing yet, such as physics and the settings of the Cubism Editor.  Umamo keeps this data while the document is open and writes it back when you export a CMO3 in the same session.  An UMA file does not store it at this time.
 
-Keep your Cubism files.  Import them into Umamo, work, and export the result, and use :menuselection:`File --> Save As…` to keep a UMA file as you go.  See :doc:`/files/cubism_interchange` for what survives the trip.
+Keep your original Cubism files.  Import them into Umamo, work on them, and export the result, and use :menuselection:`File --> Save As…` to save an UMA file as you go.  See :doc:`/files/cubism_interchange` for what is kept when moving between formats.
 
-Umamo is not made by or connected to Live2D Inc.  See :doc:`/appendices/legal`.
+Umamo is not affiliated with Live2D Inc.  See :doc:`/appendices/legal`.
 
 Keying Differences
 ==================
 
-Cubism and Umamo both store a shape for each key of a parameter, and blend the shapes between them.  How you arrive at a key is different.
+Cubism and Umamo both store a shape for each key of a parameter and blend the shapes between them.  How you create a key is different.
 
 * **Pose first, then key.**  In Umamo you set the parameters to the pose that you want to key, shape the lattice of a warp deformer in Pose Mode, and key it with :kbd:`I`, :guilabel:`Insert Keyframe`.  Until then the change is only a preview, and the Keyform Sheet marks it with a circle.  Moving a parameter drops lattice edits that are not keyed yet, with a notice, and Undo brings them back.  Pose Mode shapes warp deformer lattices at present.
 * **Edit Mode is the rest shape.**  Edit Mode changes the shape at the default pose.  You cannot insert, remove, or move keys in it.
-* **Key what is under the pointer.**  :kbd:`I` keys the field or the row that the pointer is over, :kbd:`Alt-I` removes the key, and :kbd:`K` opens a pie to key the lattice, the opacity, the colors, or all of them.
-* **The Keyform Sheet shows the keys.**  It lays out the keys of each object as marks on tracks, much as Blender's dope sheet does.  Select them and move them there.
+* **Key what is under the pointer.**  :kbd:`I` keys the field or the row that the pointer is over, :kbd:`Alt-I` removes the key, and :kbd:`K` opens a pie menu to key the lattice, the opacity, the colors, or all of them.
+* **The Keyform Sheet shows the keys.**  It shows the keys of each object as marks on tracks, similar to Blender's dope sheet.  Keys can be selected and moved there.
 
 See :doc:`/rigging/keyforms`, :doc:`/rigging/posing_warps`, and :doc:`/editors/keyform_sheet`.
 
 Runtime Target
 ==============
 
-The Cubism Editor asks for a model target version, and hides what the older runtimes cannot play.  Umamo's Runtime Target does the same.  It is a setting of the document, in the :guilabel:`Runtime` section of the Document tab of the Properties editor.  A CMO3 or MOC3 that you import brings its own target, and a new document has :guilabel:`No Target (All Features)`.
+The Cubism Editor has a "Select Target Version" setting that hides what the older runtimes cannot play.  Umamo's Runtime Target does the same.  It is a document setting found in the :guilabel:`Runtime` section of the Document tab of the Properties editor.  An imported CMO3 or MOC3 brings its own target and a new document uses :guilabel:`No Target (All Features)`.
 
-The target hides the controls of the features that it lacks, and it decides which version of MOC3 an export writes.  It never removes anything from the document.  See :doc:`/files/runtime_targets`.
+The target hides the controls for features that it does not support and decides which MOC3 format version an export writes.  It never removes anything from the document.  Only a MOC3 export strips unsupported features from the exported file.  See :doc:`/files/runtime_targets`.
 
 .. seealso::
 
