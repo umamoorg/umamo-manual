@@ -2,7 +2,7 @@
 convert
 *******
 
-``convert`` converts a model from one Cubism format to another (.cmo3 to .moc3 and vice-versa), it can also read a model and rewrite it in the same format.
+``convert`` converts a model from one Cubism format to another (``.cmo3`` to ``.moc3`` and vice versa).  It can also read a model and rewrite it in the same format.
 
 Synopsis
 ========
@@ -38,7 +38,7 @@ The direction comes from the kind of the input file and the extension of ``out``
 	  - A rebake.  The model is written again from scratch and is not byte for byte the same as the source.  Only the ``.moc3`` file is written.
 	* - CMO3
 	  - ``.moc3``
-	  - The whole MOC3 model and it's associated files - the model, manifest, display information and texture atlas pages.
+	  - The whole MOC3 model and its associated files: The model, manifest, display information, and texture atlas pages.
 	* - MOC3
 	  - ``.cmo3``
 	  - A new CMO3 is built from the model and its texture pages.  The Cubism Editor can open it.
@@ -69,9 +69,9 @@ The command prints a line for each file that it writes.  A texture page that can
 MOC3 to CMO3
 ------------
 
-The texture pages are the ones that the manifest lists.  Without a manifest next to the MOC3 file, or with a page that is missing on disk, the command warns about missing textures, but proceeds with the conversion, the resulting CMO3 has fewer textures or none.
+The texture pages are the ones that the manifest lists.  Without a manifest next to the MOC3 file, or with a page that is missing on disk, the command warns about missing textures, but proceeds with the conversion so the resulting CMO3 has fewer textures or none.
 
-The MOC3 file holds only the packed texture pages and not the artwork they were made from.  The CMO3 is built around a stand-in for the artwork, whose layers are slices of those pages.  Because of that the command always reports a ``no source artwork`` notice.
+The MOC3 file holds only the packed texture pages and not the artwork they were made from.  The CMO3 is built around a stand-in for the artwork, whose layers are slices of those pages.  Because of that, the command always reports a ``no source artwork`` notice.
 The converted file opens and renders in the Cubism Editor, but its layers are not the original layers.  Reloading the original layered artwork into the model replaces them.
 
 Overwrites Without Confirmation

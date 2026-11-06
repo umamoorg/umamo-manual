@@ -2,9 +2,9 @@
 atlas
 *****
 
-``atlas`` packs the layers of an artwork file into a texture atlas, an atlas page consists of model textures packed together to reduce overall dimensions. This command writes atlas pages and includes a report of where every layer went, and then verifies every page by reading each packed layer back out of its page and comparing it with the original texture layers pixel-by-pixel.
+``atlas`` packs the layers of an artwork file into a texture atlas.  An atlas page consists of model textures packed together to reduce overall dimensions.  This command writes atlas pages and includes a report of where every layer went, and then verifies every page by reading each packed layer back out of its page and comparing it with the original texture layers pixel by pixel.
 
-The atlas command invokes the atlas packer with no additional features, inside the Umamo editor, the same packer is behind :doc:`/artwork/atlas_packing`.
+The ``atlas`` command invokes the atlas packer with no additional features.  Inside the Umamo editor, the same packer is behind :doc:`/artwork/atlas_packing`.
 
 Synopsis
 ========
@@ -13,7 +13,7 @@ Synopsis
 
 	atlas <file> [<directory>] [options]
 
-``file`` is a PSD, CLIP, or KRA file, or a flat image. The command stops with a usage error for non-image data ( eg. a Live2D model ).  For example:
+``file`` is a PSD, CLIP, or KRA file, or a flat image.  The command stops with a usage error for non-image data, such as a Live2D model.  For example:
 
 .. code-block:: bash
 

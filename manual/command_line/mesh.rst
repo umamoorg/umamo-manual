@@ -2,7 +2,7 @@
 mesh
 ****
 
-``mesh`` runs the art mesher over the layers of an artwork file and previews the meshes: for each layer, the number of vertices and triangles for each mesh, the quality of the triangles, and duration.
+``mesh`` runs the art mesher over the layers of an artwork file and previews the meshes: For each layer, the number of vertices and triangles for each mesh, the quality of the triangles, and the duration.
 It is the mesher on its own, so it is the place to experiment with different settings on your artwork before you commit to them in the editor.  The editor's :doc:`/modeling/generate_mesh` command uses the same mesher.
 
 
@@ -36,7 +36,7 @@ Options
 	  - Meshes only the layer that has exactly this name.  Put a name that contains spaces in quotes.  It throws a usage error when the file has no such layer.
 	  - Every layer
 	* - ``--preset=NAME``
-	  - ``standard``, ``fine``, or ``coarse``.  This are settings that the overrides below start from.  The name is not case sensitive.
+	  - ``standard``, ``fine``, or ``coarse``.  These are the settings that the overrides below start from.  The name is not case sensitive.
 	  - ``standard``
 	* - ``--visible-only``
 	  - Leaves out the layers that are hidden by their own eye or by the eye of a group that holds them.
@@ -137,7 +137,7 @@ A preset is a set of settings.  Each of the following options replaces one of it
 	  - 60
 	  - More than 0
 
-The alpha threshold, the least outline points, and the vertex budget are whole numbers.  The others can have a decimal point.  A value that is out of range stops the command with a usage error that names the setting.
+The alpha threshold, the fewest outline points, and the vertex budget are whole numbers.  The others can have a decimal point.  A value that is out of range stops the command with a usage error that names the setting.
 
 The Report
 ==========
@@ -220,7 +220,7 @@ Notices
 Preview Colors
 ==============
 
-With ``--preview`` the command writes a picture for each mesh that was made.  The file is named from the layer's order, padded to three digits, and its name, in which every run of characters other than letters, digits, ``.``, ``_`` and ``-`` is replaced with an underscore, as in ``005-Paint_Layer_1.png``.
+With ``--preview`` the command writes a picture for each mesh that was made.  The file is named from the layer's order, padded to three digits, and its name, in which every run of characters other than letters, digits, ``.``, ``_``, and ``-`` is replaced with an underscore, as in ``005-Paint_Layer_1.png``.
 
 The layer is drawn on a checkerboard so that you can see where it is transparent, and the picture is larger than the layer wherever the outline runs outside of the art.
 

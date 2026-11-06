@@ -50,7 +50,7 @@ Otherwise ``diff`` prints one section for each type of data that differs, in thi
 
 The ``id`` is the id of the parameter, group, part, deformer, or drawable.  A glue has no id of its own, so it is named by the two drawables it joins and its number among the glues that join the same two, as in ``MeshA~MeshB#0``.  Under ``[document]`` there is no ``id``, because the differences are in the model as a whole.
 
-A changed data item lists the names of what differs.  They are always listed in the same order, which is the order of the tables below.
+A changed data item lists the names of what differs.  They are always listed in the same order, which is the order of the table below.
 
 .. list-table::
 	:header-rows: 1
