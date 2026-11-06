@@ -20,9 +20,9 @@ Synopsis
 Output
 ======
 
-``extract`` creates a new folder that is named after the model, with ``.cmo3`` taken off, inside ``directory``.  Without a ``directory`` it is created beside the CMO3 file.  The command above writes into ``work/Model/``.
+``extract`` creates a new folder that is named after the model, without the ``.cmo3`` extension, inside ``directory``.  Without a ``directory`` it is created beside the CMO3 file.  The command above writes into ``work/Model/``.
 
-Each entry of the archive becomes a file with the name that it has in the archive.  ``main.xml`` is written unpacked and readable.  The embedded layer images are written as PNG files.  If the archive holds a preview image, it is written as ``preview.png``.
+Each entry of the archive becomes a file with the same name.  ``main.xml`` is written unpacked and readable.  The embedded layer images are written as PNG files.  If the archive holds a preview image, it is written as ``preview.png``.
 
 The command prints a line for each file, and a summary:
 
@@ -33,7 +33,7 @@ The command prints a line for each file, and a summary:
 	Extracted work/Model/main.xml (70914 bytes)
 	Extracted 3 entries into work/Model
 
-An entry without a name is written as ``entry_`` followed by its number.  When two entries have the same name, the second one is written as ``entry_``, its number, an underscore, and then the name.  If an archive entry is already called ``preview.png``, the preview image is skipped and the command says so.
+An entry without a name is written as ``entry_`` followed by its number.  When two entries have the same name, the second one is written as ``entry_``, its number, an underscore, and then the name.  If an archive entry is already called ``preview.png``, the preview image is skipped.
 
 Safety
 ======
