@@ -2,7 +2,7 @@
 Command Palette
 ***************
 
-The command palette is a search box that runs any command by name.  Every operation in Umamo is a command, and the menus, the shortcuts, and the right-click menus are all ways to reach one.  The palette is the way when you know what you want to do and not where it is, or when it has no menu row or shortcut.
+The command palette is a search box that runs any command by name.  Every operation in Umamo is a command, and the menus, the shortcuts, and the right-click menus are all ways to reach one.  Use the palette when you know what you want to do but don't know where it is, or when it has no menu row or shortcut.
 
 Opening It
 ==========

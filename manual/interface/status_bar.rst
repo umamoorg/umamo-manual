@@ -4,14 +4,10 @@ Status Bar and Notices
 
 The status bar is the strip along the bottom of the window.  It is always there, and it has the shortcuts that suit where the pointer is, the item you have selected, and the size of the model.  It is also where Umamo tells you, briefly, what it just did, and how far along a long task is.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
-
-	:Show: The status bar across the full width of the window, with shortcut hints at the left, a notice in the middle, the selected item, and the model counts at the right.
-	:Setup: Select one drawable in the Outliner, point at the 2D Viewport, and save the document so that the ``Saved`` notice is showing.
-	:Crop: The bottom of the window, about 60 pixels high.
-	:Save as: ``images/interface/status_bar.png``
-	:Caption: The status bar.
+.. image:: ./img/status_bar.png
+   :width: 100%
+   :align: center
+   :alt: The status bar for the workspace, with all it's sections.
 
 The Four Zones
 ==============
@@ -26,9 +22,9 @@ From left to right the bar has four zones:
 Shortcut Hints
 ==============
 
-The left zone suggests shortcuts for the editor under the pointer.  Each hint is a key and a word, such as ``Tab Edit Mode``, separated by bars.  Move the pointer to another editor and the hints change.  The hints are the first six of the commands that are worth suggesting there: the ones made for that editor come first, and the ones that work everywhere follow.
+The leftmost zone suggests shortcuts for the editor under the pointer.  Each hint is a key and a word, such as ``Tab Edit Mode``, separated by bars.  Move the pointer to another editor and the hints change.  The hints are the first six commands that are worth suggesting there: the ones made for that editor come first, and the ones that work everywhere follow.
 
-The keys are those of your keymap.  A hint is left out when you have taken its key away.  See :doc:`/interface/keymap`.
+The keys are those of your keymap.  A hint is left out when it has no shortcut mapped to it.  See :doc:`/interface/keymap`.
 
 While a transform is in progress, such as a grab, the hints are replaced by the two that matter:
 
@@ -62,7 +58,7 @@ The notices are listed in :doc:`/troubleshooting/common_messages`.
 Progress
 ========
 
-A task that takes a while shows in the middle of the bar, while it runs: opening a document, adding artwork, reloading artwork, meshing the art, generating meshes, and packing the atlas.  The bar shows the name of the task, such as ``Opening name…``, a small progress bar, and a count such as ``3 / 12`` when the task knows how many steps it has.  When it does not, the bar just shows that work is going on.
+A task that takes a while shows in the middle of the bar, while it runs: opening a puppet file, adding artwork, reloading artwork, meshing the art, generating meshes, and packing the atlas.  The bar shows the name of the task, such as ``Opening name…``, a small progress bar, and a count such as ``3 / 12`` when the task knows how many steps it has.  When it does not, the bar just shows that work is going on.
 
 When more than one task runs, the bar shows the newest and then ``+1 more``.  A task outranks a notice, so a notice that arrives while one runs waits, and is shown in full once the task is done.
 
@@ -81,7 +77,7 @@ Alerts
 
 An alert for a startup problem, such as the low-memory alert, can also have a :guilabel:`Don't Show Again` button.
 
-If several arrive at once, they show one after another, each after the one in front has been answered.  An :kbd:`Enter` that was already held down when the dialog opened is ignored until you press it again, so a held key cannot answer a dialog you have not read.
+If several arrive at once, they show up sequentially, each after the one in front has been answered.  An :kbd:`Enter` that was already held down when the dialog opened is ignored until you press it again, so a held key cannot answer a dialog you have not read.
 
 .. seealso::
 

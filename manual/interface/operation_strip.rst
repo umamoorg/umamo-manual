@@ -2,23 +2,18 @@
 Operation Strip
 ***************
 
-Many operations have a few numbers behind them, such as how far a grab moved or how fine a mesh is.  The operation strip shows them after the operation has run, and lets you change them.  Each change runs the operation again, from where it started, and replaces the result.  You can try a value, see what it does, and try another, without undoing and doing it over.
-
-It works like the Adjust Last Operation panel of Blender.
+Operations in Umamo are dependant on some numeric data, such as how far a grab moved or how fine a mesh is.  The operation strip shows these parameters after the operation has run, and lets you change them.  Each change runs the operation again, from where it started, and replaces the result.
+You can experiment with values, without undoing and doing it over. It works like the Adjust Last Operation panel of Blender.
 
 What It Is
 ==========
 
 The strip is a small card with the name of the operation as its title, such as ``Move Vertices`` or ``Generate Mesh from Art``.  Its rows are the settings of that operation.  Only the last operation has a strip, so there is never more than one.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
-
-	:Show: The operation strip in the corner of the 2D Viewport, expanded, after a Grab in Edit Mode, with its title ``Move Vertices``, the Move X and Move Z rows, and the proportional editing rows.
-	:Setup: Select a few vertices of a mesh in Edit Mode, turn on proportional editing, press G, move the pointer, and click.
-	:Crop: The 2D Viewport area, with the strip at its bottom left.
-	:Save as: ``images/interface/operation_strip.png``
-	:Caption: The operation strip after a grab.
+.. image:: ./img/operation_strip.png
+   :width: 100%
+   :align: center
+   :alt: An Operation strip with modifiable parameters.
 
 Where It Appears
 ================
@@ -108,14 +103,10 @@ Generate Mesh from Art
 
 The strip of :guilabel:`Generate Mesh from Art` has the settings of the mesher.  :guilabel:`Preset` chooses :guilabel:`Standard`, :guilabel:`Fine`, or :guilabel:`Coarse`, and fills in most of the other rows.  Changing a row afterwards leaves the others as they are.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
-
-	:Show: The operation strip after Generate Mesh from Art, open, showing the title and the rows from Preset to Deformation Tolerance.
-	:Setup: Select a drawable that has art, and run Generate Mesh from Art.
-	:Crop: The 2D Viewport area, with the strip.
-	:Save as: ``images/interface/operation_strip_mesh.png``
-	:Caption: The strip of Generate Mesh from Art.
+.. image:: ./img/mesh_gen.png
+   :width: 100%
+   :align: center
+   :alt: An Operation strip for generating artmeshes.
 
 .. list-table::
 	:header-rows: 1
@@ -183,7 +174,7 @@ Import Artwork
 	* - Row
 	  - What it sets
 	* - :guilabel:`Align`
-	  - Where the added file's canvas sits on the document's canvas: Top Left, Top, Top Right, Left, Center, Right, Bottom Left, Bottom, or Bottom Right.
+	  - Where the added file's canvas sits on the puppet files's canvas: Top Left, Top, Top Right, Left, Center, Right, Bottom Left, Bottom, or Bottom Right.
 	* - :guilabel:`Offset X`, :guilabel:`Offset Z`
 	  - Moves the art right and up from where Align puts it, in pixels.
 	* - :guilabel:`Alpha Threshold`
@@ -191,7 +182,7 @@ Import Artwork
 	* - :guilabel:`Birth Mesh Margin`
 	  - How far a layer's first quad reaches past its art, in pixels.
 
-:guilabel:`Align` and the two offsets are only there when the document already had artwork.  The first artwork sets the canvas.  See :doc:`/artwork/importing`.
+:guilabel:`Align` and the two offsets are only there when the puppet file already had artwork.  The first artwork sets the canvas.  See :doc:`/artwork/importing`.
 
 Match Artwork
 -------------
