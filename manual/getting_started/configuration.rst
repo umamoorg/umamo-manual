@@ -2,7 +2,7 @@
 Configuration
 *************
 
-Umamo keeps what you choose in one settings file, and it writes its log files to a folder of their own.  Both are in your user folders and not in the installation, so they survive an upgrade and an uninstall.  This page says where they are, what is in them, and how to start again from the defaults.
+Umamo stores your choices in a single settings file and writes its log files to a separate folder.  Both are in your user folders and not in the installation, so they are kept when you upgrade or uninstall.  This page describes where they are, what they contain, and how to start again from the defaults.
 
 Settings File
 =============
@@ -16,21 +16,21 @@ The settings are in a file called ``settings.json``, in this folder:
 	  - Folder
 	* - Windows
 	  - ``%APPDATA%\umamo``
-	* - macOS
+	* - MacOS
 	  - ``~/Library/Application Support/umamo``
 	* - Linux
 	  - ``~/.config/umamo``, or ``$XDG_CONFIG_HOME/umamo`` when that variable is set
 
-Umamo does not have a menu row for this folder, so open it in your file manager.  :menuselection:`Help --> Open Log Folder…` opens the folder for the logs.
+Umamo does not have a menu row for this folder so open it in your file manager.  :menuselection:`Help --> Open Log Folder…` opens the folder for the logs.
 
-You do not need to look in the file.  Every setting that has a control is changed in :menuselection:`Edit --> Settings…`, and the change is saved at once.  See :doc:`/interface/settings`.
+You do not need to open the file.  Every setting that has a control can be changed in :menuselection:`Edit --> Settings…` and the change is saved immediately.  See :doc:`/interface/settings`.
 
-The file does not hold every setting.  Umamo has its defaults built in, and the file holds only the settings that have been written to it, which are your choices and what Umamo remembers for you.  A setting that is not in the file has its default value.  The file is created the first time Umamo starts.
+The file does not contain every setting.  Umamo has its defaults built in and the file only holds the settings that have been written to it, which are your choices and what Umamo remembers for you.  A setting that is not in the file uses its default value.  The file is created the first time Umamo starts.
 
-Every build on a computer reads and writes this same file: the installed copy, a portable copy, a ``.jar``, and different versions.  The file is plain text in JSON.  If you edit it by hand:
+Every build on a computer reads and writes this same file, including installed copies, portable copies, ``.jar`` builds, and different versions.  The file is plain text in JSON format.  If you edit it by hand:
 
-* Close Umamo first.  Umamo keeps the settings in memory and writes the whole file whenever one changes, so your edit would be overwritten.
-* Keep it valid JSON.  A file that Umamo cannot read is ignored, and the defaults are used.  The next setting that you change then replaces the file, and what was in it is lost.  Keep a copy.
+* Close Umamo first.  Umamo keeps the settings in memory and rewrites the whole file whenever one changes, so your edit would be overwritten.
+* Keep the file valid JSON.  A file that Umamo cannot read is ignored and the defaults will be used.  The next setting that you change will then replace the file and its previous contents are lost, so keep a copy.
 
 What It Stores
 ==============
@@ -55,12 +55,12 @@ What It Stores
 	* - ``app``
 	  - The recent files, whether to check for updates and when it last did, the update that you skipped, and whether to show the low-memory alert.
 
-Most of these have a control in Settings.  The shortcuts and the colors are in the :guilabel:`Keybindings` and :guilabel:`Colors` categories.  Settings that belong to one document, such as the view of each area, are saved in the document and not here.  See :doc:`/files/uma`.
+Most of these have a control in Settings, and the shortcuts and colors are in the :guilabel:`Keybindings` and :guilabel:`Colors` categories.  Settings that belong to one document, such as the view of each area, are saved in the UMA file and not here.  See :doc:`/files/uma`.
 
 Log Files
 =========
 
-Umamo writes a log file for each session, in a ``logs`` folder:
+Umamo writes a log file for each session to a ``logs`` folder:
 
 .. list-table::
 	:header-rows: 1
@@ -69,12 +69,12 @@ Umamo writes a log file for each session, in a ``logs`` folder:
 	  - Folder
 	* - Windows
 	  - ``%LOCALAPPDATA%\umamo\logs``
-	* - macOS
+	* - MacOS
 	  - ``~/Library/Application Support/umamo/logs``
 	* - Linux
 	  - ``~/.local/share/umamo/logs``, or ``$XDG_DATA_HOME/umamo/logs`` when that variable is set
 
-:menuselection:`Help --> Open Log Folder…` opens it.  Umamo keeps the last ten sessions.  The newest file is the one to attach to a bug report.  See :doc:`/troubleshooting/reporting_bugs` and :doc:`/editors/logs`.
+:menuselection:`Help --> Open Log Folder…` opens this folder.  Umamo keeps the logs of the last ten sessions.  Attach the newest file when you report a bug.  See :doc:`/troubleshooting/reporting_bugs` and :doc:`/editors/logs`.
 
 Resetting Settings
 ==================
@@ -85,9 +85,9 @@ To go back to the defaults for everything:
 #. Delete ``settings.json``, or rename it if you want to keep it.
 #. Start Umamo.
 
-Umamo then starts as it did the first time: Quick Setup opens, the language is matched to your system again, and the workspaces, the window, and the recent files are back to their start.  Your documents and your log files are not touched.  See :doc:`/getting_started/first_launch`.
+Umamo will then start as it did the first time.  Quick Setup opens, the language is matched to your system again, and the workspaces, window, and recent files are back to their defaults.  Your documents and log files are not touched.  See :doc:`/getting_started/first_launch`.
 
-To reset one part, you do not need to delete the file:
+To reset only one part, you do not need to delete the file:
 
 * :guilabel:`Reset to Preset` in the :guilabel:`Keybindings` category of Settings undoes your changed shortcuts.
 * :menuselection:`Workspace --> Reset Workspace` puts the workspace that you are in back to its default layout.
@@ -95,17 +95,17 @@ To reset one part, you do not need to delete the file:
 Window and Layout Persistence
 =============================
 
-**The window.**  When you close the window, Umamo saves its size, its place on the screen, and whether it is maximized or full screen.  The next start opens it the same way.  A maximized window remembers the size it had before, and goes back to it when you un-maximize.  The first time, it is 1280 by 800 pixels.
+**The window.**  When you close the window Umamo saves its size, its position on the screen, and whether it is maximized or full screen.  The next start opens it the same way.  A maximized window remembers the size it had before and returns to it when you un-maximize it.  The first time Umamo starts the window is 1280 by 800 pixels.
 
-**The layout.**  The workspaces are saved as you change them: which workspace is active, the tabs and their names, the order of the tabs, how each is split into areas, the size of the areas, and which editor each area shows.  The save follows a moment after you stop, and waits while you are dragging a splitter.  See :doc:`/interface/workspaces`.
+**The layout.**  The workspaces are saved as you change them.  This includes which workspace is active, the tabs and their names, the order of the tabs, how each is split into areas, the size of the areas, and which editor each area shows.  See :doc:`/interface/workspaces`.
 
-**Moving a layout.**  A layout is a part of ``settings.json``, and it can also go to a file of its own, to share it or to carry it to another computer:
+**Moving a layout.**  A layout is part of ``settings.json`` and can also be exported to a file of its own to share it or to move it to another computer:
 
 * :menuselection:`Workspace --> Export This Workspace…` saves the active workspace.
 * :menuselection:`Workspace --> Export All Workspaces…` saves all of them.
-* :menuselection:`Workspace --> Import Workspace…` reads such a file.  A file with one workspace adds it as a new tab.  A file with all of them replaces every workspace you have, after Umamo asks ``Replace all workspaces with the imported file?``  A file that is neither is refused, and the log says so.
+* :menuselection:`Workspace --> Import Workspace…` imports such a file.  A file with one workspace adds it as a new tab.  A file with all workspaces replaces every workspace you have after Umamo asks ``Replace all workspaces with the imported file?``  Any other file is refused and the reason is written to the log.
 
-Which parts of a workspace a document remembers, such as the pan and zoom of a viewport, is a different matter.  That is saved in the UMA file.  See :doc:`/files/uma`.
+What a document remembers about a workspace, such as the pan and zoom of a viewport, is saved in the UMA file and not here.  See :doc:`/files/uma`.
 
 .. seealso::
 
