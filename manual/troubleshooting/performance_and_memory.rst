@@ -40,11 +40,9 @@ Two alerts are about memory.
 
 This happens when Umamo could not start itself again.  Use the command.  :guilabel:`Don't Show Again` turns the alert off for good.  The installed versions already use up to half of your computer's installed memory, so they never show it.
 
+.. figure:: /images/troubleshooting/pointer_notice.png
 
-.. image:: ./img/not_enough_ram.png
-   :width: 100%
-   :align: center
-   :alt: A standard out of memory message when launching Umamo.
+	A standard out of memory message when launching Umamo.
 
 **During an export**, a CMO3 or MOC3 export that runs out of memory stops and tells you so:
 

@@ -12,23 +12,16 @@ A message comes in one of four forms, and the form says how much it matters.
 Notices in the status bar
 A line in the status bar at the bottom of the window, which disappears by itself after about four seconds.  They report the result of something that took a while, such as saving, adding artwork, or generating meshes, and a few explain a problem.  See :doc:`/interface/status_bar`.
 
+.. figure:: /images/troubleshooting/debugmessagebottomwindow.png
 
-.. image:: ./img/debugmessagebottomwindow.png
-   :width: 100%
-   :align: center
-   :alt: the status bar at the bottom of the Umamo Editor window with the notice.
-
-
-
-
+	The status bar at the bottom of the Umamo Editor window with the notice.
 
 Notices next to the pointer
 A small label that follows the pointer for about three seconds.  It explains why a gesture did nothing, such as ``Merge needs two or more selected vertices (vertex mode).``  You do not need to dismiss it.
 
-.. image:: ./img/pointer_notice.png
-   :width: 100%
-   :align: center
-   :alt: a notice near the pointer for recent actions.
+.. figure:: /images/troubleshooting/pointer_notice.png
+
+	A notice near the pointer for recent actions.
 
 Alerts
 A dialog in the middle of the window that stays until you press its button.  Failures that cost you something, such as a file that cannot be opened or saved, and the export report, are alerts.  The text of an alert can be selected and copied.
@@ -36,11 +29,9 @@ A dialog in the middle of the window that stays until you press its button.  Fai
 Questions
 A dialog with two or more buttons, which waits for your answer, such as ``The document has unsaved changes.  Save them first?``
 
+.. figure:: /images/files/unsaved_changes.png
 
-.. image:: ./img/dialog.png
-   :width: 100%
-   :align: center
-   :alt: a dialog box asking for user-input to confirm actions.
+	A dialog box asking for user-input to confirm actions.
 
 When a message says ``See the log``, there is more detail in the log.  Open the Logs editor, or the log file.  See :doc:`/troubleshooting/reporting_bugs`.
 
