@@ -69,9 +69,9 @@ Each ``.jar`` is built for one system and one processor and only includes the li
 Graphics
 ========
 
-Umamo needs a graphics card or graphics driver that supports OpenGL 3.3, which is used to draw the viewport.  Without it the editor will still open but the viewport will be blank.  Remote desktops and virtual machines may not provide OpenGL support.  See :doc:`/troubleshooting/platform_notes`.
+Umamo needs a graphics card or graphics driver that supports OpenGL 3.3, which is used to draw the viewport.  Without it, the editor will still open, but the viewport will be blank.  Remote desktops and virtual machines may not provide OpenGL support.  See :doc:`/troubleshooting/platform_notes`.
 
-High resolution screens are supported and the interface scales to fit them.
+High resolution screens are supported with percentage scaling.
 
 Memory
 ======
@@ -81,12 +81,12 @@ A model with many layers and large texture atlases needs a lot of memory, and ex
 Umamo is allowed to use up to half of the memory in your computer.  The installers and archives are configured this way and the ``.jar`` will restart itself to apply the same limit.  See :doc:`/troubleshooting/performance_and_memory`.
 
 Processor
----------
+=========
 
-The minimum is a processor with 4 cores.  A 2014 MacBook Pro with a 4th generation Intel Core i7 and its performance mode turned on was barely fast enough, so any newer computer should be fine.
+The minimum is a processor with 4 cores.  A 2014 MacBook Pro with a 4th-generation Intel Core i7 and its performance mode turned on was barely fast enough, so any newer computer should be fine.
 
 Network
--------
+=======
 
 Umamo does not need an internet connection.  The only feature that uses the network is the check for a newer version, which can be turned off.  See :doc:`/getting_started/updating`.
 

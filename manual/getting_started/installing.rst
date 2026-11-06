@@ -9,7 +9,7 @@ Check your computer against :doc:`/getting_started/system_requirements` first.  
 Choosing a Download
 ===================
 
-In a file name, ``<version>`` is the version number.  For example, ``0.4.0``.
+In a file name, ``<version>`` is the version number.  For example, ``0.5.0``.
 
 .. list-table::
 	:header-rows: 1
@@ -35,7 +35,7 @@ In a file name, ``<version>`` is the version number.  For example, ``0.4.0``.
 	* - Debian, Ubuntu, Linux Mint
 	  - ``umamo-linux-<arch>-<version>.deb``
 	  - A package for Debian 12, Ubuntu 22.04, Linux Mint 21, and newer.
-	* - Fedora, and other systems that use RPM
+	* - Fedora and other systems that use RPM
 	  - ``umamo-linux-<arch>-<version>.rpm``
 	  - A signed package.
 	* - Any other Linux
@@ -125,10 +125,10 @@ Double-click the file, or start it from a terminal:
 
 	java -XX:MaxRAMPercentage=50 -jar umamo-<target>-<version>.jar
 
-``-XX:MaxRAMPercentage=50`` allows Umamo to use half of the memory in your computer.  Without it, Java only gives a program a quarter.  If that would be less than 3 GB the ``.jar`` will restart itself with half, so double-clicking works too, but starting it from a terminal lets you see what happens.  See :doc:`/troubleshooting/performance_and_memory`.
+``-XX:MaxRAMPercentage=50`` allows Umamo to use half of the memory in your computer.  Without it, Java only gives a program a quarter.  If that would be less than 3 GB, the ``.jar`` will restart itself with half, so double-clicking works too, but starting it from a terminal lets you see what happens.  See :doc:`/troubleshooting/performance_and_memory`.
 
-Opening .uma Files from the File Manager
-========================================
+Opening UMA Files from the File Manager
+=======================================
 
 The installers register the ``.uma`` file type so that double-clicking a file in your file manager opens it in Umamo.  The macOS application registers the file type itself.  The portable copies on Windows and Linux do not register anything.  On Windows, use :guilabel:`Open with` on an UMA file.
 
@@ -141,7 +141,7 @@ On Linux, the archive includes the files that register the file type for your us
 
 This also adds Umamo to your application menu.  To undo it, run ``xdg-mime uninstall`` and ``xdg-desktop-menu uninstall`` with the same files.
 
-You can also pass a file to Umamo when you start it.  A path to a ``.uma``, ``.cmo3``, or ``.moc3`` file will open that document.  See :doc:`/files/uma`.
+You can also pass a file to Umamo when you start it.  A path to a ``.uma``, ``.cmo3``, or ``.moc3`` file will open that puppet file.  See :doc:`/files/uma`.
 
 Upgrading and Uninstalling
 ==========================
@@ -166,7 +166,7 @@ Upgrading and Uninstalling
 	* - A portable copy, or a ``.jar``
 	  - Delete the folder or the file.
 
-Uninstalling does not remove your documents.  Your settings and log files are stored in your user folders and not in the installation, so they are kept.  To remove them as well, delete the folders listed in :doc:`/getting_started/configuration`.
+Uninstalling does not remove your puppet files.  Your settings and log files are stored in your user folders and not in the installation, so they are kept.  To remove them as well, delete the folders listed in :doc:`/getting_started/configuration`.
 
 .. seealso::
 
