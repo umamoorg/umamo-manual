@@ -2,12 +2,12 @@
 Export Reports and Notices
 **************************
 
-An export always writes its file.  When a CMO3 or a MOC3 cannot carry something that is in the open document, or when the export had to change something to fit the format, Umamo tells you in an export report.  Nothing is dropped without a word.  This page explains how to read a report, and lists what each line means.
+Sometimes an export can't write out everything that was request of it.  When a CMO3 or MOC3 cannot export something from the open document, or when the export had to change something to fit the format, Umamo tells you in an export report.  Nothing is dropped silently.  This page explains how to read a report and what each line means.
 
 Reading a Report
 ================
 
-The report opens as an alert once the file has been written.  Its first line says which format was exported, and each line after it is one notice:
+The report opens as an alert once the file has been written.  Its first line says which format was exported and each line after it is one notice:
 
 .. code-block:: text
 
@@ -15,16 +15,11 @@ The report opens as an alert once the file has been written.  Its first line say
 	• [Drawable] ArtMesh7: The drawable is hidden and the export options omit hidden drawables, so it was left out.
 	• Multiply Color is not available for the target runtime version, so it was removed from: ArtMesh3, ArtMesh9.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
+.. figure:: /images/files/export_report.png
 
-	:Show: The export report alert, with its header line and at least three notices, one of them a feature that was removed for the Runtime Target.
-	:Setup: Import a model that uses Multiply Color on a drawable, hide another drawable, choose Cubism 3.0 as the Runtime Target, and export it as a MOC3 with Export hidden drawables turned off.
-	:Crop: The alert and a little of the window around it.
-	:Save as: ``images/files/export_report.png``
-	:Caption: An export report.
+	An export report.
 
-A notice that is about one thing starts with the category of the thing in brackets, then its ID, and then the reason: ``[Drawable] ArtMesh7: …``.  The ID is the one the model has, so it is never translated.  A notice about the whole document has no ID.  A notice about a sidecar file has the name of the file in place of an ID.
+A notice about a single object starts with the category of the object in brackets, followed by its ID and then the reason.  For example, ``[Drawable] ArtMesh7: …``.  A notice about the whole document has no ID, and a notice about a sidecar file shows the name of the file in place of an ID.
 
 Three kinds of notices have no category:
 
@@ -34,18 +29,18 @@ Three kinds of notices have no category:
 	* - Notice
 	  - What it means
 	* - *Feature* is not available for the target runtime version, so it was removed from: *names*.
-	  - A MOC3 export took a feature out of the file because the version of the Runtime Target cannot hold it.  The list shows up to eight names and then ``(+N more)``.  The document still has the feature.  See :doc:`/files/runtime_targets`.
+	  - A MOC3 export stripped a feature from the file because the MOC3 format version of the Runtime Target does not support it.  The list shows up to eight names and then ``(+N more)``.  The document still has the feature.  See :doc:`/files/runtime_targets`.
 	* - Base geometry or UVs were edited on: *drawables*.  The export keeps them as authored, but editing those meshes or their atlas in the Cubism Editor may re-derive and corrupt the UV mapping.
-	  - A CMO3 export.  Cubism ties the geometry and the UVs of a mesh together, and you have edited them in a way that breaks that tie.  The file has what you made.  Avoid editing those meshes or their atlas in the Cubism Editor.
-	* - This model has no source artwork (it came from a MOC3, which stores only packed texture atlases).  A stand-in source document was rebuilt from the *N* atlas page(s), …
-	  - A CMO3 export from a document that came from a MOC3.  The file has the full rig and opens in the Cubism Editor, but every layer is a slice of a baked atlas page and not the artwork the rig was drawn from.  To get real, editable layers, import the CMO3 and add the original layered artwork to that.  See :doc:`/artwork/relinking_and_reloading`.
+	  - A CMO3 export.  Cubism ties the geometry and the UVs of a mesh together and you have edited them in a way that breaks that tie.  The export file contains what you made.  Avoid editing those meshes or their atlas in the Cubism Editor as it may cause it to break.
+	* - This model has no source artwork, such when a document was created from an imported MOC3, which stores only packed texture atlases.  A stand-in source document was rebuilt from the *N* atlas page(s), …
+	  - A CMO3 export from a document that came from a MOC3.  The file has the full rig and opens in the Cubism Editor, but every layer is a slice of a baked atlas page and not the artwork the puppet was drawn from.  To get real, editable layers, import the CMO3 and add the original layered artwork to it.  See :doc:`/artwork/relinking_and_reloading`.
 
 Every notice is also written to the log, with the prefix ``export:``.  See :doc:`/editors/logs`.  The text of the alert can be selected and copied, so you can paste it into a bug report.  An export with nothing to report shows no alert.
 
 Categories
 ==========
 
-The category names the kind of thing that a notice is about.  It also tells you which editor to look in.  The tables list the reasons that belong to one category.  Reasons that turn up in several are described in `Common Reasons`_, and the tables point there.
+The category names the kind of object that a notice is about, which also tells you which editor area to inspect.  Each table lists the reasons that belong to one category.  Reasons that appear in several categories are described in `Common Reasons`_, and the tables point there.
 
 Parameter
 ---------
@@ -59,11 +54,11 @@ The subject is the ID of a parameter.
 	  - Message
 	  - What it means
 	* - CMO3
-	  - A parameter's kind change (normal / blend shape) is not lowered.
-	  - The parameter was changed between a normal parameter and a blend shape parameter.  The CMO3 keeps the kind that it had.  Make the change in the Cubism Editor.
+	  - A parameter's kind change(normal/blend shape) is not lowered.
+	  - The parameter was changed between a normal parameter and a blend shape parameter.
 	* - CMO3
-	  - The physics settings *names* still read or drive this deleted parameter.  They were written unchanged; retarget or remove them in the Cubism Editor.
-	  - You deleted a parameter that the physics of the original CMO3 still use.  Umamo does not edit physics, so it left them as they were.
+	  - The physics settings *names* still point to this deleted parameter.  They were written unchanged; retarget or remove them.
+	  - You deleted a parameter that the physics still point to in the data.
 
 Also seen here: `No matching source`_, `Created in Umamo`_, and `Ids too long for a MOC3`_.
 
@@ -96,7 +91,7 @@ The subject is the ID of a part.
 	  - Message
 	  - What it means
 	* - MOC3
-	  - A clipping mask names a drawable that could not be written, so it was dropped from the offscreen.
+	  - A clipping mask names a drawable that could not be written, so it was dropped from the part composite.
 	  - An isolated part is masked by a drawable that is not in the export, so the part is no longer masked by it.
 	* - CMO3
 	  - The static draw order is shadowed by its keyform track, so CMO3 cannot store it independently.
@@ -131,11 +126,11 @@ The subject is the ID of a deformer.
 	  - A deformer's kind change is not lowered.
 	  - The deformer was changed between a warp and a rotation deformer.  The CMO3 keeps the kind that it had.
 	* - CMO3
-	  - The CMO3 source is not a warp deformer, so warp-only edits (bilinear mode, lattice, keyforms) were not written.
-	  - You edited something only a warp has on a deformer that is not a warp in the original file.
+	  - The CMO3 source is not a warp deformer, so warp-only edits(bilinear mode, lattice, keyforms) were not written.
+	  - You edited a property that only a warp deformer has, on a deformer that is not a warp in the original file.
 	* - CMO3
-	  - The CMO3 source is not a rotation deformer, so rotation-only edits (base angle, keyforms) were not written.
-	  - The same, for something only a rotation deformer has.
+	  - The CMO3 source is not a rotation deformer, so rotation-only edits(base angle, keyforms) were not written.
+	  - The same, for a property that only a rotation deformer has.
 	* - CMO3
 	  - There is no CMO3 part to move the deformer to, so its part was left unchanged.
 	  - You moved the deformer into a part that the original file does not have.
@@ -276,7 +271,7 @@ A notice about the document as a whole has no ID.  A notice about a sidecar file
 	  - You moved artwork that is not on a page.
 	* - CMO3
 	  - This artwork was moved on its atlas page, but the page image still shows it at its old spot; repack to redraw it.
-	  - The placement was written, and the picture on the page was not redrawn.  Use :doc:`/artwork/atlas_packing`.
+	  - The placement was written, and the picture on the page was not redrawn.  Repack the atlas to redraw it.  See :doc:`/artwork/atlas_packing`.
 	* - CMO3
 	  - This artwork's pixels, name, or size changed, which an atlas placement cannot carry; re-import the artwork instead.
 	  - Reload the artwork rather than repack it.  See :doc:`/artwork/relinking_and_reloading`.
@@ -315,21 +310,21 @@ No matching source
 Created in Umamo
 ----------------
 
-*The CMO3 model has no set of this kind to create into*, *The newly created entity has no CMO3 source yet*, and the other messages that say an entity was created.  A CMO3 export from a document that came from a CMO3 builds new objects for the things that you made in Umamo.  When it cannot, because the original has no place for that kind of object, the object is not written, or it is written without a place in the panel order.
+*The CMO3 model has no set of this kind to create into*, *The newly created entity has no CMO3 source yet*, and the other messages that mention a created entity.  A CMO3 export from a document that came from a CMO3 builds new objects for the things that you made in Umamo.  When it cannot, because the original has no place for that kind of object, the object is not written or is written without a place in the panel order.
 
 One grid for each object
 ------------------------
 
-*… is keyed over a narrower span than the object's grid, so it was written as a constant.  MOC3 stores one grid per object.*  *… CMO3 stores one grid per object.*  A MOC3 or a CMO3 keeps the geometry of an object and its opacity, colors, and draw order in a single grid.  If one of them is keyed over a smaller span than the others, there is no way to write it as it is.  A MOC3 writes it as a constant.  A CMO3 reports the keys that would not fit:
+*… is keyed over a narrower span than the object's grid, so it was written as a constant.  MOC3 stores one grid per object.*  *… CMO3 stores one grid per object.*  A MOC3 or a CMO3 keeps the geometry of an object and its opacity, colors, and draw order in a single grid.  If one of them is keyed over a smaller span than the others, it cannot be written as it is.  A MOC3 writes it as a constant.  A CMO3 reports the keys that would not fit:
 
 * Keys outside the geometry's keyed span cannot be bundled into one grid.
 * Channel keys with no geometry cannot be bundled into one grid.
 * Keys outside the *channel* track's span cannot be bundled into one grid.
 
-Ids too long for a MOC3
+IDs too long for a MOC3
 -----------------------
 
-*The id does not fit a moc's 64-byte id record, so it was written truncated to …*  A MOC3 stores IDs in records of 64 bytes.  A longer ID is cut to fit.  If the cut ID is the same as another object's, a suffix is added to keep them different.  The ``.cdi3.json`` file uses the new IDs.  A sidecar file that was carried through unchanged still has the old ones, and is reported under `Document`_.
+*The ID does not fit a moc's 64-byte id record, so it was written truncated to …*  A MOC3 stores IDs in records of 64 bytes.  A longer ID is cut to fit.  If the cut ID is the same as another object's, a suffix is added to keep them distinct.  The ``.cdi3.json`` file uses the new IDs.  A sidecar file that was carried through unchanged still has the old ones, and is reported under `Document`_.
 
 Whole numbers only
 ------------------
