@@ -25,7 +25,7 @@ Output by Format
 MOC3
 ----
 
-Without options, ``dump`` prints the static rig of a MOC3 file.  This includes the parameters, the parts, and the drawables exactly as they are stored.   Nothing is evaluated, so there are no posed positions or opacities.
+Without options, ``dump`` prints the static rig of a MOC3 file.  This includes the parameters, the parts, and the drawables exactly as they are stored.  Nothing is evaluated, so there are no posed positions or opacities.
 
 .. code-block:: text
 
@@ -51,11 +51,11 @@ The lines that start with ``#`` are the header.  They give the MOC3 version, the
 	* - ``P``
 	  - A parameter: Its index, ``id``, ``type`` ``number``, ``min``, ``max``, ``def`` (default), and ``repeat``.
 	* - ``T``
-	  - A part: Its index, ``id`` and the index of its ``parent`` part.
+	  - A part: Its index, ``id``, and the index of its ``parent`` part.
 	* - ``D``
 	  - A drawable: Its index, ``id``, its constant flags (``cflag``, in hexadecimal), the index of its texture page (``tex``), its parent part (``part``), its vertex count (``vtx``), the number of triangle indices (``idx``), and the number of drawables that mask it (``masks``).
 
-``--sections`` prints the structure of the file instead: The MOC3 version, how many sections it has, the counts that the file declares, and one ``S`` line for each section that is present with its number of elements.
+``--sections`` prints the structure of the file instead: The MOC3 version, the number of sections, the counts for each section that the file declares, and one ``S`` line for each section that is present with its number of elements.
 
 .. code-block:: text
 
@@ -100,7 +100,7 @@ A CMO3 file is an archive.  Without options, ``dump`` prints the Cubism version 
 	* - ``# imports``
 	  - The classes that the model document imports.
 
-``--xml`` prints the entirety of the XML model document, ``main.xml``, and can redirected to standard out:
+``--xml`` prints the entirety of the XML model document, ``main.xml``, and its output can be redirected to a file:
 
 .. code-block:: bash
 
@@ -156,7 +156,7 @@ Options
 
 An option on a kind of file that it does not apply to is a usage error.
 
-``--puppet`` prints the model after the normal output, as Umamo imports it.  This is the import that the editor and ``convert`` use, so it is the place to look first when a conversion is not what you expected.
+``--puppet`` prints the model after the normal output, as Umamo imports it.  This is the import that the editor and ``convert`` use, so use this option to investigate when a conversion is not what you expected.
 
 .. code-block:: text
 
@@ -180,7 +180,7 @@ An option on a kind of file that it does not apply to is a usage error.
 	* - ``# canvas``
 	  - The canvas size, the position of the origin, and the runtime ``target`` of the model, such as ``Cubism53``.
 	* - ``P``
-	  - A parameter: its index, ``id``, ``min``, ``max``, and ``def``.
+	  - A parameter: Its index, ``id``, ``min``, ``max``, and ``def``.
 	* - ``N``
 	  - A node of the parameter panel, in the order the panel shows it.  The number after ``N`` is how many groups it is inside.  A ``param`` node has an ``id``.  A ``group`` node has an ``id``, a ``name``, and ``open``, which is 1 when the group starts open.
 	* - ``K``
