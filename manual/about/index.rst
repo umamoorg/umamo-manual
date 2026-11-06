@@ -2,7 +2,7 @@
 About
 *****
 
-This chapter introduces Umamo, explains the licenses that cover Umamo and this manual, and shows how to help improve both.
+Thank you for choosing Umamo, here's some helpful info to get started, and how to improve it.
 
 .. toctree::
 	:maxdepth: 1
