@@ -21,7 +21,7 @@ The settings are in a file called ``settings.json``, in this folder:
 	* - Linux
 	  - ``~/.config/umamo``, or ``$XDG_CONFIG_HOME/umamo`` when that variable is set
 
-Umamo does not have a menu row for this folder so open it in your file manager.  :menuselection:`Help --> Open Log Folder…` opens the folder for the logs.
+Umamo does not have a menu row for this folder, so open it in your file manager.  :menuselection:`Help --> Open Log Folder…` opens the folder for the logs.
 
 You do not need to open the file.  Every setting that has a control can be changed in :menuselection:`Edit --> Settings…` and the change is saved immediately.  See :doc:`/interface/settings`.
 
@@ -55,7 +55,7 @@ What It Stores
 	* - ``app``
 	  - The recent files, whether to check for updates and when it last did, the update that you skipped, and whether to show the low-memory alert.
 
-Most of these have a control in Settings, and the shortcuts and colors are in the :guilabel:`Keybindings` and :guilabel:`Colors` categories.  Settings that belong to one document, such as the view of each area, are saved in the UMA file and not here.  See :doc:`/files/uma`.
+Most of these have a control in Settings, and the shortcuts and colors are in the :guilabel:`Keybindings` and :guilabel:`Colors` categories.  Settings that belong to one puppet, such as the view of each area, are saved in its UMA file and not here.  See :doc:`/files/uma`.
 
 Log Files
 =========
@@ -85,7 +85,7 @@ To go back to the defaults for everything:
 #. Delete ``settings.json``, or rename it if you want to keep it.
 #. Start Umamo.
 
-Umamo will then start as it did the first time.  Quick Setup opens, the language is matched to your system again, and the workspaces, window, and recent files are back to their defaults.  Your documents and log files are not touched.  See :doc:`/getting_started/first_launch`.
+Umamo will then start as it did the first time.  Quick Setup opens, the language is matched to your system again, and the workspaces, window, and recent files are back to their defaults.  Your puppet files and log files are not touched.  See :doc:`/getting_started/first_launch`.
 
 To reset only one part, you do not need to delete the file:
 
@@ -105,7 +105,7 @@ Window and Layout Persistence
 * :menuselection:`Workspace --> Export All Workspaces…` saves all of them.
 * :menuselection:`Workspace --> Import Workspace…` imports such a file.  A file with one workspace adds it as a new tab.  A file with all workspaces replaces every workspace you have after Umamo asks ``Replace all workspaces with the imported file?``  Any other file is refused and the reason is written to the log.
 
-What a document remembers about a workspace, such as the pan and zoom of a viewport, is saved in the UMA file and not here.  See :doc:`/files/uma`.
+What a puppet remembers about a workspace, such as the pan and zoom of a viewport, is saved in its UMA file and not here.  See :doc:`/files/uma`.
 
 .. seealso::
 

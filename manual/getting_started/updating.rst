@@ -16,14 +16,14 @@ Checking for Updates
 
 Only full releases are considered.  Drafts and releases that are marked as a preview are ignored.
 
-The check asks GitHub for the latest release of the project and reads its version.  It does not send any information about you or your documents.  The request includes your version of Umamo in the same way that a browser identifies itself, and the proxy settings of your operating system are used.  This is the only network access that Umamo makes.
+The check asks GitHub for the latest release of the project and reads its version.  It does not send any information about you or your puppet files.  The request includes your version of Umamo in the same way that a browser identifies itself, and the proxy settings of your operating system are used.  This is the only network access that Umamo makes.
 
 You can see your version of Umamo in :menuselection:`Help --> About Umamo…`.  A development build such as ``0.5.0-dev`` is considered older than the release ``0.5.0``, so the check will offer you that release once it is available.
 
 Update Notifications
 ====================
 
-Umamo also checks for updates when it starts, as long as it has not checked in the last day.  It only notifies you when there is something to report.  If you are up to date, no release has been published, or there is no network, nothing is shown and a line is written to the log.  A check that gets no answer will be tried again at the next start.
+Umamo also checks for updates when it starts, as long as it has not checked in the last day.  It only notifies you when there is something to report.  If you are up to date, no release has been published, or there is no network, nothing is shown, and a line is written to the log.  A check that gets no answer will be tried again at the next start.
 
 When a newer version is available, a window will say ``Umamo 0.5.0 is available.  You have 0.4.0.``  The window has these buttons:
 
@@ -48,11 +48,11 @@ When a newer version is available, a window will say ``Umamo 0.5.0 is available.
 Installing an Update
 ====================
 
-Download the new version from the download page and install it over the old one in the same way as before.  See :doc:`/getting_started/installing`.  Your settings and documents are kept.  Close Umamo before installing.
+Download the new version from the download page and install it over the old one in the same way as before.  See :doc:`/getting_started/installing`.  Your settings and puppet files are kept.  Close Umamo before installing.
 
 Verify the download if you want to be sure of it.  See :doc:`/getting_started/verifying_downloads`.
 
-Read the release notes before you update.  A new version may change a file format and an older version may not be able to open files saved by a newer version.  See :doc:`/appendices/release_notes` and :doc:`/files/uma`.
+Read the release notes before you update.  A new version may change a file format and an older version may not be able to open puppet files saved by a newer version.  See :doc:`/appendices/release_notes` and :doc:`/files/uma`.
 
 Turning Off the Startup Check
 =============================
