@@ -23,13 +23,13 @@ In a file name, ``<version>`` is the version number.  For example, ``0.5.0``.
 	* - Windows
 	  - ``umamo-windows-x64-<version>.zip``
 	  - A portable copy.  Unpack it and run it.
-	* - macOS, Apple silicon
+	* - MacOS, Apple silicon
 	  - ``umamo-macos-arm64-<version>.dmg``
 	  - The disk image.  Drag Umamo to Applications.
-	* - macOS, Apple silicon
+	* - MacOS, Apple silicon
 	  - ``umamo-macos-arm64-<version>.zip``
 	  - ``Umamo.app`` in an archive.
-	* - macOS, Intel
+	* - MacOS, Intel
 	  - ``umamo-macos-x64-<version>.jar``
 	  - Intel Macs use the ``.jar`` for now.
 	* - Debian, Ubuntu, Linux Mint
@@ -69,7 +69,7 @@ Portable Archive
 
 The portable copy does not add anything to the Start menu or register the ``.uma`` file type.  Its settings are stored in the same location as an installed copy.  See :doc:`/getting_started/configuration`.
 
-macOS
+MacOS
 =====
 
 **Apple silicon.**  Open ``umamo-macos-arm64-<version>.dmg``, drag Umamo to Applications, and start it from there.  The disk image and the application are signed and notarized by Apple.  If you downloaded the ``.zip`` instead, unpack it and move ``Umamo.app`` to Applications.
@@ -130,7 +130,7 @@ Double-click the file, or start it from a terminal:
 Opening UMA Files from the File Manager
 =======================================
 
-The installers register the ``.uma`` file type so that double-clicking a file in your file manager opens it in Umamo.  The macOS application registers the file type itself.  The portable copies on Windows and Linux do not register anything.  On Windows, use :guilabel:`Open with` on an UMA file.
+The installers register the ``.uma`` file type so that double-clicking a file in your file manager opens it in Umamo.  The MacOS application registers the file type itself.  The portable copies on Windows and Linux do not register anything.  On Windows, use :guilabel:`Open with` on an UMA file.
 
 On Linux, the archive includes the files that register the file type for your user.  Put ``umamo/bin/umamo`` on your ``PATH`` or edit the ``Exec=`` line in ``umamo.desktop`` to the full path.  Then register both files:
 
@@ -161,7 +161,7 @@ Upgrading and Uninstalling
 	  - ``sudo apt remove umamo``
 	* - The ``.rpm``
 	  - ``sudo dnf remove umamo``
-	* - The macOS application
+	* - The MacOS application
 	  - Drag ``Umamo`` from Applications to the Trash.
 	* - A portable copy, or a ``.jar``
 	  - Delete the folder or the file.
