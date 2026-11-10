@@ -15,17 +15,22 @@ make check      # Builds with warnings as errors; run this before sending a chan
 
 The `Makefile` uses `.venv/bin/sphinx-build`.  On Windows, `make.bat` does the same with `.venv\Scripts\sphinx-build.exe`.
 
+## Publishing
+
+The workflow in `.github/workflows/pages.yml` runs `make check` on every pull request.  A push to `master` runs the same build and publishes `build/html` to GitHub Pages, which serves it at [docs.umamo.org](https://docs.umamo.org/).  A build with warnings will not be deployed.  To publish again without a new commit run the workflow on `master` from the repository's Actions tab or run the workflow manually(`gh workflow run pages.yml --ref master`).
+
 ## Layout
 
-| Path                    | Contents                                                                    |
-| ----------------------- | --------------------------------------------------------------------------- |
-| `manual/`               | The Sphinx source: `conf.py`, `index.rst`, and one folder per chapter.      |
-| `manual/_static/`       | Static files for the HTML output (CSS, logo).                               |
-| `locale/`               | Translation catalogs: `locale/<language>/LC_MESSAGES/*.po`.                 |
-| `requirements.txt`      | What it takes to build the manual.  Read the Docs installs this file.       |
-| `requirements-dev.txt`  | The above, plus `sphinx-autobuild` and `sphinx-intl`.                       |
-| `.readthedocs.yaml`     | The Read the Docs build.                                                    |
-| `.editorconfig`         | Editor settings: reStructuredText is indented with tabs.                    |
+| Path                          | Contents                                                                                    |
+| ----------------------------- | ------------------------------------------------------------------------------------------- |
+| `manual/`                     | The Sphinx source: `conf.py`, `index.rst`, and one folder per chapter.                      |
+| `manual/_static/`             | Static files for the HTML output (CSS, logo).                                               |
+| `locale/`                     | Translation catalogs: `locale/<language>/LC_MESSAGES/*.po`.                                 |
+| `requirements.txt`            | What it takes to build the manual.  The Pages workflow and Read the Docs install this file. |
+| `requirements-dev.txt`        | The above, plus `sphinx-autobuild` and `sphinx-intl`.                                       |
+| `.github/workflows/pages.yml` | The GitHub Pages build and deployment.  See Publishing.                                     |
+| `.readthedocs.yaml`           | The Read the Docs build.                                                                    |
+| `.editorconfig`               | Editor settings: reStructuredText is indented with tabs.                                    |
 
 Pages are written in reStructuredText.  MyST Markdown (`.md`) is also enabled.  Each chapter is a folder holding an `index.rst` with its table of contents.  A page that is not written yet holds a `.. todo::` that says what it will cover, and the empty headings it will be written under.  The heading, indentation, Reference block, and See also conventions are in the manual's Writing Guide (`manual/about/contribute/writing_guide.rst`).
 
