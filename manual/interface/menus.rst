@@ -8,15 +8,6 @@ A row that cannot be used now is greyed out.  A row with a small arrow opens a s
 
 Every row is also a command in the command palette, so any of them can be run without the menu.  See :doc:`/interface/command_palette`.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
-
-	:Show: The menu bar with the File menu open, and the Import submenu open from it.
-	:Setup: Open a document, open File, and move the pointer over Import.
-	:Crop: The top left of the window.
-	:Save as: ``images/interface/file_menu.png``
-	:Caption: The File menu with the Import submenu.
-
 File
 ====
 

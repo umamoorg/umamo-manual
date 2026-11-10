@@ -2,7 +2,7 @@
 Settings
 ********
 
-The Settings window holds the choices that belong to you and not to a document: the language and the theme, how the viewport draws, how artwork comes in, and your shortcuts.  Some other programs, and older notes about Umamo, call it Preferences.
+The Settings window holds the global editor settings and not specific to a puppet file: the language and the theme, how the viewport draws, how artwork comes in, and your shortcuts.  Some other programs, and older notes about Umamo, call it Preferences.
 
 Opening Settings
 ================
@@ -11,16 +11,7 @@ Choose :menuselection:`Edit --> Settings…`, or press :kbd:`Ctrl-Comma`.  It is
 
 The window opens over the Umamo window.  The categories are in a list on the left, and the settings of the chosen one are on the right.  There is no :guilabel:`OK` or :guilabel:`Apply`: every change takes effect and is saved as you make it, so the language, the theme, and the colors change behind the window while you work in it.  Close it with the button at its top right, with :kbd:`Escape`, or by clicking outside it.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
-
-	:Show: The Settings window with the Interface category chosen: the list of categories at the left (Interface, Colors, Viewport, Import, Keybindings, Pen), and the Theme, Language, History Steps, and Check for updates rows.
-	:Setup: Choose Edit → Settings….
-	:Crop: The Settings window and a little of the window behind it.
-	:Save as: ``images/interface/settings.png``
-	:Caption: The Settings window.
-
-The settings are saved in a file in your user folder.  See :doc:`/getting_started/configuration`.  Nothing in this window changes a document.
+The settings are saved in a file in your user folder.  See :doc:`/getting_started/configuration`.  Nothing in this window changes a puppet file.
 
 Interface
 =========
@@ -35,7 +26,7 @@ Interface
 	* - :guilabel:`Language`
 	  - The language of the interface: English, 日本語, 한국어, or Français.  Umamo picks one at the first start from your system's languages.  See :doc:`/about/contribute/translations`.
 	* - :guilabel:`History Steps`
-	  - How many undo steps are kept, from 1 to 1000.  The default is 200.  Lowering it trims the history of the open document, but never the current step or the steps you can redo.  See :doc:`/editors/history`.
+	  - How many undo steps are kept, from 1 to 1000.  The default is 200.  Lowering it trims the history of the open puppet file, but never the current step or the steps you can redo.  See :doc:`/editors/history`.
 	* - :guilabel:`Check for updates when Umamo starts`
 	  - Whether Umamo asks once a day if a newer version is out.  See :doc:`/getting_started/updating`.
 
@@ -133,7 +124,7 @@ An area that you have toggled keeps its own choice, so changing the default does
 Import
 ======
 
-How artwork is brought into a document.  See :doc:`/artwork/importing`.
+How artwork is brought into a puppet file.  See :doc:`/artwork/importing`.
 
 .. list-table::
 	:header-rows: 1
@@ -143,7 +134,7 @@ How artwork is brought into a document.  See :doc:`/artwork/importing`.
 	  - What it does
 	* - :guilabel:`Parameter Template`
 	  - Humanoid
-	  - The parameters that the first artwork of a document starts with: :guilabel:`Humanoid` for the usual set, or :guilabel:`None`.
+	  - The parameters that the first artwork of a puppet file starts with: :guilabel:`Humanoid` for the usual set, or :guilabel:`None`.
 	* - :guilabel:`Initial Mesh`
 	  - Generated from Art
 	  - The mesh that each new layer starts with: one :guilabel:`Generated from Art`, or a plain :guilabel:`Quad`.
