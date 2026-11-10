@@ -2,7 +2,7 @@
 Getting Started
 ***************
 
-This chapter covers getting Umamo up and running, from downloading it to your first session.  It describes the computer requirements, how to install Umamo and verify that the download is the one that was published, what you will see the first time it starts, and where it keeps its settings.  If you already use Live2D Cubism, there is also a page that maps what you know to the terms that Umamo uses.
+This chapter covers getting Umamo up and running, from downloading it to your first session.  It describes the computer requirements, how to install Umamo and verify that the download is the one that was published, what you will see the first time it starts, and where it keeps its settings.  If you already use Live2D Cubism, there is also a migration guide to Umamo.
 
 .. toctree::
 	:maxdepth: 1
