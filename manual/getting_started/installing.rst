@@ -43,11 +43,11 @@ In a file name, ``<version>`` is the version number.  For example, ``0.5.0``.
 	  - A portable copy.  Unpack it and run it.
 	* - Any system with Java 21 or newer
 	  - ``umamo-<target>-<version>.jar``
-	  - Available for any systems that run Java.  See `Running the Jar`_.
+	  - Available for any system that runs Java.  See `Running the Jar`_.
 
 ``<arch>`` is ``x64`` or ``arm64``.  ``<target>`` is one of ``windows-x64``, ``macos-arm64``, ``macos-x64``, ``linux-x64``, or ``linux-arm64``.
 
-The installer is recommend if one is available for your system.
+The installer is recommended if one is available for your system.
 
 Windows
 =======

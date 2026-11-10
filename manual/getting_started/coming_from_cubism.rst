@@ -2,7 +2,7 @@
 Coming from Cubism
 ******************
 
-Umamo is built to work with Live2D Cubism and it reads and writes the Cubism Editor's own files.  However, it is not built to be exactly like Cubism.  It instead uses the design paradigms and interface style of the popular Blender 3D modelling software.  If you're already familiar with Blender then working Umamo will feel like home.
+Umamo is built to work with Live2D Cubism and it reads and writes the Cubism Editor's own files.  However, it is not built to be exactly like Cubism.  It instead uses the design paradigms and interface style of the popular Blender 3D modelling software.  If you're already familiar with Blender then working in Umamo will feel like home.
 
 Terminology Map
 ===============
@@ -69,7 +69,7 @@ Terminology Map
 	  - A mesh is edited in the 2D Viewport while in edit mode.  Press :kbd:`Tab` to enter Edit Mode from Object Mode.
 	* - Automatic Mesh Generation
 	  - :guilabel:`Generate Mesh from Art`
-	  - Accessible from the :guilabel:`Command Palette` and :kbd:`Shift+M`.  See :doc:`/modeling/generate_mesh`.
+	  - Accessible from the :guilabel:`Command Palette` and :kbd:`Shift-M`.  See :doc:`/modeling/generate_mesh`.
 	* - Updating a model after the artwork changed
 	  - Reload, relink, and match
 	  - The Sources editor.  Umamo can also watch the artwork files to reload automatically.  See :doc:`/artwork/relinking_and_reloading`.
@@ -87,7 +87,7 @@ Keymap Presets
 
 Umamo has three sets of shortcuts to start from.  You choose one in Quick Setup or in the :guilabel:`Keybindings` category of Settings.  See :doc:`/interface/keymap`.
 
-**We highly recommend learning the default keymap as it is used throughout the manual.**  However, the :guilabel:`Cubism` preset is for people who do not want to learn a new set.  There are less keys bound by default.  It keeps:
+**We highly recommend learning the default keymap as it is used throughout the manual.**  However, the :guilabel:`Cubism` preset is for people who do not want to learn a new set.  There are fewer keys bound by default.  It keeps:
 
 * :kbd:`Ctrl-N`, :kbd:`Ctrl-O`, :kbd:`Ctrl-S`, and :kbd:`Ctrl-Shift-S` for New, Open, Save, and Save As, and :kbd:`Ctrl-Shift-O` for Import Artwork.
 * :kbd:`Ctrl-Z` to undo, and :kbd:`Ctrl-Shift-Z` and :kbd:`Ctrl-Y` to redo.
@@ -103,7 +103,7 @@ File Compatibility
 
 * **CMO3.**  Umamo imports and exports CMO3 files and is tested with Cubism Editor 4.2 to 5.4.  A CMO3 exported from Umamo can be opened in the Cubism Editor.  Umamo has advanced editing features that when exported to CMO3 may not be supported in Cubism.
 * **MOC3.**  Umamo imports and exports baked models together with their sidecar files.  Importing MOC3 is functionality intended for rescuing a puppet file when the original CMO3 was lost.
-* **Artwork.**  Umamo reads layered artwork from Photoshop, Clip Studio Paint, Krita, and flat image format.
+* **Artwork.**  Umamo reads layered artwork from Photoshop, Clip Studio Paint, Krita, and flat image formats.
 
 While Umamo is in development preview you should keep your original Cubism files.  Import them into Umamo, work on them, and export the result as separate copies.  Use :menuselection:`File --> Save As…` to save an UMA file as you go.  See :doc:`/files/cubism_interchange` for what is kept when moving between formats.
 
@@ -114,7 +114,7 @@ Keying Differences
 
 In Umamo pose authoring is not automatically keyed and keying a pose onto a parameter requires an explicit action.
 
-* **Pose first, then key.**  In Umamo you set the parameters to the pose that you want to key, shape the lattice of a warp deformer in Pose Mode, and key it with :kbd:`I`, :guilabel:`Insert Keyframe`.  Until the change is committed it is only a preview and will be denoted the on the Keyform Sheet marked with an orange circle.  Moving a parameter before keying an committed pose will discard the pose edit, but can be brought back with :guilabel:`Undo`.
+* **Pose first, then key.**  In Umamo you set the parameters to the pose that you want to key, shape the lattice of a warp deformer in Pose Mode, and key it with :kbd:`I`, :guilabel:`Insert Keyframe`.  Until the change is committed it is only a preview and will be denoted on the Keyform Sheet marked with an orange circle.  Moving a parameter before keying an uncommitted pose will discard the pose edit, but can be brought back with :guilabel:`Undo`.
 * **Edit Mode is the rest shape.**  Edit Mode changes the shape of meshes and deformers at the default pose.  You cannot insert, remove, or move keys while in :guilabel:`Edit Mode`.
 * **Key what is under the pointer.**  :kbd:`I` keys the field or the row that the pointer is over, :kbd:`Alt-I` removes the key, and :kbd:`K` opens a pie menu to key the lattice, the opacity, the colors, or all of them.
 * **The Keyform Sheet shows the keys.**  It shows the keys of each object as marks on tracks, similar to an animation dope sheet.  Keys can be selected and moved there.
@@ -124,7 +124,7 @@ See :doc:`/rigging/keyforms`, :doc:`/rigging/posing_warps`, and :doc:`/editors/k
 Runtime Target
 ==============
 
-The Cubism Editor has a "Select Target Version" setting the limits the availability of features based on the SDK runtime version.  Umamo's :guilabel:`Runtime Target` option has all the Cubism targets plus other runtime targets.  It can be found in the :guilabel:`Properties` editor area, :guilabel:`Puppet` tab, :guilabel:`Runtime` section.
+The Cubism Editor has a "Select Target Version" setting that limits the availability of features based on the SDK runtime version.  Umamo's :guilabel:`Runtime Target` option has all the Cubism targets plus other runtime targets.  It can be found in the :guilabel:`Properties` editor area, :guilabel:`Puppet` tab, :guilabel:`Runtime` section.
 
 The Runtime Target hides the controls for features that are unsupported by the target version.  If you downgrade the target version those features will not be removed from the puppet file, but a MOC3 export strips unsupported features in the resulting file.  See :doc:`/files/runtime_targets`.
 

@@ -46,7 +46,7 @@ Now check your files against the list:
 
 	sha256sum --check --ignore-missing SHA256SUMS.txt
 
-It prints ``OK`` for each file in the list that is in the folder.  ``--ignore-missing`` skips any missing files..
+It prints ``OK`` for each file in the list that is in the folder.  ``--ignore-missing`` skips any missing files.
 
 On Windows, calculate the checksum yourself and compare it with the line for your file in ``SHA256SUMS.txt`` using PowerShell:
 

@@ -20,7 +20,7 @@ Language
 
 Sets the language of the interface.  Umamo will pick from the first of your system's preferred languages.  If a translation is not available it will default to English.
 
-If you would like to help translate Umamo into another language, see :doc:`/about/contribute/translations`.  
+If you would like to help translate Umamo into another language, see :doc:`/about/contribute/translations`.
 
 Keybindings Preset
 ------------------
@@ -34,7 +34,7 @@ Chooses which set of keyboard shortcuts to start from.
 	A smaller set for people who come from the Cubism Editor.  We recommend using the default keymap, but the Cubism keymap is provided for convenience.  See :doc:`/getting_started/coming_from_cubism`.
 
 :guilabel:`Blender`
-	For people who come from Blender.  The keymap is nearly indetical to the default, but with a few changes such as the :guilabel:`Command Palette` being set to :kbd:`F3` and Frame All set to :kbd:`Home`.
+	For people who come from Blender.  The keymap is nearly identical to the default, but with a few changes such as the :guilabel:`Command Palette` being set to :kbd:`F3` and Frame All set to :kbd:`Home`.
 
 You can rebind any shortcut later in the :guilabel:`Keybindings` category of Settings.  See :doc:`/interface/keymap` for what the presets are.
 
