@@ -54,11 +54,14 @@ gettext_compact = False
 
 html_theme = "furo"
 html_title = f"Umamo Manual {version}"
+# Where the manual is published (see .github/workflows/pages.yml).  Sphinx
+# uses it for the canonical link on every page.
+html_baseurl = "https://docs.umamo.org/"
 html_static_path = ["_static"]
 html_css_files = ["css/custom.css"]
 
 html_theme_options = {
     "source_repository": "https://github.com/umamoorg/umamo-manual/",
-    "source_branch": "main",
+    "source_branch": "master",
     "source_directory": "manual/",
 }
