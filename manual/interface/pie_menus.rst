@@ -2,21 +2,18 @@
 Pie Menus
 *********
 
-A pie menu is a ring of choices that opens under the pointer.  You pick one by the direction in which you move, not by aiming at a button, so a flick of the hand is enough, with the mouse as much as with a pen.  Umamo has five of them, for choices that you make often and in the middle of work: the pivot point, snapping, the target of a merge, and which values to key.
+A pie menu is a ring of choices that opens under the pointer.  You pick one by the direction in which you move, not by aiming at a button, so a flick of the hand is enough, with the mouse as much as with a pen.
+Umamo has five of them, for choices that you make often and in the middle of work: the pivot point, snapping, the target of a merge, and which values to key.
 
 Using a Pie
 ===========
 
 Press the key of a pie.  The ring opens centered on the pointer, with its name in the middle and up to eight choices around it.  If the pointer is near the edge of the window, the ring moves in so that it fits.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
-
-	:Show: The Snap pie open over the 2D Viewport, with all eight entries around the ring and their numbers, and one of them highlighted.
-	:Setup: In Object Mode with a drawable selected, point at the middle of the 2D Viewport and press Shift-S, and move the pointer slightly toward one entry.
-	:Crop: The 2D Viewport area.
-	:Save as: ``images/interface/pie_menu.png``
-	:Caption: The Snap pie.
+.. image:: ./img/Pie_menu.png
+   :width: 100%
+   :align: center
+   :alt: A Pie menu, with various selectable options like an inventory wheel.
 
 Then pick one:
 

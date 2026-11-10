@@ -16,19 +16,17 @@ From top to bottom the window has:
 
 Dialogs and the command palette open over the window and take the keyboard until you close them.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
 
-	:Show: The whole window, with labels or arrows (added in an image editor) for the title bar, the menu bar, the workspace tabs, an area header, the body of an area, a splitter between two areas, and the status bar.
-	:Setup: Open a model in the Modelling workspace.
-	:Crop: The whole window.
-	:Save as: ``images/interface/window_anatomy.png``
-	:Caption: The parts of the Umamo window.
+.. image:: ./img/main_window.png
+   :width: 100%
+   :align: center
+   :alt: Umamo's editor layout, describing the title bar, menu bar and the status bar.
+
 
 Window Title and State
 ======================
 
-The title of the window is ``Umamo``, a dash, and the name of the document: ``Umamo - Untitled`` for a document that has no file.  A ``*`` after the name means that there are unsaved changes, and ``(read-only)`` means that the document cannot be saved.  See :doc:`/files/uma`.
+The title of the window is ``Umamo``, a dash, and the name of the puppet file: ``Umamo - Untitled`` for an empty puppet file.  A ``*`` after the name means that there are unsaved changes, and ``(read-only)`` means that the file cannot be saved.  See :doc:`/files/uma`.
 
 Umamo remembers the size and place of the window and whether it was maximized or full screen, and opens the same way next time.  On Windows 11 it tints the title bar to the color of the interface, so a light or dark theme does not leave a bright strip at the top.  See :doc:`/getting_started/configuration`.
 
@@ -37,7 +35,7 @@ Areas
 
 Every area has a **header**, a thin bar across its top, and a **body** under it.  The body is the editor.  The header has the editor type on its left, and then the controls of that editor.  When there is not room for all of them, the ones that do not fit are put in a menu at the end of the header, and the editor type never moves.
 
-An area keeps its state for as long as it exists.  If you switch it to another editor and back, the first editor is as you left it.  The view of each area, such as the pan and zoom of a viewport, is saved in the document.  See :doc:`/files/uma`.
+An area keeps its state for as long as it exists.  If you switch it to another editor and back, the first editor is as you left it.  The view of each area, such as the pan and zoom of a viewport, is saved in the puppet-file.  See :doc:`/files/uma`.
 
 The border of the area under the pointer is a little brighter than the others.
 
@@ -73,7 +71,7 @@ The dropdown at the left end of an area's header switches the area to another ed
 	  - The keys of each object, in tracks across a parameter's range.
 	  - :doc:`/editors/keyform_sheet`
 	* - Properties
-	  - The document, the selected object, and its data, in three tabs.
+	  - The puppet-file, the selected object, and its data, in three tabs.
 	  - :doc:`/editors/properties/index`
 	* - Tool Settings
 	  - Reserved for the settings of the active tool.  It is empty today.
@@ -104,19 +102,17 @@ Right-click an area's header to open its menu.  In the body of an area, many edi
 :guilabel:`Close Area`
 	Closes the area.  The area next to it grows to fill the space.  The last area of a workspace cannot be closed.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
 
-	:Show: An area's context menu open on its header, with Split Left/Right, Split Top/Bottom, Change Editor Type with its submenu open, and Close Area.
-	:Setup: Right-click the header of the Outliner.
-	:Crop: The area and the menu.
-	:Save as: ``images/interface/area_context_menu.png``
-	:Caption: The context menu of an area.
+.. image:: ./img/area_context_menu.png
+   :width: 100%
+   :align: center
+   :alt: A Window's context menu, after right-clicking it's title.
+
 
 Splitting, Joining, and Docking Areas
 =====================================
 
-Each corner of an area is a handle.  Drag from a corner with the left button, and what happens depends on where you drag to.  An outline shows the result before you let go.
+Each corner of an area is a handle.  Drag from a corner with the left button and  An outline shows the result before you let go.
 
 **Split.**  Drag inward, into the area you started in.  Once you have moved a short way, the direction that you moved in is chosen, and the new border follows the pointer.  Let go to split the area there.  The new area shows the same editor as the old one.
 
@@ -126,14 +122,11 @@ Each corner of an area is a handle.  Drag from a corner with the left button, an
 
 Press :kbd:`Escape` while you drag to cancel.  The context menu does the same as a split, with no dragging, and :guilabel:`Close Area` does a close.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
+.. image:: ./img/window_drag.png
+   :width: 100%
+   :align: center
+   :alt: What dragging a window from one of it's corners allows.
 
-	:Show: A corner drag in progress, joining two areas: the outline over the area that would be closed.
-	:Setup: Start dragging from the top-right corner of the Outliner toward the Properties area below it, and take the picture while the button is down.
-	:Crop: The Outliner, the Properties editor, and the outline.
-	:Save as: ``images/interface/area_join.png``
-	:Caption: Joining two areas by dragging from a corner.
 
 Resizing with Splitters
 =======================
@@ -145,16 +138,17 @@ Press :kbd:`Escape` during the drag to cancel it.
 Which Area Gets the Input
 =========================
 
-Keyboard shortcuts go to the area that the pointer touched last.  Move the pointer over the 2D Viewport, and :kbd:`G` grabs in it.  Move it over the Outliner, and the keys of the Outliner apply.  An area does not need a click to be active.
+Keyboard shortcuts go to the area that was last selected.  Move the pointer over the 2D Viewport, and :kbd:`G` grabs in it.  Move it over the Outliner, and the keys of the Outliner apply.  An area does not need a click to be active.
 
-The area stays the one that counts when the pointer leaves it for the menu bar, the tabs, or the status bar, so a shortcut still works after you glance at them.  It stops counting when you close the area, or switch it to another editor.  The command palette, and the hints in the status bar, follow the same area.  See :doc:`/interface/command_palette`.
+The selected area is the one the pointer leaves when accessing the menu bar, the tabs, or the status bar, so a shortcut still works after you glance at them.  The areas stop being selected when you close the area, or switch to another editor.
+The command palette, and the hints in the status bar, follow the same area.  See :doc:`/interface/command_palette`.
 
-A menu command that works on the whole document, such as Save, does not depend on the area.  A few, such as Export Image, use the last 2D Viewport that you touched.
+A menu command that works on the whole puppet file, such as Save and does not depend on the area.  A few, such as Export Image, use the last 2D Viewport that was selected.
 
 Escape Precedence
 =================
 
-:kbd:`Escape` does the nearest thing first.  When several of these are true at the same time, the first one in the list takes the key:
+:kbd:`Escape` does the nearest thing first.  When several of these are true at the same time, the first one in the list takes priority:
 
 #. A question dialog, such as the unsaved-changes prompt, is cancelled.
 #. An alert or a report, such as the export report, is dismissed.
