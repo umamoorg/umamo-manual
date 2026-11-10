@@ -81,7 +81,7 @@ What Is Signed
 	  - The release key
 	  - ``dnf`` and ``rpm``, once you import the key.  See :doc:`/getting_started/installing`.
 	* - The macOS ``.dmg`` and ``Umamo.app``
-	  - Apple's Developer ID, and notarized by Apple
+	  - Apple's Developer ID and notarized by Apple
 	  - macOS, when you open it.
 	* - The Windows ``.msi`` and ``Umamo.exe``
 	  - Nothing yet

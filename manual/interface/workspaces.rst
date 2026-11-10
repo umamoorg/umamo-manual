@@ -2,7 +2,8 @@
 Workspaces
 **********
 
-A workspace is a named arrangement of areas for one kind of work.  The tabs along the top of the window are the workspaces, and a click on one swaps the whole arrangement.  Umamo comes with three, and you can make as many more as you like.  Workspaces belong to you and not to a document: they are the same whichever document is open.
+A workspace is a named arrangement of areas for one kind of work.  The tabs along the top of the window are the workspaces, and a click on one swaps the whole arrangement.  Umamo comes with three, and you can make as many more as you like.
+Workspaces belong to the editor and not to a specific puppet file: they are the same whichever puppet file is open.
 
 Default Workspaces
 ==================
@@ -30,14 +31,10 @@ Physics
 
 A single **2D Viewport**.  It is a place held for the physics tools, which do not exist yet.  See :doc:`/rigging/physics`.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
-
-	:Show: The Texture workspace, with its two UV Editors on the left, the 2D Viewport, and the right column of the Sources editor, Outliner, and Properties.  The workspace tabs must be readable, with Texture active.
-	:Setup: Open a model that was made from artwork, and click the Texture tab.
-	:Crop: The whole window.
-	:Save as: ``images/interface/texture_workspace.png``
-	:Caption: The Texture workspace.
+.. image:: ./img/default_workspace.png
+   :width: 100%
+   :align: center
+   :alt: The default workspace layout for Textures.
 
 The Tab Strip
 =============
@@ -54,14 +51,10 @@ The menu of a tab has :guilabel:`Rename`, :guilabel:`Duplicate`, and :guilabel:`
 
 The names of the three built-in workspaces follow the language of the interface.  Once you rename one, its name is yours and stays as you typed it.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
-
-	:Show: The workspace tab strip with the context menu of a tab open, showing Rename, Duplicate, Delete, Previous Workspace, and Next Workspace.
-	:Setup: Right-click the Modelling tab.
-	:Crop: The top row of the window and the menu.
-	:Save as: ``images/interface/workspace_tab_menu.png``
-	:Caption: The context menu of a workspace tab.
+.. image:: ./img/workspace_tab_strip.png
+   :width: 100%
+   :align: center
+   :alt: The workspace tab, with options for new workspaces.
 
 Workspace Menu
 ==============
@@ -137,7 +130,7 @@ What a Workspace Remembers
 
 A workspace remembers how its area is divided: the splits, the size of each area, and which editor each area shows.  It also remembers its name, and the position of its tab.  Umamo saves all of that in your settings as you change it, so the next start has the same tabs.  See :doc:`/getting_started/configuration`.
 
-A workspace does not remember what is in the editors.  The pan and zoom of a viewport, the open branches of the Outliner, the filters, and the other state of each area belong to the document that you have open, and are saved in it.  See :doc:`/files/uma`.
+A workspace does not remember what is in the editors.  The pan and zoom of a viewport, the open branches of the Outliner, the filters, and the other state of each area belong to the puppet file that you have open, and are saved in it.  See :doc:`/files/uma`.
 
 .. seealso::
 

@@ -2,12 +2,12 @@
 First Launch
 ************
 
-The first time Umamo starts it opens a new document and a small window called Quick Setup, which asks four questions.  You can answer them or close the window and change them later.  This page describes what you will see and how to open your first file.
+The first time Umamo starts, it opens a new puppet and a small window called Quick Setup, which asks you to select common preferences.  You can answer them or close the window and change them later.  This page describes what you will see and how to open your first file.
 
-A New Document Opens
-====================
+A New Puppet Opens
+==================
 
-Umamo always starts with a document open.  If you start it without a file, it will be a new empty document, the same as one created with :menuselection:`File --> New`.  The window title is ``Umamo - Untitled``.  The window opens at 1280 by 800 pixels the first time and after that opens the way you left it.
+Umamo always starts with a puppet open.  If you start it without a file, it will be a new empty puppet, the same as one created with :menuselection:`File --> New`.  The window title is ``Umamo - Untitled``.  The window opens at 1280 by 800 pixels the first time and after that opens the way you left it.
 
 .. admonition:: Screenshot needed
 	:class: screenshot-needed
@@ -16,7 +16,7 @@ Umamo always starts with a document open.  If you start it without a file, it wi
 	:Setup: Start Umamo with no settings file, which is a fresh install, and close Quick Setup.
 	:Crop: The whole window.
 	:Save as: ``images/getting_started/first_window.png``
-	:Caption: Umamo after the first start, with an empty document in the Modelling workspace.
+	:Caption: Umamo after the first start, with an empty puppet in the Modelling workspace.
 
 The window is divided into areas and each area shows one editor.  Umamo starts in the Modelling workspace:
 
@@ -24,7 +24,7 @@ The window is divided into areas and each area shows one editor.  Umamo starts i
 * The **2D Viewport**, where the model is drawn, is in the middle, above the **Keyform Sheet**.
 * The **Outliner** is on the right, above the **Properties** editor.
 
-The tabs along the top switch between workspaces.  There are three workspaces: Modelling, Texture, and Physics.  The viewport is empty and the editors have nothing to show because the document does not have any content yet.  Adding artwork or importing a model will fill them.  See :doc:`/interface/window_system` and :doc:`/interface/workspaces`.
+The tabs along the top switch between workspaces.  There are three workspaces: Modelling, Texture, and Physics.  The viewport is empty and the editors have nothing to show because the puppet does not have any content yet.  Adding artwork or importing a model will fill them.  See :doc:`/interface/window_system` and :doc:`/interface/workspaces`.
 
 Quick Setup
 ===========
@@ -55,7 +55,7 @@ Keybindings Preset
 Chooses which set of keyboard shortcuts to start from.
 
 :guilabel:`Default`
-	The shortcuts that this manual describes.  They follow Blender's way of working with a key for each tool.  For example, :kbd:`G` to grab and :kbd:`Tab` for Edit Mode.
+	The shortcuts that this manual describes.  They follow Blender's way of working with a key for each tool, such as :kbd:`G` to grab and :kbd:`Tab` for Edit Mode.
 
 :guilabel:`Cubism`
 	A smaller set for people who come from the Cubism Editor.  It keeps the shortcuts that Cubism users know, and leaves most of the single-key tools unassigned.  See :doc:`/getting_started/coming_from_cubism`.
@@ -80,15 +80,15 @@ Opening Your First File
 
 Umamo can open or import several different types of files:
 
-* **A model made in Cubism.**  Use :menuselection:`File --> Import --> CMO3…` for a Cubism Editor project or :menuselection:`File --> Import --> MOC3…` for a baked model.  The imported model will replace the empty document.  See :doc:`/files/cubism_interchange`.
-* **Layered artwork.**  Use :menuselection:`File --> Import --> Artwork…` to add a PSD, CLIP, or KRA file, or a flat image, to the document.  Umamo will create a drawable and a mesh for each layer.  See :doc:`/artwork/importing`.
-* **An UMA document.**  Use :menuselection:`File --> Open…` to open an UMA file, which is Umamo's native document format.  See :doc:`/files/uma`.
+* **A model made in Cubism.**  Use :menuselection:`File --> Import --> CMO3…` for a Cubism Editor project or :menuselection:`File --> Import --> MOC3…` for a baked model.  The imported model will replace the empty puppet.  See :doc:`/files/cubism_interchange`.
+* **Layered artwork.**  Use :menuselection:`File --> Import --> Artwork…` to add a PSD, CLIP, or KRA file, or a flat image, to the puppet.  Umamo will create a drawable and a mesh for each layer.  See :doc:`/artwork/importing`.
+* **An UMA file.**  Use :menuselection:`File --> Open…` to open an UMA file, which is Umamo's native format.  See :doc:`/files/uma`.
 
-You can also drag a file onto the window.  The first file in a drop decides what happens to the whole drop.  Artwork is added to the document and anything else is opened.
+You can also drag a file onto the window.  The first file in a drop decides what happens to the whole drop.  Artwork is added to the puppet and anything else is opened.
 
 .. warning::
 
-	Umamo is alpha-level software and does not save your documents automatically.  Work on copies of your files and use :menuselection:`File --> Save As…` early to save an UMA file.  See :doc:`/troubleshooting/backups_and_data_safety`.
+	Umamo is alpha-level software and does not save your puppet files automatically.  Work on copies of your files and use :menuselection:`File --> Save As…` early to save an UMA file.  See :doc:`/troubleshooting/backups_and_data_safety`.
 
 Low-Memory Notice
 =================

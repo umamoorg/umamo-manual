@@ -2,7 +2,7 @@
 Coming from Cubism
 ******************
 
-Umamo is built to work with Live2D Cubism.  It reads and writes the Cubism Editor's own files and a puppet means the same thing in both.  The interface is different because it is modelled on Blender's and a few ideas have different names.  This page maps what you know from Cubism to where it is in Umamo.
+Umamo is built to work with Live2D Cubism and it reads and writes the Cubism Editor's own files.  The interface is different because it is modeled on Blender's and a few ideas have different names.  This page maps what you know from Cubism to where it is in Umamo.
 
 Terminology Map
 ===============
@@ -105,10 +105,10 @@ File Compatibility
 
 * **CMO3.**  Umamo imports and exports CMO3 files and is tested with Cubism Editor 4.2 to 5.4.  A CMO3 exported from Umamo can be opened in the Cubism Editor.
 * **MOC3.**  Umamo imports and exports baked models together with their sidecar files.  A MOC3 does not contain any layers, so a model imported from one has no artwork to edit.
-* **Artwork.**  Umamo reads layered files from Photoshop, Clip Studio Paint, and Krita, as well as flat images, and keeps the puppet in sync when the artwork changes.
-* **Data that Umamo does not edit.**  A CMO3 holds data that Umamo does not support editing yet, such as physics and the settings of the Cubism Editor.  Umamo keeps this data while the document is open and writes it back when you export a CMO3 in the same session.  An UMA file does not store it at this time.
+* **Artwork.**  Umamo reads layered artwork from Photoshop, Clip Studio Paint, and Krita, as well as flat images, and keeps the puppet in sync when the artwork changes.
+* **Data that Umamo does not edit.**  A CMO3 holds data that Umamo does not support editing yet, such as physics and the settings of the Cubism Editor.  Umamo keeps this data while the puppet file is open and writes it back when you export a CMO3 in the same session.  An UMA file does not store it at this time.
 
-Keep your original Cubism files.  Import them into Umamo, work on them, and export the result, and use :menuselection:`File --> Save As…` to save an UMA file as you go.  See :doc:`/files/cubism_interchange` for what is kept when moving between formats.
+Keep your original Cubism files.  Import them into Umamo, work on them, and export the result.  Use :menuselection:`File --> Save As…` to save an UMA file as you go.  See :doc:`/files/cubism_interchange` for what is kept when moving between formats.
 
 Umamo is not affiliated with Live2D Inc.  See :doc:`/appendices/legal`.
 
@@ -127,9 +127,9 @@ See :doc:`/rigging/keyforms`, :doc:`/rigging/posing_warps`, and :doc:`/editors/k
 Runtime Target
 ==============
 
-The Cubism Editor has a "Select Target Version" setting that hides what the older runtimes cannot play.  Umamo's Runtime Target does the same.  It is a document setting found in the :guilabel:`Runtime` section of the Document tab of the Properties editor.  An imported CMO3 or MOC3 brings its own target and a new document uses :guilabel:`No Target (All Features)`.
+The Cubism Editor has a "Select Target Version" setting that hides what the older runtimes cannot play.  Umamo's Runtime Target does the same.  It is a setting of the puppet, found in the :guilabel:`Runtime` section of the Document tab of the Properties editor.  An imported CMO3 or MOC3 brings its own target, and a new puppet uses :guilabel:`No Target (All Features)`.
 
-The target hides the controls for features that it does not support and decides which MOC3 format version an export writes.  It never removes anything from the document.  Only a MOC3 export strips unsupported features from the exported file.  See :doc:`/files/runtime_targets`.
+The target hides the controls for features that it does not support and decides which MOC3 format version an export writes.  It never removes anything from the puppet.  Only a MOC3 export strips unsupported features from the exported file.  See :doc:`/files/runtime_targets`.
 
 .. seealso::
 

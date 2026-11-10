@@ -2,7 +2,7 @@
 Interface
 *********
 
-This chapter is about the window itself, and about the ways of telling Umamo what to do.  The window is divided into areas that each show an editor, grouped into workspaces.  Every action is a command, and a command can be reached from a menu, a shortcut, the command palette, a pie menu, or the right-click menu of an editor.
+This chapter is about the Umamo Editor Window.  The window is divided into areas that each show an editor, grouped into workspaces.  Every action is a command, and a command can be reached from a menu, a shortcut, the command palette, a pie menu, or the right-click menu of an editor.
 
 The editors, such as the 2D Viewport and the Outliner, are described in :doc:`/editors/index`.
 
