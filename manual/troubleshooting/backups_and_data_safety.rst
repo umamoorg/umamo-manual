@@ -43,7 +43,7 @@ Unsaved-Changes Prompts
 
 New, Open, the imports, and Exit ask first when the puppet file has unsaved changes, and so do the close button of the window and the quit command of the operating system:
 
-``The document has unsaved changes.  Save them first?``
+``The puppet has unsaved changes.  Save them first?``
 
 :guilabel:`Save` saves your work, :guilabel:`Don't Save` goes on without saving, and :guilabel:`Cancel` stays where you are.
 
