@@ -2,12 +2,12 @@
 Keymap
 ******
 
-The keymap is the list of which key runs which command.  Umamo comes with three, and you can change any binding.  Every command can be run without a key, from the menus or the command palette, so a binding is a shortcut and never the only way.
+The keymap is the list of keyboard shortcuts mapped tp a command.  Umamo comes with three, and you can change any binding.  Every command can be run without a key, from the menus or the command palette, so a keybind is a shortcut and never the only way.
 
 How Bindings Work
 =================
 
-A binding connects a **chord** to a **command**.  A chord is a key together with the modifier keys held down with it: :kbd:`G`, :kbd:`Ctrl-S`, :kbd:`Shift-Alt-Z`.
+A binding connects a **chord** to a **command**.  A chord is a key and the modifier keys held down simultaneously : :kbd:`G`, :kbd:`Ctrl-S`, :kbd:`Shift-Alt-Z`.
 
 * **One chord runs one command.**  A command can have more than one chord, such as the two that open the command palette.
 * **A binding names a key by its position.**  The shortcut stays on the same physical key, whatever the layout of your keyboard.  The letters in this manual and in Umamo's menus name keys by their place on a US QWERTY keyboard.
@@ -82,14 +82,10 @@ Editing Bindings
 
 :guilabel:`Keybindings` in Settings lists every command that has a name, with its shortcut at the right.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
-
-	:Show: The Keybindings category of Settings: the Preset list and the Reset to Preset button at the top, then rows of command names with their shortcuts, one row capturing with ``Press a shortcut…`` on its chip.
-	:Setup: Open Edit → Settings…, choose Keybindings, and click the shortcut of any command.
-	:Crop: The Settings window.
-	:Save as: ``images/interface/keybindings.png``
-	:Caption: Rebinding a command.
+.. image:: ./img/keybind_window.png
+   :width: 100%
+   :align: center
+   :alt: A settings window that displays keybinds.
 
 To change a shortcut:
 
