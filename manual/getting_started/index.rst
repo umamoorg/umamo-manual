@@ -2,7 +2,7 @@
 Getting Started
 ***************
 
-This chapter covers getting Umamo up and running, from downloading it to your first session.  It describes what your computer needs, how to install Umamo and verify that the download is the one that was published, what you will see the first time it starts, and where it keeps its settings.  If you already use Live2D Cubism, there is also a page that maps what you know to the terms that Umamo uses.
+This chapter covers getting Umamo up and running, from downloading it to your first session.  It describes the computer requirements, how to install Umamo and verify that the download is the one that was published, what you will see the first time it starts, and where it keeps its settings.  If you already use Live2D Cubism, there is also a migration guide to Umamo.
 
 .. toctree::
 	:maxdepth: 1
@@ -40,4 +40,4 @@ Where to Start
 
 .. warning::
 
-	Umamo is alpha-level software and does not save your documents automatically.  Read :doc:`/troubleshooting/backups_and_data_safety` before you start work that matters.
+	Umamo is alpha-level software and does not save your puppet files automatically.  Read :doc:`/troubleshooting/backups_and_data_safety` before you start work that matters.
