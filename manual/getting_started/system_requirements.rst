@@ -2,7 +2,7 @@
 System Requirements
 *******************
 
-Umamo runs on Windows, macOS, and Linux.  Since its a graphics editing program it uses more resources of your system than a typical program.  Depending on the size and complexity of the puppet models that you plan to work on your computer will need to meet certain minimum recommendations.
+Umamo runs on Windows, macOS, and Linux.  Since it's a graphics editing program it uses more resources of your system than a typical program.  Depending on the size and complexity of the puppet models that you plan to work on your computer will need to meet certain minimum recommendations.
 
 .. list-table::
 	:header-rows: 1
@@ -14,7 +14,7 @@ Umamo runs on Windows, macOS, and Linux.  Since its a graphics editing program i
 	* - Memory
 	  - 16 GB
 	  - 32 GB or more
-	  - 8 GB is possible, but may requiring closing other programs.
+	  - 8 GB is possible, but may require closing other programs.
 	* - Processor
 	  - 4 cores
 	  - —
@@ -22,7 +22,7 @@ Umamo runs on Windows, macOS, and Linux.  Since its a graphics editing program i
 	* - Windows
 	  - Windows 10 or 11
 	  - —
-	  - JAR distributions may run on earlier versions of Windows, but is untested and unsupported.
+	  - JAR distributions may run on earlier versions of Windows, but it is untested and unsupported.
 	* - MacOS
 	  - MacOS 11 (Intel)
 	  - MacOS 15 (Apple silicon)
@@ -67,7 +67,7 @@ See :doc:`/getting_started/installing` for the downloads, and :doc:`/troubleshoo
 Java (Jar Builds)
 =================
 
-The installers and archives do not require Java to be installed on your computer.  The ``.jar`` does require Java 21 or newer from any provider.  Check which version you have with ``java -version``.  Intel Macs use the ``.jar`` and this require Java.
+The installers and archives do not require Java to be installed on your computer.  The ``.jar`` does require Java 21 or newer from any provider.  Check which version you have with ``java -version``.  Intel Macs use the ``.jar`` and this requires Java.
 
 Each ``.jar`` is built for one system and one architecture that only includes the libraries for that combination, so download the one that matches your computer.  See :ref:`running-the-jar`.
 
@@ -81,7 +81,7 @@ High resolution screens are supported with percentage scaling.
 Memory
 ======
 
-A model with many layers and large texture atlases needs a lot of memory, and exporting needs more than editing does.  16 GB is the recommended minimum and 32 GB or more is preferred amount of memory.  8 GB has been tested, but heavy models can run out of memory.
+A model with many layers and large texture atlases needs a lot of memory, and exporting needs more than editing does.  16 GB is the recommended minimum and 32 GB or more is the preferred amount of memory.  8 GB has been tested, but heavy models can run out of memory.
 
 By default, Umamo is set to use up to half of the memory in your computer.  The installers and archives are configured this way and the ``.jar`` will restart itself to apply the same limit.  See :doc:`/troubleshooting/performance_and_memory`.
 
