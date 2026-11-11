@@ -20,6 +20,7 @@ extensions = [
     "sphinx.ext.extlinks",
     "sphinx_copybutton",
     "sphinx_design",
+    "sphinxcontrib.video",
 ]
 
 source_suffix = {
