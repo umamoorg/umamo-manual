@@ -47,7 +47,7 @@ Each translation is a file with the same name in a folder beside it, named for t
 
 * Change only the text inside each ``<string>`` element.  Leave its ``name`` as it is.
 * Keep placeholders such as ``%1$s`` in the translated text.  Umamo fills them in with a name or a number.
-* Do not translate format-level identifiers such as ``ParamAngleX``.  They are part of the Cubism data model and stay as they are so that files remain compatible.  The names that you give to your own parts and parameters are also left alone, because they belong to your document.
+* Do not translate format-level identifiers such as ``ParamAngleX``.  They are part of the Cubism data model and stay as they are so that files remain compatible.  The names that you give to your own parts and parameters are also left alone, because they belong to your puppet.
 * Partial translations are welcome.  Any untranslated strings will default to showing the English string.
 
 It helps the next translator if the file starts with a comment that lists the terms you chose and the style you used, as the French file does.  For example, it chooses the polite form of address.
