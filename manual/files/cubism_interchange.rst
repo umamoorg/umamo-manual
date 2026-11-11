@@ -2,7 +2,7 @@
 Cubism Interchange
 ******************
 
-Umamo works with the CMO3 and MOC3 model formats of Live2D Cubism, so that a model can be brought into Umamo from the Cubism Editor, worked on, and then sent back out.  It imports them into a new document and exports a new file from the open document, and the original file is never modified.
+Umamo works with the CMO3 and MOC3 model formats of Live2D Cubism, so that a model can be brought into Umamo from the Cubism Editor, worked on, and then sent back out.  It imports them into a new puppet and exports a new file from the open puppet, and the original file is never modified.
 
 Roles of Each Format
 ====================
@@ -14,7 +14,7 @@ Roles of Each Format
 	  - What it is
 	  - In Umamo
 	* - UMA
-	  - Umamo's own document.
+	  - Umamo's own puppet file.
 	  - Open and Save.  See :doc:`/files/uma`.
 	* - CMO3
 	  - The project file of the Cubism Editor.  It holds the model, the layered artwork it was made from, and the editor's own settings.
@@ -23,7 +23,7 @@ Roles of Each Format
 	  - The baked model that an application plays.  It holds only the puppet geometry and the texture atlas pages.
 	  - Import and Export, together with its sidecar files.
 
-A CMO3 is the source project and a MOC3 is the finished model that an application plays.  The Cubism Editor produces a MOC3 from a CMO3  and Umamo can export either one from the open document.
+A CMO3 is the source project and a MOC3 is the finished model that an application plays.  The Cubism Editor produces a MOC3 from a CMO3  and Umamo can export either one from the open puppet.
 
 A MOC3 comes with a group of files which are referred to as sidecars.  Besides the ``.moc3`` file, there is a ``.model3.json`` manifest that lists the others, a ``.cdi3.json`` file with the display names of the parameters and parts and how the parameters are grouped, the texture pages as PNG images, and, when the model has them, physics, pose, expression, motion, and user data files.  Umamo reads and writes the group as a whole.
 
@@ -32,9 +32,9 @@ Umamo is not affiliated with Live2D Inc., and its support for these formats was 
 Importing
 =========
 
-Importing a model replaces the open document with a new document made from the file.  If the open document has unsaved changes you will be asked to save first.  The imported file is not changed and the new document is not linked to it.  The first Save asks where to put an UMA file and suggests the name of the file that you imported.
+Importing a model replaces the open puppet with a new puppet made from the file.  If the open puppet has unsaved changes you will be asked to save first.  The imported file is not changed and the new puppet is not linked to it.  The first Save asks where to put an UMA file and suggests the name of the file that you imported.
 
-The status bar shows the progress while a large model is read.  A file that cannot be imported leaves the open document as it was and shows an alert.  See :ref:`uma-open-failures`.
+The status bar shows the progress while a large model is read.  A file that cannot be imported leaves the open puppet as it was and shows an alert.  See :ref:`uma-open-failures`.
 
 Import can be accessed from the File menu or from the command palette as :guilabel:`Import CMO3…` and :guilabel:`Import MOC3…`.
 
@@ -96,42 +96,42 @@ What comes in is the baked model: Its parameters, parts, deformers, drawables, m
 
 The physics, pose, expression, motion, and user data files are kept as they were and written out unchanged by Export MOC3.  Umamo does not edit them.  The groups and hit areas of the manifest are kept in the same way.
 
-A MOC3 has no layers, so the document has no source artwork.  Adding artwork to it is refused with the notice ``Artwork can't be added to documents created from imported MOC3 files.``  Export a CMO3 first, import that file, and add the artwork there.
+A MOC3 has no layers, so the puppet has no source artwork.  Adding artwork to it is refused with the notice ``Artwork can't be added to a puppet created from a MOC3.``  Export a CMO3 first, import that file, and add the artwork there.
 
 Compatible Cubism Versions
 ==========================
 
 Umamo reads and writes CMO3 files and is tested with Cubism Editor 4.2 to 5.4.  It reads and writes MOC3 files from version 1 to version 6, which are the models of Cubism 3.0 to 5.4.  See :doc:`/files/runtime_targets` for the version that each Runtime Target uses.
 
-The Runtime Target of the document decides what an export writes when exporting a MOC3 file.
+The Runtime Target of the puppet decides what an export writes when exporting a MOC3 file.
 
 A newer version of Cubism may add something that Umamo does not know about.  If that happens, open an issue on `GitHub <https://github.com/umamoorg/umamo/issues>`__ that describes the problem and includes a sample file.  See :doc:`/troubleshooting/reporting_bugs`.
 
 Exporting CMO3
 ==============
 
-Export CMO3 writes a project that the Cubism Editor can open.  How it is built depends on where the document came from:
+Export CMO3 writes a project that the Cubism Editor can open.  How it is built depends on where the puppet came from:
 
 .. list-table::
 	:header-rows: 1
 
-	* - The document came from
+	* - The puppet came from
 	  - The CMO3 is built from
 	* - A CMO3
-	  - A fresh copy of the original file's contents with your edits applied on top.  Everything that Cubism stored and Umamo does not edit is written back.  A document without edits exports its model unchanged.
+	  - A fresh copy of the original file's contents with your edits applied on top.  Everything that Cubism stored and Umamo does not edit is written back.  A puppet without edits exports its model unchanged.
 	* - Artwork
 	  - The model.  The real layers and folders of the artwork are written into the file, and every drawable keeps its layer binding.
 	* - A MOC3
 	  - The model, with a stand-in source rebuilt from the atlas pages.  Each layer is a slice of a baked page and not the artwork the model was drawn from.  The file opens and renders in the Cubism Editor, and the export report notes this.
-	* - An UMA file, or a new document
+	* - An UMA file, or a new puppet
 	  - The model.  Anything that Cubism stored and the UMA file does not carry is absent.
 
-Export CMO3 never changes the open document or the original file.  Anything that the CMO3 format does not support will be listed in the export report.  See :doc:`/files/exporting` for the dialog and :doc:`/files/export_notices` for the report.
+Export CMO3 never changes the open puppet or the original file.  Anything that the CMO3 format does not support will be listed in the export report.  See :doc:`/files/exporting` for the dialog and :doc:`/files/export_notices` for the report.
 
 Exporting MOC3
 ==============
 
-Export MOC3 bakes the open document into a MOC3 and its sidecar files.  Whatever the document came from, the MOC3 is baked fresh from the model, so it is not byte-for-byte the same as the file that you imported.
+Export MOC3 bakes the open puppet into a MOC3 and its sidecar files.  Whatever the puppet came from, the MOC3 is baked fresh from the model, so it is not byte-for-byte the same as the file that you imported.
 
 The MOC3 format version follows the Runtime Target.  Any feature that the version does not support is stripped from the exported file, and the export report will list it.  See :doc:`/files/runtime_targets`.
 

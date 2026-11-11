@@ -2,7 +2,7 @@
 Exporting
 *********
 
-Exporting writes a new file from the open document and leaves the document as it is.  Umamo can export a model as a CMO3, or as a MOC3 with its sidecar files, and can export a picture of the posed model as a PNG image.
+Exporting writes a new file from the open puppet and leaves the puppet as it is.  Umamo can export a model as a CMO3, or as a MOC3 with its sidecar files, and can export a picture of the posed model as a PNG image.
 
 The Export Menu
 ===============
@@ -33,10 +33,10 @@ None of them has a default shortcut.  A row is greyed out while there is nothing
 
 Some things are the same for every export:
 
-* An export is not a save.  The document is not marked as saved, its title does not change, and the UMA file is not touched.
-* The file picker suggests the name of the document's UMA file without its extension.  If there is none, it suggests the name of the file that the document came from, or ``Untitled``.  The picker adds the extension.
-* The status bar shows ``Exporting model…`` or ``Exporting image…`` while the file is written, and ``Exported`` with the name of the file when it is done.  You can keep working in the meantime.
-* Only one model export runs at a time.  Starting another CMO3 or MOC3 export shows the notice ``An export is already in progress.``  Anything that replaces the open document or quits Umamo, such as New and Open, waits for a running model export to finish and shows ``Waiting on export to finish…`` in the status bar.
+* An export is not a save.  The puppet is not marked as saved, its title does not change, and the UMA file is not touched.
+* The file picker suggests the name of the puppet's UMA file without its extension.  If there is none, it suggests the name of the file that the puppet came from, or ``Untitled``.  The picker adds the extension.
+* The status bar shows ``Exporting puppet…`` or ``Exporting image…`` while the file is written, and ``Exported`` with the name of the file when it is done.  You can keep working in the meantime.
+* Only one model export runs at a time.  Starting another CMO3 or MOC3 export shows the notice ``An export is already in progress.``  Anything that replaces the open puppet or quits Umamo, such as New and Open, waits for a running model export to finish and shows ``Waiting on export to finish…`` in the status bar.
 * A CMO3 and an image are written to a temporary file first and moved into place when they are complete, so a failed export leaves the old file as it was.  The files of a MOC3 are written straight into place.
 * The native file picker asks before it replaces the file that you picked.  A MOC3 export also writes other files beside it and has a warning of its own for those.  See `Overwrite Warning`_.
 
@@ -60,7 +60,7 @@ Export MOC3
 
 	:Menu: :menuselection:`File --> Export --> MOC3…`
 
-Export MOC3 bakes the document into a runtime model.  It first shows the `Export Options`_ dialog.  When you confirm it, the file picker asks where to put the ``.moc3`` file, and Umamo builds and writes the files that make up the model.
+Export MOC3 bakes the puppet into a runtime model.  It first shows the `Export Options`_ dialog.  When you confirm it, the file picker asks where to put the ``.moc3`` file, and Umamo builds and writes the files that make up the model.
 
 Export Options
 --------------
@@ -99,7 +99,7 @@ Export Options
 
 :guilabel:`Pixels per unit` says how many pixels of the canvas make one unit of the model.  It starts at the scale the model was imported with.  Otherwise it starts at the width of the canvas in pixels, so that the canvas is one unit wide.  Under the field, the dialog shows the size of the canvas in units at the scale that you entered.
 
-Umamo remembers the choices until you quit, so the next dialog opens with them, but it does not save them to your settings.  The checkboxes carry over to other documents.  The scale is kept for the same document only, and a different document starts with its own.  The choices are remembered once you confirm the dialog, even if you then cancel the file picker.
+Umamo remembers the choices until you quit, so the next dialog opens with them, but it does not save them to your settings.  The checkboxes carry over to other puppets.  The scale is kept for the same puppet only, and a different puppet starts with its own.  The choices are remembered once you confirm the dialog, even if you then cancel the file picker.
 
 Files Written
 -------------
@@ -165,7 +165,7 @@ Region
 	* - :guilabel:`Viewport`
 	  - Exactly what the current 2D Viewport shows with the same pan and zoom.  If a 2D Viewport is not shown in the current workspace this option will be hidden.  At a scale of 100% the image matches the viewport pixel for pixel.
 	* - :guilabel:`Canvas`
-	  - The canvas of the document.  This region is only offered when the document has a defined canvas.
+	  - The canvas of the puppet.  This region is only offered when the puppet has a defined canvas.
 	* - :guilabel:`Visible Content`
 	  - The drawables that are shown in the current pose, cropped tightly around them.  This is the default.
 
@@ -188,7 +188,7 @@ Background
 :guilabel:`Viewport Grid`
 	The grid and the world axes, as the viewport shows them.  See :doc:`/editors/viewport_2d/overlays`.
 
-Umamo remembers these choices for every document until you quit.
+Umamo remembers these choices for every puppet until you quit.
 
 Export Reports and Failures
 ===========================

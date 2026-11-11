@@ -78,7 +78,7 @@ You can also drag a file onto the window.  The first file in a drop decides what
 
 .. warning::
 
-	Umamo is alpha-level software and does not save your puppet files automatically.  Work on copies of your files and use :menuselection:`File --> Save…` often to save your file.  See :doc:`/troubleshooting/backups_and_data_safety`.
+	Umamo is alpha-level software and does not save your puppet files automatically.  Work on copies of your files and use :menuselection:`File --> Save` often to save your file.  See :doc:`/troubleshooting/backups_and_data_safety`.
 
 Low-Memory Notice
 =================

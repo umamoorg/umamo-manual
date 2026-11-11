@@ -2,12 +2,12 @@
 Runtime Targets and Cubism Versions
 ***********************************
 
-Every target runtime version can play a different set of features.  A model that uses a feature that an older runtime lacks may play incorrectly there or not at all.  The Runtime Target of a document says which runtime the model is intended to play on.  When a runtime target is selected Umamo will hide the features and controls that the runtime cannot play.  When you export to MOC3 it writes the format version for that runtime.
+Every target runtime version can play a different set of features.  A model that uses a feature that an older runtime lacks may play incorrectly there or not at all.  The Runtime Target of a puppet says which runtime the model is intended to play on.  When a runtime target is selected Umamo will hide the features and controls that the runtime cannot play.  When you export to MOC3 it writes the format version for that runtime.
 
 What a Runtime Target Is
 ========================
 
-The Runtime Target is a document setting and is saved into it.  This is the same as the "Select Target Version" in the Cubism Editor.
+The Runtime Target is a setting of the puppet and is saved into it.  This is the same as the "Select Target Version" in the Cubism Editor.
 
 A target limits what you can *author*.  It does not delete any existing authored features:
 
@@ -18,20 +18,20 @@ A target limits what you can *author*.  It does not delete any existing authored
 Choosing a Target
 =================
 
-The :guilabel:`Target` list is in the :guilabel:`Runtime` section of the Document tab of the Properties editor.  See :doc:`/editors/properties/document_tab`.  Changing it is an undoable step that the History editor labels ``Set Runtime Target``.
+The :guilabel:`Target` list is in the :guilabel:`Runtime` section of the Puppet tab of the Properties editor.  See :doc:`/editors/properties/document_tab`.  Changing it is an undoable step that the History editor labels ``Set Runtime Target``.
 
 .. figure:: /images/files/runtime_target.png
 
-	The Runtime section of the Document tab.
+	The Runtime section of the Puppet tab.
 
-The starting target depends on where the document came from:
+The starting target depends on where the puppet came from:
 
 * A CMO3 starts with the target the file was saved for, or with :guilabel:`No Target (All Features)` when it was saved for the latest Cubism.
 * A MOC3 starts with the target that matches its version.
 * An UMA file starts with the target that it was saved with.
-* A new document and a document made from artwork starts with :guilabel:`No Target (All Features)`.
+* A new puppet and a puppet made from artwork start with :guilabel:`No Target (All Features)`.
 
-Below the list, Umamo names the features that the chosen target restricts, or says ``All features are available.``  A restricted feature that your document already uses is marked ``CURRENTLY IN USE``, so that you can see what a MOC3 export would remove.
+Below the list, Umamo names the features that the chosen target restricts, or says ``All features are available.``  A restricted feature that your puppet already uses is marked ``CURRENTLY IN USE``, so that you can see what a MOC3 export would remove.
 
 Target List
 ===========
@@ -47,6 +47,10 @@ Target List
 	  - 6 (Latest Version)
 	  - —
 	  - No restrictions.  The MOC3 version is written out as the latest.
+	* - Ayagami (Cubism 5.0 Equivalent)
+	  - 5
+	  - 5.0
+	  - Free, Open Source Runtime - `Ayagami <https://github.com/AyagamiDev/ayagami>`__
 	* - Ayagami (Cubism 5.3 Equivalent)
 	  - 6
 	  - 5.3
@@ -136,8 +140,8 @@ What a restricted target does in the editor:
 
 What it does not do:
 
-* It never stops a model from rendering.  A document that uses features beyond the target still renders in full.
-* It never removes anything from the document and it never stops a save to UMA or an export to CMO3.
+* It never stops a model from rendering.  A puppet that uses features beyond the target still renders in full.
+* It never removes anything from the puppet and it never stops a save to UMA or an export to CMO3.
 
 A MOC3 export is the only place where a target removes anything.  It writes a file compatible with the target version and strips any unavailable features.  The export report will list anything that was removed from the export.  For example, a line of the report reads ``Multiply Color is not available for the target runtime version, so it was removed from:`` followed by a list of the items it was removed from.  See :doc:`/files/export_notices`.
 

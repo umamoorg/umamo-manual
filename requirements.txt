@@ -4,3 +4,4 @@ furo~=2025.12
 myst-parser~=5.1
 sphinx-copybutton~=0.5
 sphinx-design~=0.7
+sphinxcontrib-video~=0.4
