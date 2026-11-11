@@ -25,19 +25,19 @@ Each row has an arrow to open or close it, a small icon for what it is, and its 
 
 When you select an object somewhere else, such as by clicking it in the 2D Viewport, the Outliner opens the branches above its row and scrolls to it.  A click in the Outliner itself never scrolls the list.
 
-Which branches are open, which kinds of rows and which columns are shown, belong to the area and are saved in the document.  See :doc:`/files/uma`.
+Which branches are open, which kinds of rows and which columns are shown, belong to the area and are saved in the puppet file.  See :doc:`/files/uma`.
 
 Header
 ======
 
-The header of an Outliner has a search field in the middle and a filter button at the right end.  Neither shows without a document.
+The header of an Outliner has a search field in the middle and a filter button at the right end.  Neither shows without an open puppet.
 
 Search
 ------
 
 Type part of a name to see only the rows that match, with the branches above them.  The match ignores upper and lower case.  Every branch opens while a search is on, so a match is never hidden in a closed branch, and the arrows do nothing until the search is cleared.
 
-If you clicked a row among the results, clearing the search brings the tree back with that row in view.  The search text is not saved with the document, so a file always reopens to the whole tree.
+If you clicked a row among the results, clearing the search brings the tree back with that row in view.  The search text is not saved with the puppet file, so the file always reopens to the whole tree.
 
 Filters
 -------
@@ -73,7 +73,7 @@ Two columns of small icons are at the right end of each row, the pointer first a
 * The **pointer** column says whether the object can be selected in the viewport.  Click it to switch it.  An object that cannot be selected is skipped by clicks and boxes in the 2D Viewport.  Parts, drawables, and deformers all have a pointer.
 * The **eye** column says whether the object is shown.  Click it to hide or show it.  The eye is struck through while the object is hidden.  Parts and drawables have an eye.  Deformers do not.
 
-Clicking an icon changes the flag and does not select the row.  :kbd:`Shift`-click an icon to set the row and everything under it to one value, the opposite of the clicked row's, so that a mixed branch ends up the same.  Each change is one undo step, and it is saved with the document.
+Clicking an icon changes the flag and does not select the row.  :kbd:`Shift`-click an icon to set the row and everything under it to one value, the opposite of the clicked row's, so that a mixed branch ends up the same.  Each change is one undo step, and it is saved with the puppet file.
 
 Hiding a part hides everything inside it in the viewport, whatever the eye of each of them says.  Only the part's own row is dimmed.  See :doc:`/modeling/parts_and_drawables`.
 

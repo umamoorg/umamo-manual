@@ -112,7 +112,7 @@ Per-Area Cameras and the Zoom Readout
 
 Every area has a view of its own, so two 2D Viewports can look at two parts of the model, one close and one far.  The first time that an area shows the model, it fits it.  After that the area keeps its view.
 
-An area that you switch between a 2D Viewport and a UV Editor keeps a view for each, because the model's canvas and a texture page do not share coordinates.  The views are saved in the document, so it reopens with the same views.  See :doc:`/files/uma`.
+An area that you switch between a 2D Viewport and a UV Editor keeps a view for each, because the model's canvas and a texture page do not share coordinates.  The views are saved in the puppet file, so the file reopens with the same views.  See :doc:`/files/uma`.
 
 The percentage at the bottom left of the area is the zoom of its view.  Hide it, with the other chips, by turning off :guilabel:`General Information` in the overlays.  See :doc:`/editors/viewport_2d/overlays`.
 

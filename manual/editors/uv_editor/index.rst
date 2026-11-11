@@ -41,7 +41,7 @@ Texture selector
 	Chooses the picture: :guilabel:`Follow Selection`, :guilabel:`Source Layer`, or a page.  See :doc:`/editors/uv_editor/texture_selector`.
 
 :guilabel:`Find by Artwork`
-	A magnifier button that finds a drawable by the layer it is drawn from.  It is there only when the document keeps its source artwork.
+	A magnifier button that finds a drawable by the layer it is drawn from.  It is there only when the puppet keeps its source artwork.
 
 Select mode buttons
 	Vertex, edge, and face select mode.  They are only there in Edit Mode, and they are the shared ones: choosing one here chooses it in the 2D Viewport too.

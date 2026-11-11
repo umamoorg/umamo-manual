@@ -40,7 +40,7 @@ Track Kinds
 An owner row has these tracks under it.  The name of the track is on the left, and its keys are marks on the right.
 
 :guilabel:`Geometry`
-	The form of the item as it changes with the parameter: the mesh of a drawable, the lattice of a warp, or the own form of a rotation deformer.  The marks are round.
+	The form of the item as it changes with the parameter: the mesh of a drawable, the lattice of a warp, or the form of a rotation deformer itself.  The marks are round.
 
 Property tracks
 	One for each property that is keyed, named for it: :guilabel:`Draw Order`, :guilabel:`Opacity`, :guilabel:`Multiply`, :guilabel:`Screen`, :guilabel:`Flip X`, :guilabel:`Flip Y`, or :guilabel:`Glue Intensity`.  The marks are round.  An item can key opacity on a parameter that its shape does not use, and then it has the one track and not the other.
@@ -75,7 +75,7 @@ The header has one control, the :guilabel:`Filters` button.  It lists three chec
 * :guilabel:`Property Tracks` are the opacity, color, draw order, flip, and glue tracks.
 * :guilabel:`Blend Shape Tracks` are the blend shapes.
 
-All three are on at first.  A track that is filtered out is not in the sheet at all, so an owner with nothing left loses its row, and a summary mark never stands for a key that you cannot see.  The button has another glyph while a kind is hidden.  The filters are saved with the document.
+All three are on at first.  A track that is filtered out is not in the sheet at all, so an owner with nothing left loses its row, and a summary mark never stands for a key that you cannot see.  The button has another glyph while a kind is hidden.  The filters are saved with the puppet file.
 
 Selecting Keys
 ==============
@@ -123,7 +123,7 @@ Delete Keyframe
 
 Removes the key under the pointer.  Pointing at a track but not at a key removes nothing, so it can never take a key that you were not pointing at.  Over a Properties field it removes the key at the pose.
 
-:guilabel:`Delete Selected Keys` removes every selected key in one step.  It is :kbd:`Delete` in the Default and Blender keymaps, and it is in the command palette for all of them.
+:guilabel:`Delete Selected Keys` removes every selected key in one step.  It is :kbd:`Delete` in the Default keymap, and it is in the command palette.
 
 Insert Key by Type
 ------------------
@@ -146,7 +146,7 @@ Drag a mark left or right to move its key to a new value.  A key moves along its
 * Dragging a mark that is not selected selects it first.
 * A key stops at the ends of the range, and a group stops when its first key reaches an end.  The preview does not run past the point where the drag will stop.
 * A key can be moved past its neighbors.  The keys are numbered again, and the selection follows the keys that you moved.
-* :kbd:`Left` and :kbd:`Right` nudge the selected keys by one hundredth of their range.  :guilabel:`Nudge Keyframe Left` and :guilabel:`Nudge Keyframe Right` are the commands, and they are bound in the Default and Blender keymaps.
+* :kbd:`Left` and :kbd:`Right` nudge the selected keys by one hundredth of their range.  :guilabel:`Nudge Keyframe Left` and :guilabel:`Nudge Keyframe Right` are the commands.
 * The drag, the nudge, and the selection that goes with them are one undo step.
 
 Window Controls
@@ -161,7 +161,7 @@ The sheet shows the whole range at first.  To look closer at a part of it:
 * :guilabel:`Frame All Keys`, which is :kbd:`Home` over the sheet, frames the whole range again.
 * Drag the separator between the names and the tracks to change the width of the names.
 
-The plain wheel scrolls the list of tracks up and down.  The window, the width of the names, the open owners, the folded sections, and the filters are saved with the document.
+The plain wheel scrolls the list of tracks up and down.  The window, the width of the names, the open owners, the folded sections, and the filters are saved with the puppet file.
 
 Context Menus
 =============

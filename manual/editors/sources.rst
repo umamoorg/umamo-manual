@@ -2,7 +2,7 @@
 Sources
 *******
 
-The Sources editor is a table of the artwork behind the model.  It lists the artwork files that the document was made from, the layers of each file, the pieces of art that are bound to those layers, and the drawables that are drawn from each piece.  Use it to see what is bound to what, to find a drawable by the layer it came from, to reload files that you changed in your art program, and to repair a binding that a change broke.  What a binding is, and how reloading works, is in :doc:`/artwork/relinking_and_reloading`.
+The Sources editor is a table of the artwork behind the model.  It lists the artwork files that the puppet was made from, the layers of each file, the pieces of art that are bound to those layers, and the drawables that are drawn from each piece.  Use it to see what is bound to what, to find a drawable by the layer it came from, to reload files that you changed in your art program, and to repair a binding that a change broke.  What a binding is, and how reloading works, is in :doc:`/artwork/relinking_and_reloading`.
 
 .. admonition:: Screenshot needed
 	:class: screenshot-needed
@@ -18,31 +18,31 @@ Reading the Table
 
 The table is a tree, from the file down to the drawable:
 
-#. An **artwork file** that the document lists.
+#. An **artwork file** that the puppet lists.
 #. The **layers** that the file had the last time Umamo read it.
-#. The **tiles** that are bound to each layer.  A tile is one piece of art in the document's atlas.
+#. The **tiles** that are bound to each layer.  A tile is one piece of art in the puppet's atlas.
 #. The **drawables** that are drawn from each tile.
 
-At the end is a group, :guilabel:`Unbound Art`, with the tiles that are bound to no layer, and the tiles that are bound to a file that the document does not list.
+At the end is a group, :guilabel:`Unbound Art`, with the tiles that are bound to no layer, and the tiles that are bound to a file that the puppet does not list.
 
-Files and the :guilabel:`Unbound Art` group are open at first, and layers and tiles are closed.  Click the arrow of a row to open or close it.  Which rows are open is saved with the document.
+Files and the :guilabel:`Unbound Art` group are open at first, and layers and tiles are closed.  Click the arrow of a row to open or close it.  Which rows are open is saved with the puppet file.
 
-An empty document has an empty table.
+An empty puppet has an empty table.
 
 Header Controls
 ===============
 
-The header has, left to right, the :guilabel:`Import Artwork…` button, the search field, the :guilabel:`Match Automatically` button, the :guilabel:`Reload Artwork Files` button, and the :guilabel:`Filters` button.  They do not show without a document.
+The header has, left to right, the :guilabel:`Import Artwork…` button, the search field, the :guilabel:`Match Automatically` button, the :guilabel:`Reload Artwork Files` button, and the :guilabel:`Filters` button.  They do not show without an open puppet.
 
 Import Artwork
 --------------
 
-The first button runs :guilabel:`Import Artwork…`, the same command as in the File menu.  It opens the import dialog and adds the file you choose to the document.  See :doc:`/artwork/importing`.
+The first button runs :guilabel:`Import Artwork…`, the same command as in the File menu.  It opens the import dialog and adds the file you choose to the open puppet.  See :doc:`/artwork/importing`.
 
 Search
 ------
 
-Type part of a name to list only the rows that match, with the rows above them for context.  The match is on the names of files, layers, tiles, and drawables, and ignores upper and lower case.  Every row opens while you search, and the arrows do nothing until you clear the field.  The text is not saved with the document.
+Type part of a name to list only the rows that match, with the rows above them for context.  The match is on the names of files, layers, tiles, and drawables, and ignores upper and lower case.  Every row opens while you search, and the arrows do nothing until you clear the field.  The text is not saved with the puppet file.
 
 Match Automatically
 -------------------
@@ -56,7 +56,7 @@ Reload Artwork Files
 
 The button with the circular arrow runs :guilabel:`Reload Artwork`.  It checks that every file is still there, and then reloads the files that are, as one undo step.  A notice says what changed, such as ``Artwork reloaded: 2 updated, 1 added, 4 matched.``  If no file changed, it says ``The artwork file(s) have not changed.``
 
-When Umamo has noticed that files changed on disk and is waiting for you, the button shows an alert mark, and its tooltip says ``Artwork files changed on disk.  Reload to take the changes.``  That happens when :guilabel:`Watch Artwork Files` is :guilabel:`Notify Only`, or when a file was edited while the document was closed.  See :doc:`/artwork/source_watcher`.
+When Umamo has noticed that files changed on disk and is waiting for you, the button shows an alert mark, and its tooltip says ``Artwork files changed on disk.  Reload to take the changes.``  That happens when :guilabel:`Watch Artwork Files` is :guilabel:`Notify Only`, or when a file was edited while the puppet file was closed.  See :doc:`/artwork/source_watcher`.
 
 Filters
 -------
@@ -70,12 +70,12 @@ The :guilabel:`Filters` button lists one checkbox for each kind of row:
 	Layers that no tile is bound to, the ignored ones among them, and tiles that are bound to no layer.
 
 :guilabel:`Missing Files`
-	Files that are no longer where the document read them, with everything under them.
+	Files that are no longer where the puppet read them, with everything under them.
 
 :guilabel:`Needs Review`
 	Bindings that a reload could not settle.  See `Reviewing a Binding`_.
 
-All four are on at first.  A kind that is off is left out with what is under it.  The rows that give context to a row that is shown stay.  The button has another glyph while a kind is off, and the choice is saved with the document.
+All four are on at first.  A kind that is off is left out with what is under it.  The rows that give context to a row that is shown stay.  The button has another glyph while a kind is off, and the choice is saved with the puppet file.
 
 Row Types and Columns
 =====================
@@ -91,7 +91,7 @@ Every row has the same parts: an arrow, an icon, a name with a line of detail, a
 	  - Button
 	* - File
 	  - The sources glyph, which is red with a broken file when the file is missing
-	  - The format and the number of layers, such as ``PSD · 24 layers``, and ``no path recorded`` when the document does not know where the file is
+	  - The format and the number of layers, such as ``PSD · 24 layers``, and ``no path recorded`` when the puppet does not know where the file is
 	  - :guilabel:`File Actions`
 	* - Layer
 	  - A link, in a color that gives the status
@@ -125,13 +125,13 @@ The icon of a row says its status, and its tooltip says it in words.  The colors
 	  - Meaning
 	* - Present
 	  - File
-	  - The file is where the document read it.
+	  - The file is where the puppet read it.
 	* - Missing
 	  - File
 	  - The file is not there any more.
 	* - Unknown
 	  - File
-	  - The document has no path for the file, or the platform cannot check.  Umamo never calls a file missing when it could not look.
+	  - The puppet has no path for the file, or the platform cannot check.  Umamo never calls a file missing when it could not look.
 	* - Bound
 	  - Layer
 	  - A tile is bound to the layer by a key that the format made for it.  The binding does not depend on the name of the layer.
@@ -141,24 +141,24 @@ The icon of a row says its status, and its tooltip says it in words.  The colors
 	* - Unbound
 	  - Layer, group
 	  - No tile is bound to the layer.  The art that is bound to none is listed under :guilabel:`Unbound Art`.
-	* - Needs review: The file no longer has this layer
+	* - Needs review: The artwork no longer has this layer
 	  - Layer
 	  - A tile is bound to a layer that its file does not list any more.  The tile keeps its art until you decide.
-	* - Needs review: The layer is empty in the file
+	* - Needs review: The layer is empty in the artwork
 	  - Layer
 	  - The file still has the layer, but it is empty.
-	* - Needs review: The replacement file has no layer under this key
+	* - Needs review: The replacement artwork has no layer under this key
 	  - Layer
 	  - :guilabel:`Replace Artwork…` pointed the file at another file, which has nothing for this binding.
-	* - Needs review: This document does not list the file this art is bound to
+	* - Needs review: This puppet does not list the artwork this art is bound to
 	  - Tile
-	  - The tile is bound to a file that the document does not list.
+	  - The tile is bound to a file that the puppet does not list.
 	* - Ignored: A reload never adds this layer
 	  - Layer
 	  - You asked Umamo to keep the layer out of the rig.
 	* - Unplaced
 	  - Tile
-	  - The tile is in the document and on no page.
+	  - The tile is in the puppet and on no page.
 
 Row Actions
 ===========
@@ -179,7 +179,7 @@ See :doc:`/artwork/relinking_and_reloading`.
 Layer Actions
 -------------
 
-An unbound layer, and an ignored one, has a menu at its end and on a right-click.
+An unbound layer and an ignored layer each have a menu at the end of the row and on a right-click.
 
 :guilabel:`Ignore Layer`
 	A reload never makes a drawable for this layer.  Use it for layers that are only a guide, such as a sketch.

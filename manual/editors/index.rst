@@ -56,12 +56,12 @@ The Area Header
 
 Every area has a header.  At its left end is the editor type, and after it come the controls of that editor.  Most headers follow the same plan:
 
-* **Controls that make or change something** come first, such as :guilabel:`Add Parameter`, and :guilabel:`Import Artwork…`.
+* **Controls that make or change something** come first, such as :guilabel:`Add Parameter` and :guilabel:`Import Artwork…`.
 * A **search field** is in the middle of the headers of the Outliner, the Properties editor, the Parameters editor, and the Sources editor.
 * **Filters and view controls** are at the right end.
 * The 2D Viewport and the UV Editor share their edit controls: the select mode, the pivot point, snapping, proportional editing, and the overlays.  The state behind the select mode, the pivot, and proportional editing belongs to the session, so changing one in a viewport changes it in the UV Editor too.
 
-The controls of most editors are not shown until a document is open.  When a header is too narrow, the controls that do not fit move into a menu at the end of the header, and the editor type never moves.  A right-click on the header opens the menu of the area, with the layout commands.  See :doc:`/interface/window_system`.
+The controls of most editors are not shown until a puppet is open.  When a header is too narrow, the controls that do not fit move into a menu at the end of the header, and the editor type never moves.  A right-click on the header opens the menu of the area, with the layout commands.  See :doc:`/interface/window_system`.
 
 Default Workspaces
 ==================
@@ -82,10 +82,10 @@ Umamo opens in the Modelling workspace, which has the editors that you need to b
 
 :doc:`/editors/history` and :doc:`/editors/logs` are in no default workspace.  Switch any area to them when you need them, then switch back.  See :doc:`/interface/workspaces`.
 
-View State Saved with the Document
-==================================
+View State Saved with the Puppet File
+=====================================
 
-The state of an editor belongs to its area, and it is saved with the document, so a file reopens with the layout of panels as you left it.  See :doc:`/files/uma`.
+The state of an editor belongs to its area, and it is saved with the puppet file, so the file reopens with the layout of panels as you left it.  See :doc:`/files/uma`.
 
 .. list-table::
 	:header-rows: 1

@@ -22,12 +22,12 @@ The selector is a button that names what the area shows now: :guilabel:`Follow S
 	Shows the page of the drawable you are working on.  See `Follow Selection`_.
 
 :guilabel:`Source Layer`
-	Shows the artwork layer of the drawable you are working on, as it was before it was packed.  The row is only in the list when the document keeps its source artwork, which a model opened from a MOC3 does not.
+	Shows the artwork layer of the drawable you are working on, as it was before it was packed.  The row is only in the list when the puppet keeps its source artwork, which a model opened from a MOC3 does not.
 
 ``Page 1 · 2048 × 2048 · 14 meshes``
 	One row for every page of the atlas, with its size in pixels and the number of meshes that are drawn from it.  Choosing a page **pins** it: the area keeps showing that page whatever you select.
 
-A pinned page, and the source layer, are saved with the document.
+A pinned page, and the source layer, are saved with the puppet file.
 
 Follow Selection
 ================
@@ -36,7 +36,7 @@ This is the default.  The page changes by itself to the page of the drawable you
 
 #. The active mesh of Edit Mode.
 #. The active drawable of the selection.
-#. The first drawable with a mesh, so that the area is not blank over a document with art.
+#. The first drawable with a mesh, so that the area is not blank over a puppet with art.
 
 A drawable that has no place on any page has no picture to show.  The area then shows an empty unit square, and the wireframe of its mesh is drawn over the grid.
 
@@ -47,13 +47,13 @@ What is drawn over the picture depends on the mode.  In Object Mode, it is the i
 Find by Artwork
 ===============
 
-The button with the magnifier opens a list of the layers of the source artwork, and selects the drawable that uses the one you choose.  It is there only when the document keeps source artwork.  It is a way to find a drawable by its picture, when you know the layer and not the name of the drawable.
+The button with the magnifier opens a list of the layers of the source artwork, and selects the drawable that uses the one you choose.  It is there only when the puppet keeps source artwork.  It is a way to find a drawable by its picture, when you know the layer and not the name of the drawable.
 
 * Type in the search box to narrow the list.  The search ranks the layers with the same rules as the command palette, so ``eye`` finds the eye layers as it finds the eye commands.  See :doc:`/interface/command_palette`.
 * A row names the layer, its size in pixels, and how many meshes use it, such as ``Eye L · 256 × 256 · 2 meshes``.  Duplicated art is common, and the count shows that a row selects one of several.
 * A row selects the first drawable that uses the layer.  It replaces the selection, so the selection and the picture follow it everywhere, in the viewport and in the Outliner too.
 * A layer that no drawable uses is dimmed, because it selects nothing.
-* ``No artwork matches`` means that the search found nothing.  ``This document has no source artwork.`` means that the list has no layers.
+* ``No artwork matches`` means that the search found nothing.  ``This puppet has no source artwork.`` means that the list has no layers.
 
 Texture Page Commands
 =====================
@@ -78,12 +78,12 @@ The two pictures hold the same art, in different places.
 
 You can edit the texture coordinates over either.  An edit on the source layer is converted back through the place of the art on its page.  You cannot move the art over a source layer, because the layer is not a page: the editor says ``Show an atlas page in the UV editor to move placements.``  Show a page to move art.
 
-The :guilabel:`Show source artwork` setting of the document is a different thing.  It decides what the viewports draw the model from, and has no effect on the UV Editor.  See :doc:`/editors/properties/document_tab`.
+The :guilabel:`Show source artwork` setting of the puppet is a different thing.  It decides what the viewports draw the model from, and has no effect on the UV Editor.  See :doc:`/editors/properties/document_tab`.
 
 Pinned Selections That No Longer Exist
 ======================================
 
-A pin can name a page that is not there any more, for example after a repack that needed fewer pages, or in a file saved by another version.  The area then behaves as :guilabel:`Follow Selection`, and the selector is labeled that way.  The pin is not thrown away, so a later repack that brings the page back finds it still set.  In the same way, :guilabel:`Source Layer` falls back to the page view when the drawable has no layer, and to :guilabel:`Follow Selection` when the document has no source artwork, so nothing goes blank.
+A pin can name a page that is not there any more, for example after a repack that needed fewer pages, or in a file saved by another version.  The area then behaves as :guilabel:`Follow Selection`, and the selector is labeled that way.  The pin is not thrown away, so a later repack that brings the page back finds it still set.  In the same way, :guilabel:`Source Layer` falls back to the page view when the drawable has no layer, and to :guilabel:`Follow Selection` when the puppet has no source artwork, so nothing goes blank.
 
 .. seealso::
 

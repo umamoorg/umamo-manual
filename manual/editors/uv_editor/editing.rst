@@ -27,14 +27,14 @@ The selection is **one selection** for the UV Editor and the 2D Viewport.  A ver
 
 Each confirmed gesture is one undo step: ``Move UVs``, ``Rotate UVs``, or ``Scale UVs``.  It also shows an operation strip with the numbers.  See :doc:`/interface/operation_strip`.
 
-Only the meshes that are **on the shown picture** can be edited.  Over a page, these are the meshes drawn from that page.  Over a source layer, these are the drawables that share that layer.  If none of the meshes you are editing is on it, the commands say ``Nothing to edit here.  None of the edited meshes are on the shown page or layer.``  Pick the page of the mesh with the texture selector.  See :doc:`/editors/uv_editor/texture_selector`.
+Only the meshes that are **on the shown picture** can be edited.  Over a page, these are the meshes drawn from that page.  Over a source layer, these are the drawables that share that layer.  If none of the meshes you are editing is on it, the commands say ``Nothing to edit here.  None of the meshes you are editing are on the page or layer being shown.``  Pick the page of the mesh with the texture selector.  See :doc:`/editors/uv_editor/texture_selector`.
 
 If the selection has no texture coordinates to edit, a gesture says ``The selection has no editable UVs.``
 
 Mirroring
 =========
 
-A mirror reflects the selected texture coordinates about the pivot, in one undo step, ``Mirror UVs``.  It makes a flipped copy of a region: copy a mesh, mirror its UVs, and it shows the same art the other way round.  Both commands are in the palette and in the right-click menu of the UV Editor as :guilabel:`Mirror X` and :guilabel:`Mirror Y`.  They have no shortcut, because a flip you do by hand is :kbd:`S`, an axis, and a drag through the pivot.  You can give them one in :guilabel:`Keybindings`.  See :doc:`/interface/keymap`.
+A mirror reflects the selected texture coordinates about the pivot, in one undo step, ``Mirror UVs``.  It makes a flipped copy of a region: copy a mesh, mirror its UVs, and it shows the same art the other way round.  Both commands are in the palette and in the context menu of the UV Editor as :guilabel:`Mirror X` and :guilabel:`Mirror Y`.  They have no shortcut, because a flip you do by hand is :kbd:`S`, an axis, and a drag through the pivot.  You can give them one in :guilabel:`Keybindings`.  See :doc:`/interface/keymap`.
 
 The axis is the axis of the picture you are looking at.  Over a source layer that is rotated or mirrored on its page, the page's axes and the layer's axes differ, and the mirror follows what you see.  Only the meshes on the shown picture are mirrored, because a mesh on another page is measured in another space.
 
@@ -49,7 +49,7 @@ Mirror UVs Horizontally
 	:Mode: Edit Mode
 	:Menu: Command palette
 
-Reflects the selection left to right, about the pivot.  In the right-click menu it is :guilabel:`Mirror X`.
+Reflects the selection left to right, about the pivot.  In the context menu it is :guilabel:`Mirror X`.
 
 Mirror UVs Vertically
 ---------------------
@@ -60,7 +60,7 @@ Mirror UVs Vertically
 	:Mode: Edit Mode
 	:Menu: Command palette
 
-Reflects the selection top to bottom, about the pivot.  In the right-click menu it is :guilabel:`Mirror Y`.
+Reflects the selection top to bottom, about the pivot.  In the context menu it is :guilabel:`Mirror Y`.
 
 Snapping
 ========
@@ -79,7 +79,7 @@ Proportional Editing
 
 Proportional editing moves the texture coordinates near the selection a little, by distance.  It works in Edit Mode, in the UV Editor as it does in the 2D Viewport: :kbd:`O` turns it on and off, and :kbd:`Alt-O` switches :guilabel:`Connected Only`.  The falloff curve and :guilabel:`Connected Only` are shared with the viewport.  See :doc:`/modeling/proportional_editing`.
 
-The **size** of the influence is the one thing the UV Editor keeps for itself, because the viewport measures it in world units and a texture in texels.  It is in texels, in the :guilabel:`Proportional Size` row of the header, and the wheel changes it during a gesture.  Each picture keeps its own size: going to another page, or to a source layer, brings back the size that you left there.  The size is not saved with the document.
+The **size** of the influence is the one thing the UV Editor keeps for itself, because the viewport measures it in world units and a texture in texels.  It is in texels, in the :guilabel:`Proportional Size` row of the header, and the wheel changes it during a gesture.  Each picture keeps its own size: going to another page, or to a source layer, brings back the size that you left there.  The size is not saved with the puppet file.
 
 View-Only in Pose Mode
 ======================

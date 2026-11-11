@@ -76,14 +76,14 @@ The :guilabel:`Masked By` row is a list of the masking drawables, over a search 
 * Click the field, type part of a name, and press :kbd:`Enter` to add the match that is highlighted.
 * Click the **dropper** and then a drawable in the 2D Viewport or a row of the Outliner to add that drawable.
 * Click the remove button at the end of an entry to take it off.
-* Drag the handle under the list to change its height.  The height is saved in the document.
+* Drag the handle under the list to change its height.  The height is saved in the puppet file.
 
 Any drawable can be a mask except the drawable itself.  A drawable is listed once.
 
 Blend Shapes
 ------------
 
-A read-only line for every blend shape the drawable has, such as ``Smile: 3 keys``, with the name of the parameter that drives it and the number of keys.  The section is left out for a drawable that has none.  A blend shape is made and keyed elsewhere.  See :doc:`/rigging/blend_shapes`.
+A read-only line for every blend shape the drawable has, such as ``Smile: 3 key(s)``, with the name of the parameter that drives it and the number of keys.  The section is left out for a drawable that has none.  A blend shape is made and keyed elsewhere.  See :doc:`/rigging/blend_shapes`.
 
 Warp Deformer
 =============

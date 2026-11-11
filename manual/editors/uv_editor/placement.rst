@@ -59,22 +59,22 @@ A gesture is refused, with a notice near the pointer, when it could not be carri
 	* - ``Show an atlas page in the UV editor to move placements.``
 	  - The editor shows a source layer, and not a page.
 	* - ``Nothing selected is packed on an atlas page or there is no source artwork.``
-	  - The selected drawables have no placement.  Their art is not on a page that Umamo packed, or the document keeps no source artwork to compose the page from.
+	  - The selected drawables have no placement.  Their art is not on a page that Umamo packed, or the puppet keeps no source artwork to compose the page from.
 	* - ``Nothing selected is packed on this page.``
 	  - The selected art is on another page.  Show that page.
 	* - ``Selected tile is pinned.  Unpin it to transform it.``
 	  - Every selected piece of art is pinned.  See `Pinning`_.
-	* - ``The atlas cannot be recomposed from its source art, so placements cannot move.``
+	* - ``The atlas cannot be recomposed from its source artwork, so placements cannot move.``
 	  - Umamo cannot rebuild the page from the artwork.
 	* - ``The puppet's UVs address the source artwork and not the atlas so there is no placement to move.``
-	  - The document was saved so that its texture coordinates point at the artwork itself, so there is no place on a page to change.
+	  - The puppet file was saved so that its texture coordinates point at the artwork itself, so there is no place on a page to change.
 
 Only the unpinned art is moved when a selection holds both.
 
 Pinning
 =======
 
-A **pin** holds a piece of art where it is.  A pinned piece is not moved by hand, and a repack leaves it where it is, if :guilabel:`Keep Pinned Tiles` is on, as it is at first.  Both commands work in Object Mode on the UV Editor under the pointer, and they pin or unpin the art of the selected drawables, pinned or not.  A pin is saved with the document.  The state is also a checkbox, :guilabel:`Pinned`, in the Data tab of the Properties editor.  See :doc:`/editors/properties/data_tab`.
+A **pin** holds a piece of art where it is.  A pinned piece is not moved by hand, and a repack leaves it where it is, if :guilabel:`Keep Pinned Tiles` is on, as it is at first.  Both commands work in Object Mode on the UV Editor under the pointer, and they pin or unpin the art of the selected drawables, pinned or not.  A pin is saved with the puppet file.  The state is also a checkbox, :guilabel:`Pinned`, in the Data tab of the Properties editor.  See :doc:`/editors/properties/data_tab`.
 
 Pin Art Placement
 -----------------

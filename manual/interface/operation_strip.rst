@@ -31,7 +31,7 @@ Each row is a field like those of the Properties editor.  Drag across a number t
 
 Two numbers that go together, such as the two factors of a scale or the rows and columns of a lattice, are drawn as a pair with a lock between them.  With the lock on, changing one changes the other in the same proportion.
 
-A number is applied when you let go of it or confirmed with :kbd`Enter` when typing.  Each applied value runs the operation again from the state it started from.  Only one step is added to the History for the operation, whatever the number of changes.  See :doc:`/editors/history`.
+A number is applied when you let go of it or confirmed with :kbd:`Enter` when typing.  Each applied value runs the operation again from the state it started from.  Only one step is added to the History for the operation, whatever the number of changes.  See :doc:`/editors/history`.
 
 The strip belongs to the newest step in the History and goes away as soon as there is another.  Starting another operation replaces it and so does changing the selection because selecting is a step too.  An undo, a redo, or a jump in the History ends it as well.  Adjust an operation before you select something else.
 

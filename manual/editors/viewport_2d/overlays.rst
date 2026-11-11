@@ -2,7 +2,7 @@
 Overlays
 ********
 
-Overlays are the things the viewport draws over the model to help you work: the grid, the axes, the cursor, the wireframe, the tint on what is selected, the lattices of the warp deformers, and the text in the corners.  Each overlay can be turned on and off.  The overlays belong to the area, so one viewport can show a grid and a wireframe while another is clean, and they are saved in the document.
+Overlays are the things the viewport draws over the model to help you work: the grid, the axes, the cursor, the wireframe, the tint on what is selected, the lattices of the warp deformers, and the text in the corners.  Each overlay can be turned on and off.  The overlays belong to the area, so one viewport can show a grid and a wireframe while another is clean, and they are saved in the puppet file.
 
 Show Overlays and Viewport Overlays
 ===================================

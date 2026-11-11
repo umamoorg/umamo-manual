@@ -13,7 +13,7 @@ The sidebar is closed at first.  A small pull tab shows at the top of the right 
 * Drag the **inner edge** of the panels to change their width.  It can be from 160 to 480 pixels wide, and it starts at 200.  Drag it narrower than the minimum and the sidebar closes.
 * In an area too narrow for the narrowest sidebar, only the pull tab shows, and the sidebar opens when the area grows.
 
-Whether the sidebar is open, how wide it is, which tab it shows, and which panels are folded belong to the area, and are saved in the document.  :guilabel:`Show Sidebar by Default` in Settings decides what an area that you have not touched does.  See :doc:`/interface/settings`.
+Whether the sidebar is open, how wide it is, which tab it shows, and which panels are folded belong to the area, and are saved in the puppet file.  :guilabel:`Show Sidebar by Default` in Settings decides what an area that you have not touched does.  See :doc:`/interface/settings`.
 
 The sidebar floats over the viewport and does not take any room from it, and the pointer does not reach the viewport through its panels.
 

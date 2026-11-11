@@ -2,7 +2,7 @@
 Properties
 **********
 
-The Properties editor shows the settings of the document, and the settings of the item you are working on.  It is where you type exact values, choose a blend mode, bind an object to a parent, and read what a runtime target restricts.  What it shows follows the selection and the editor mode, and the controls that the document's runtime target cannot play are left out.
+The Properties editor shows the settings of the puppet, and the settings of the item you are working on.  It is where you type exact values, choose a blend mode, bind an object to a parent, and read what a runtime target restricts.  What it shows follows the selection and the editor mode, and the controls that the puppet's runtime target cannot play are left out.
 
 .. toctree::
 	:maxdepth: 1
@@ -23,19 +23,19 @@ The Properties editor shows the settings of the document, and the settings of th
 Layout
 ======
 
-A column of icon tabs is at the left edge, and the active tab fills the rest of the area.  The header has a search field in the middle, and nothing else.  Neither shows without a document.
+A column of icon tabs is at the left edge, and the active tab fills the rest of the area.  The header has a search field in the middle, and nothing else.  Neither shows without an open puppet.
 
 The active tab is a stack of **sections**.  A section has a heading and a card of rows under it.  Click the heading to fold the card away or to open it.  Each row is a label and a field.  Rest the pointer on a label for a sentence that says what the field does and what its unit is.
 
-The tab that is shown, the sections that you folded, and the height that you gave the Masked By list belong to the area, and are saved in the document.  The search text is not saved.  See :doc:`/files/uma`.
+The tab that is shown, the sections that you folded, and the height that you gave the Masked By list belong to the area, and are saved in the puppet file.  The search text is not saved.  See :doc:`/files/uma`.
 
 Tabs and When They Appear
 =========================
 
 There are three tabs, always in this order.
 
-:guilabel:`Document`
-	The settings of the whole document.  It is always there, with nothing selected as well.  See :doc:`/editors/properties/document_tab`.
+:guilabel:`Puppet`
+	The settings of the whole puppet.  It is always there, with nothing selected as well.  See :doc:`/editors/properties/document_tab`.
 
 :guilabel:`Object`
 	Where the item is, and what it is bound to.  It needs an item.  See :doc:`/editors/properties/object_tab`.
@@ -45,7 +45,7 @@ There are three tabs, always in this order.
 
 The item is the **active** one of the selection, even when several things are selected.  When nothing is active, it is the one that was active last, so the tabs do not vanish when you click an empty place.  An item that was deleted no longer counts.  The Item tab of the sidebar shows the same item.  See :doc:`/editors/viewport_2d/sidebar`.
 
-If you saved a document with the Object tab open and open it with nothing selected, the area shows the Document tab, and goes back to the Object tab when an item is selected.
+If you saved a puppet file with the Object tab open and open it with nothing selected, the area shows the Puppet tab, and goes back to the Object tab when an item is selected.
 
 Item-Type Matrix
 ================
@@ -92,7 +92,7 @@ When nothing matches, the area says ``No matching properties.``  Clear the field
 	:class: screenshot-needed
 
 	:Show: The Properties editor with ``color`` typed in the search field, on the Data tab of a drawable: the Blend section with only the Multiply Color and Screen Color rows, and the tab strip reduced to the tabs that match.
-	:Setup: Select a drawable on a document whose runtime target is No Target, open the Data tab, and type ``color``.
+	:Setup: Select a drawable on a puppet whose runtime target is No Target, open the Data tab, and type ``color``.
 	:Crop: The Properties area, with its header.
 	:Save as: ``images/editors/properties_search.png``
 	:Caption: Searching the properties.
@@ -173,12 +173,12 @@ A field that binds the item to another one, such as :guilabel:`Parent Deformer`,
 Runtime Target Gating
 =====================
 
-The :guilabel:`Runtime` setting of the document says which Cubism runtime the model is for.  The Properties editor does not offer what that runtime cannot play.
+The :guilabel:`Runtime` setting of the puppet says which Cubism runtime the model is for.  The Properties editor does not offer what that runtime cannot play.
 
 * A **row** for a feature that the target lacks is left out.  This covers :guilabel:`Multiply Color`, :guilabel:`Screen Color`, :guilabel:`Invert Mask`, :guilabel:`Bilinear (Quad)`, and the isolated-part controls.
 * A **list** offers the values that the target supports, and the value the item has now, so that a value you already use is never missing from its own list.  This covers :guilabel:`Blend`, :guilabel:`Alpha`, and :guilabel:`Group Mode`.
 
-The setting hides controls and takes nothing from the document.  An item that uses a feature the target lacks keeps it, and keeps rendering with it.  Only a MOC3 export leaves it out.  See :doc:`/files/runtime_targets` for the targets and the features, and :doc:`/files/exporting` for the export.
+The setting hides controls and takes nothing from the puppet.  An item that uses a feature the target lacks keeps it, and keeps rendering with it.  Only a MOC3 export leaves it out.  See :doc:`/files/runtime_targets` for the targets and the features, and :doc:`/files/exporting` for the export.
 
 .. seealso::
 

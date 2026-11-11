@@ -41,7 +41,7 @@ Editor Mode
 
 The first control is the mode of the editor.  Its list has :guilabel:`Object Mode`, :guilabel:`Edit Mode`, and :guilabel:`Pose Mode`.  The mode decides what the pointer and the keys do in the viewport.  :kbd:`Tab` toggles Edit Mode, and :kbd:`Ctrl-Tab` toggles Pose Mode.  See :doc:`/modeling/modes`.
 
-The mode belongs to the whole document and not to the area: another 2D Viewport, and the UV Editor, change mode with it.
+The mode belongs to the whole puppet and not to the area: another 2D Viewport, and the UV Editor, change mode with it.
 
 Select Mode
 -----------
@@ -56,7 +56,7 @@ A button with the glyph of the pivot that is in use.  It opens a list of the fou
 Snap
 ----
 
-A magnet button that opens the snap menu: four rows that move the 2D cursor, and, after a rule, four that move the selection.  They are the choices of the Snap pie on :kbd:`Shift-S`.  See :doc:`/modeling/snapping`.
+A magnet button that opens the snap menu: four entries that move the 2D cursor, and, after a rule, four that move the selection.  They are the choices of the Snap pie on :kbd:`Shift-S`.  See :doc:`/modeling/snapping`.
 
 Proportional Editing
 --------------------
@@ -125,12 +125,12 @@ Objects that are hidden or marked as not selectable are skipped by every one of 
 Context Menu
 ============
 
-A right-click on the viewport, when no gesture is in progress, opens a menu of the common commands of the mode, each with its shortcut.  A row that cannot be used right now is greyed out.  Rows that open a pie show its choices as a submenu.
+A right-click on the viewport, when no gesture is in progress, opens a menu of the common commands of the mode, each with its shortcut.  A menu entry that cannot be used right now is greyed out.  Entries that open a pie show its choices as a submenu.
 
 .. admonition:: Screenshot needed
 	:class: screenshot-needed
 
-	:Show: The right-click menu of the 2D Viewport in Edit Mode, with the Merge Vertices submenu open.
+	:Show: The context menu of the 2D Viewport in Edit Mode, with the Merge Vertices submenu open.
 	:Setup: Enter Edit Mode, select two vertices, and right-click.
 	:Crop: The menu, with a little of the viewport around it.
 	:Save as: ``images/editors/viewport_context_menu.png``
@@ -163,7 +163,7 @@ HUD
 
 The text and chips drawn over the viewport do not take clicks.
 
-* The **active object chip**, at the top left, names the active drawable with its part, as ``Part | Name``, and the deformer that is its parent below it.  For an active warp deformer it names the deformer, its part, and its parent deformer.  The names are shown as they are in the document.
+* The **active object chip**, at the top left, names the active drawable with its part, as ``Part | Name``, and the deformer that is its parent below it.  For an active warp deformer it names the deformer, its part, and its parent deformer.  The names are shown as they are in the puppet.
 * The **zoom readout**, at the bottom left, is the zoom as a percentage.  100% is one pixel of the canvas for each pixel of the screen.
 * The **operator badge**, at the top center, shows while a transform is in progress, in the area where it started.  It names the transform, the axis if one is locked with :kbd:`X` or :kbd:`Z`, and the proportional editing in use.
 
@@ -174,7 +174,7 @@ The 2D Cursor
 
 The 2D cursor is a marker on the canvas.  The :guilabel:`2D Cursor` pivot turns about it, and the snap commands move things to it and it to things.  It is not drawn until it is placed, and an unplaced cursor counts as being at the world origin.
 
-You place it with :kbd:`Shift`-right-click, with the cursor rows of the Snap menu or pie, or by typing its position in the :guilabel:`View` tab of the sidebar.  Moving it is not an undo step.  The overlay can hide it without removing it.  See :doc:`/editors/viewport_2d/sidebar`.
+You place it with :kbd:`Shift`-right-click, with the cursor entries of the Snap menu or pie, or by typing its position in the :guilabel:`View` tab of the sidebar.  Moving it is not an undo step.  The overlay can hide it without removing it.  See :doc:`/editors/viewport_2d/sidebar`.
 
 Operation Strip
 ===============

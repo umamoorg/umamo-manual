@@ -2,9 +2,9 @@
 History
 *******
 
-The History editor lists the undo steps of the open document.  Every change that you make is a step, and the list shows them in order, with the step you are at highlighted.  You can click any step to go straight back, or forward, to it.
+The History editor lists the undo steps of the open puppet.  Every change that you make is a step, and the list shows them in order, with the step you are at highlighted.  You can click any step to go straight back, or forward, to it.
 
-The history belongs to the session.  It is not saved with the document, and a document that you open starts with a history of one step.  See :doc:`/files/uma`.
+The history belongs to the session.  It is not saved with the puppet file, and a puppet file that you open starts with a history of one step.  See :doc:`/files/uma`.
 
 .. admonition:: Screenshot needed
 	:class: screenshot-needed
@@ -18,7 +18,7 @@ The history belongs to the session.  It is not saved with the document, and a do
 Reading the List
 ================
 
-The oldest step is at the top.  The first one, ``Open``, is the document as it was when you opened it.  Each row after it has the name of what you did, such as ``Move Vertices`` or ``Insert Keyframe``.  See `Step Label Reference`_.
+The oldest step is at the top.  The first one, ``Open``, is the puppet as it was when you opened it.  Each row after it has the name of what you did, such as ``Move Vertices`` or ``Insert Keyframe``.  See `Step Label Reference`_.
 
 * The **current step** is the row with the colored band.  It is what you see in the other editors.
 * The steps **below** it are dimmed.  They are steps you took back, and can do again.
@@ -31,7 +31,7 @@ A long list scrolls so that the current step stays in view when you undo or redo
 Jumping to a Step
 =================
 
-Click a row to go to that step.  Umamo undoes or redoes as many steps as it takes, in one move.  The document, the selection, and the mode are as they were then.  Click a dimmed row to go forward again.
+Click a row to go to that step.  Umamo undoes or redoes as many steps as it takes, in one move.  The puppet, the selection, and the mode are as they were then.  Click a dimmed row to go forward again.
 
 A jump ends the operation strip, because it belongs to the newest step only.  See :doc:`/interface/operation_strip`.
 
@@ -47,7 +47,7 @@ Undo
 	:Menu: :menuselection:`Edit --> Undo`
 	:Shortcut: :kbd:`Ctrl-Z`
 
-Goes back one step.  The row is greyed out in the menu when there is nothing to go back to.
+Goes back one step.  The menu entry is greyed out when there is nothing to go back to.
 
 Redo
 ----
@@ -60,14 +60,14 @@ Redo
 
 Goes forward one step, to a step that you took back.  The Cubism keymap also binds :kbd:`Ctrl-Y`.  Greyed out when there is nothing to do again.
 
-Undoing a step does not mean that the document is unchanged.  The ``*`` in the title goes away only when you are back at the step that was saved.
+Undoing a step does not mean that the puppet file is unchanged.  The ``*`` in the title goes away only when you are back at the step that was saved.
 
 History Steps Setting
 =====================
 
 The number of steps that Umamo keeps is a setting, :guilabel:`History Steps` in the :guilabel:`Interface` category of :menuselection:`Edit --> Settings…`.  It is 200 by default and can be from 1 to 1000.  When the list is longer, the oldest steps are dropped as new ones are made.
 
-Lowering the number trims the open document at once.  It never removes the current step or the steps that you can redo.  Steps use memory, so a low number helps a very large document.  See :doc:`/interface/settings` and :doc:`/troubleshooting/performance_and_memory`.
+Lowering the number trims the history of the open puppet at once.  It never removes the current step or the steps that you can redo.  Steps use memory, so a low number helps a very large puppet.  See :doc:`/interface/settings` and :doc:`/troubleshooting/performance_and_memory`.
 
 Step Label Reference
 ====================
@@ -101,7 +101,7 @@ The label of a step is the name of the operation, and it is the same name that t
 	  - Move Objects, Scale Objects, Rotate Objects, Duplicate Objects
 	* - UVs
 	  - Move UVs, Scale UVs, Rotate UVs, Mirror UVs
-	* - The document
+	* - The puppet
 	  - Set Canvas Size, Set World Origin, Change Texture Display, Set Runtime Target
 	* - The atlas
 	  - Move Art On Atlas, Rotate Art On Atlas, Scale Art On Atlas, Pin Art On Atlas, Unpin Art On Atlas, Repack Atlas
