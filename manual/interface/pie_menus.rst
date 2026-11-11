@@ -2,24 +2,22 @@
 Pie Menus
 *********
 
-A pie menu is a ring of choices that opens under the pointer.  You pick one by the direction in which you move, not by aiming at a button, so a flick of the hand is enough, with the mouse as much as with a pen.
-Umamo has five of them, for choices that you make often and in the middle of work: the pivot point, snapping, the target of a merge, and which values to key.
+A pie menu is a ring of choices that opens under the pointer.  You pick one by the direction in which you move, not by aiming at a button, so a flick of the hand is enough, with the mouse as much as with a pen.  The menu choices can also be selected by the number shown next to the choice label.  Umamo has several pie mnues for choices that you make often: The pivot point, snapping, the target of a merge, and which values to key.
 
 Using a Pie
 ===========
 
 Press the key of a pie.  The ring opens centered on the pointer, with its name in the middle and up to eight choices around it.  If the pointer is near the edge of the window, the ring moves in so that it fits.
 
-.. image:: ./img/Pie_menu.png
-   :width: 100%
-   :align: center
-   :alt: A Pie menu, with various selectable options like an inventory wheel.
+.. figure:: /images/interface/pie_menu.png
+
+	The Snap pie, with its eight choices and their numbers.
 
 Then pick one:
 
 * **Move toward it and click.**  The choice nearest the direction of the pointer from the middle is highlighted, and a click picks it.  You do not need to reach it.
 * **Press, drag, and let go.**  Move the pointer toward it while the button is down, and the release picks it.
-* **Press its number.**  Every choice shows a number, which follows the order of the ring.  :kbd:`1` to :kbd:`8` pick at once.
+* **Press its number.**  Every choice shows a number, which follows the order of the ring.  :kbd:`1` to :kbd:`8` or :kbd:`Numpad1` to :kbd:`Numpad8` picks the choice.
 * **Cancel.**  Press :kbd:`Escape`, or click in the small disc in the middle.
 
 A choice that does not apply right now is dimmed, and cannot be picked.
@@ -45,18 +43,23 @@ The point that rotations and scales turn about.  The 2D Viewport's header has th
 	:header-rows: 1
 
 	* - Direction
+	  - Number
 	  - Choice
 	  - The pivot is
 	* - West
+	  - :kbd:`1`
 	  - :guilabel:`Median Point`
 	  - The middle of the selection.
 	* - East
+	  - :kbd:`2`
 	  - :guilabel:`Individual Origins`
 	  - The center of each selected item on its own.
 	* - South
+	  - :kbd:`3`
 	  - :guilabel:`Active Element`
 	  - The active element.
 	* - North
+	  - :kbd:`4`
 	  - :guilabel:`2D Cursor`
 	  - The 2D cursor.
 
@@ -76,22 +79,31 @@ Moves the selection or the 2D cursor in one step.  It opens over the 2D Viewport
 	:header-rows: 1
 
 	* - Direction
+	  - Number
 	  - Choice
 	* - West
+	  - :kbd:`1`
 	  - :guilabel:`Cursor to World Origin`
 	* - East
+	  - :kbd:`2`
 	  - :guilabel:`Cursor to Selected`
 	* - South
+	  - :kbd:`3`
 	  - :guilabel:`Cursor to Active`
 	* - North
+	  - :kbd:`4`
 	  - :guilabel:`Cursor to Grid`
 	* - Northwest
+	  - :kbd:`5`
 	  - :guilabel:`Selection to Grid`
 	* - Northeast
+	  - :kbd:`6`
 	  - :guilabel:`Selection to Cursor`
 	* - Southwest
+	  - :kbd:`7`
 	  - :guilabel:`Selection to Cursor (Keep Offset)`
 	* - Southeast
+	  - :kbd:`8`
 	  - :guilabel:`Selection to Active`
 
 The four :guilabel:`Cursor` choices put the 2D cursor in the named place.  The four :guilabel:`Selection` choices move the selection.  :guilabel:`Selection to Cursor` moves the selected elements onto the cursor, and the :guilabel:`Keep Offset` form moves them together so that the selection keeps its shape.  See :doc:`/modeling/snapping`.
@@ -110,20 +122,28 @@ The same shortcut, over the UV Editor.  It works on UV coordinates in Edit Mode,
 	:header-rows: 1
 
 	* - Direction
+	  - Number
 	  - Choice
 	* - West
+	  - :kbd:`1`
 	  - :guilabel:`Selection to Pixels`
 	* - East
+	  - :kbd:`2`
 	  - :guilabel:`Selection to Cursor`
 	* - South
+	  - :kbd:`3`
 	  - :guilabel:`Selection to Cursor (Keep Offset)`
 	* - North
+	  - :kbd:`4`
 	  - :guilabel:`Selection to Grid`
 	* - Northwest
+	  - :kbd:`5`
 	  - :guilabel:`Cursor to Pixels`
 	* - Northeast
+	  - :kbd:`6`
 	  - :guilabel:`Cursor to Selected`
 	* - Southwest
+	  - :kbd:`7`
 	  - :guilabel:`Cursor to Grid`
 
 See :doc:`/editors/uv_editor/editing`.
@@ -143,19 +163,23 @@ Merge Vertices asks where the vertices should come together.
 	:header-rows: 1
 
 	* - Direction
+	  - Number
 	  - Choice
 	  - The vertices meet
 	* - West
+	  - :kbd:`1`
 	  - :guilabel:`Merge at Center`
 	  - At the middle of them.
 	* - East
+	  - :kbd:`2`
 	  - :guilabel:`Merge at First`
 	  - On the first one selected.
 	* - South
+	  - :kbd:`3`
 	  - :guilabel:`Merge at Last`
 	  - On the last one selected.
 
-The merge leaves the :guilabel:`Merge At` row of the operation strip, so the choice can be changed afterwards.  See :doc:`/interface/operation_strip`.
+The choice is kept in the :guilabel:`Merge At` row of the operation strip, so it can be changed afterwards.  See :doc:`/interface/operation_strip`.
 
 Insert Key
 ----------
@@ -172,18 +196,23 @@ Chooses which values of the posed warps to key.  It opens over a 2D Viewport onl
 	:header-rows: 1
 
 	* - Direction
+	  - Number
 	  - Choice
 	  - Keys
 	* - West
+	  - :kbd:`1`
 	  - :guilabel:`Lattice`
 	  - The shape of the lattice.
 	* - East
+	  - :kbd:`2`
 	  - :guilabel:`Opacity`
 	  - The opacity.
 	* - South
+	  - :kbd:`3`
 	  - :guilabel:`Colors`
 	  - The multiply and screen colors.
 	* - North
+	  - :kbd:`4`
 	  - :guilabel:`All`
 	  - All of them.
 

@@ -2,12 +2,11 @@
 Status Bar and Notices
 **********************
 
-The status bar is the strip along the bottom of the window.  It is always there, and it has the shortcuts that suit where the pointer is, the item you have selected, and the size of the model.  It is also where Umamo tells you, briefly, what it just did, and how far along a long task is.
+The status bar is the strip along the bottom of the window.  It is always there, and it shows shortcut hints for the editor under the pointer, the item you have selected, and the size of the model.  It is also where Umamo tells you, briefly, what it just did, and how far along a long task is.
 
-.. image:: ./img/status_bar.png
-   :width: 100%
-   :align: center
-   :alt: The status bar for the workspace, with all it's sections.
+.. figure:: /images/interface/status_bar.png
+
+	The status bar while opening a puppet, with the notice in the middle.
 
 The Four Zones
 ==============
@@ -70,7 +69,7 @@ Modal Dialogs and Alerts
 Some messages cannot be a notice, because they need an answer or are too important to miss.  They open in the middle of the window, over everything, and dim what is behind them.  Nothing else in the window can be used until you answer, and no shortcut fires behind them.
 
 Questions
-	A message and two or three buttons, such as ``The document has unsaved changes.  Save them first?``  :kbd:`Enter` presses the main button, which is the default, and :kbd:`Escape` presses :guilabel:`Cancel`.
+	A message and two or three buttons, such as ``The puppet has unsaved changes.  Save them first?``  :kbd:`Enter` presses the main button, which is the default, and :kbd:`Escape` presses :guilabel:`Cancel`.
 
 Alerts
 	A message and an :guilabel:`Okay` button, for a failure or a result that you must see: a file that cannot be opened, a save that failed, the report after an export, a repack that was refused.  :kbd:`Enter` or :kbd:`Escape` dismisses it.  You can select the text of an alert and copy it with the copy shortcut of your system, to paste it into a bug report.
