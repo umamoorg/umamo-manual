@@ -7,7 +7,7 @@ Pen and Touch
 
 	This feature is not available in Umamo yet.  This page records its current status.
 
-Umamo is being made for pen displays and tablets, and first class pen and touch support is one of the goals of the project.  It is not built yet.
+Umamo is being made for pen displays and tablets and first class pen and touch support is one of the goals of the project.  It is not built yet.
 
 Current Status
 ==============
@@ -15,7 +15,7 @@ Current Status
 * Pen pressure, tilt, and the buttons of a pen are not read.  Nothing in Umamo changes with how hard you press.
 * The :guilabel:`Pen` category of the Settings window is empty.  It says ``Pen configuration is coming soon.``  See :doc:`/interface/settings`.
 * Touch has no gestures of its own.  There is no pinch to zoom and no two-finger pan.
-* There is no Android or iPadOS build, which is where a pen and touch interface matters most.  See :doc:`/troubleshooting/platform_notes`.
+* There is no Android or iPadOS build  which is where a pen and touch interface matters most.  See :doc:`/troubleshooting/platform_notes`.
 
 What Works Today
 ================
@@ -24,7 +24,7 @@ On a computer, a pen or a finger that your operating system turns into mouse inp
 
 Some parts of the interface were made so that they do not need a keyboard:
 
-* **Pie menus** pick by the direction of a flick, and can be reached from the right-click menu of the 2D Viewport.  See :doc:`/interface/pie_menus`.
+* **Pie menus** pick by the direction of a flick and can be reached from the right-click menu of the 2D Viewport.  See :doc:`/interface/pie_menus`.
 * **Every command is in a menu or in the command palette**, so none of them needs a shortcut.  See :doc:`/interface/menus`.
 * **The Settings window has a close button**, for a device that has no :kbd:`Escape` key.
 * **Rows can be dragged after a long press** in the Outliner and the Sources editor, to reparent or relink them.

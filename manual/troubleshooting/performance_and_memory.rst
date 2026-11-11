@@ -52,7 +52,7 @@ This happens when Umamo could not start itself again.  Use the command.  :guilab
 
 **During an export**, a CMO3 or MOC3 export that runs out of memory stops and tells you so:
 
-``Could not export name: Umamo ran out of memory.  The open document is unaffected.``
+``Could not export name: Umamo ran out of memory.  The open puppet is unaffected.``
 
 For the ``.jar`` the alert also names the limit it ran out of, and gives the command that allows half of your memory: ``Save, quit, and run this command from a terminal``.  Your open puppet file is not changed.
 

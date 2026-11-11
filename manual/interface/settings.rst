@@ -2,14 +2,14 @@
 Settings
 ********
 
-The Settings window holds the global editor settings and not specific to a puppet file: the language and the theme, how the viewport draws, how artwork comes in, and your shortcuts.  Some other programs, and older notes about Umamo, call it Preferences.
+The Settings window holds the settings that belong to the editor and not to a specific puppet file: The language and the theme, how the viewport draws, how artwork is ingested, and your shortcuts.  Settings are also called Preferences in other applications.
 
 Opening Settings
 ================
 
 Choose :menuselection:`Edit --> Settings…`, or press :kbd:`Ctrl-Comma`.  It is in the command palette as :guilabel:`Settings`.
 
-The window opens over the Umamo window.  The categories are in a list on the left, and the settings of the chosen one are on the right.  There is no :guilabel:`OK` or :guilabel:`Apply`: every change takes effect and is saved as you make it, so the language, the theme, and the colors change behind the window while you work in it.  Close it with the button at its top right, with :kbd:`Escape`, or by clicking outside it.
+The window opens over the Umamo window.  The categories are in a list on the left and the settings of the chosen one are on the right.  There is no :guilabel:`OK` or :guilabel:`Apply`: every change takes effect and is saved as you make it, so the language, the theme, and the colors change behind the window while you work in it.  Close it with the button at its top right, with :kbd:`Escape`, or by clicking outside it.
 
 The settings are saved in a file in your user folder.  See :doc:`/getting_started/configuration`.  Nothing in this window changes a puppet file.
 
@@ -33,7 +33,7 @@ Interface
 Colors
 ======
 
-The colors that Umamo draws over your art.  They are your colors, and not a part of the theme, because no theme can know what reads well against a piece of art.  Each is a hexadecimal color written ``#AARRGGBB``: the opacity, then red, green, and blue.  An edit recolors the viewport as you type.
+The colors that Umamo draws over your art.  They are your colors and not a part of the theme because no theme can know what reads well against a piece of art.  Each is a hexadecimal color written ``#AARRGGBB``: the opacity, then red, green, and blue.  An edit recolors the viewport as you type.
 
 Viewport
 --------
@@ -162,7 +162,7 @@ The preset, the shortcut of every command, and the button that resets your chang
 Pen
 ===
 
-The category is there, and it is empty: ``Pen configuration is coming soon.``  See :doc:`/interface/pen_and_touch`.
+The category is empty for now.  It only says ``Pen configuration is coming soon.``  See :doc:`/interface/pen_and_touch`.
 
 .. seealso::
 
