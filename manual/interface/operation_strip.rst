@@ -2,18 +2,16 @@
 Operation Strip
 ***************
 
-Operations in Umamo are dependant on some numeric data, such as how far a grab moved or how fine a mesh is.  The operation strip shows these parameters after the operation has run, and lets you change them.  Each change runs the operation again, from where it started, and replaces the result.
-You can experiment with values, without undoing and doing it over. It works like the Adjust Last Operation panel of Blender.
+Operations in Umamo depend on some numeric data, such as how far a grab moved or how fine a mesh is.  The operation strip shows these parameters after the operation has run and lets you change them.  Each change runs the operation again, from where it started, and replaces the result.  You can experiment with values without undoing and doing the operation over.
 
 What It Is
 ==========
 
-The strip is a small card with the name of the operation as its title, such as ``Move Vertices`` or ``Generate Mesh from Art``.  Its rows are the settings of that operation.  Only the last operation has a strip, so there is never more than one.
+The strip is a small card with the name of the operation as its title, such as ``Move Vertices`` or ``Generate Mesh from Art``.  The shown rows are the parameters of that operation.  Only the last operation will show its strip until dismissed or replaced by another operation.
 
-.. image:: ./img/operation_strip.png
-   :width: 100%
-   :align: center
-   :alt: An Operation strip with modifiable parameters.
+.. figure:: /images/interface/operation_strip.png
+
+	The operation strip after Create Warp Deformer, with its rows open.
 
 Where It Appears
 ================
@@ -33,9 +31,9 @@ Each row is a field like those of the Properties editor.  Drag across a number t
 
 Two numbers that go together, such as the two factors of a scale or the rows and columns of a lattice, are drawn as a pair with a lock between them.  With the lock on, changing one changes the other in the same proportion.
 
-A number is applied when you let go of it, or confirm what you typed.  Each applied value runs the operation again from the state it started from.  Only one step is added to the History for the operation, whatever the number of changes.  See :doc:`/editors/history`.
+A number is applied when you let go of it or confirmed with :kbd`Enter` when typing.  Each applied value runs the operation again from the state it started from.  Only one step is added to the History for the operation, whatever the number of changes.  See :doc:`/editors/history`.
 
-The strip belongs to the newest step in the History, and goes as soon as there is another.  Another operation takes it over, and so does a change of the selection, because selecting is a step too.  An undo, a redo, or a jump in the History ends it as well.  So adjust an operation before you select something else.
+The strip belongs to the newest step in the History and goes away as soon as there is another.  Starting another operation replaces it and so does changing the selection because selecting is a step too.  An undo, a redo, or a jump in the History ends it as well.  Adjust an operation before you select something else.
 
 Adjust Last Operation
 ---------------------
@@ -101,12 +99,11 @@ One row, :guilabel:`Merge At`, with three choices: :guilabel:`Center` merges the
 Generate Mesh from Art
 ----------------------
 
-The strip of :guilabel:`Generate Mesh from Art` has the settings of the mesher.  :guilabel:`Preset` chooses :guilabel:`Standard`, :guilabel:`Fine`, or :guilabel:`Coarse`, and fills in most of the other rows.  Changing a row afterwards leaves the others as they are.
+The strip of :guilabel:`Generate Mesh from Art` has the parameters of the mesher.  :guilabel:`Preset` chooses :guilabel:`Standard`, :guilabel:`Fine`, or :guilabel:`Coarse`, and fills in most of the other rows.  Changing a row afterwards leaves the others as they are.
 
-.. image:: ./img/mesh_gen.png
-   :width: 100%
-   :align: center
-   :alt: An Operation strip for generating artmeshes.
+.. figure:: /images/interface/mesh_gen.png
+
+	The operation strip of Generate Mesh from Art.
 
 .. list-table::
 	:header-rows: 1
@@ -136,7 +133,7 @@ The strip of :guilabel:`Generate Mesh from Art` has the settings of the mesher. 
 	* - :guilabel:`Deformation Tolerance`
 	  - How far the new mesh may stray from the shapes the rig gives the old one.  Where it would stray further, the old vertices that hold those shapes are kept.
 
-:guilabel:`Generate Quad Mesh` has one row, :guilabel:`Margin`, which says how far the quad reaches past the art.  These are the same settings as the ``mesh`` command of the command line tool.  See :doc:`/modeling/generate_mesh`.
+:guilabel:`Generate Quad Mesh` has one row, :guilabel:`Margin`, which says how far the quad reaches past the art.  These are the same parameters as the ``mesh`` command of the command line tool.  See :doc:`/modeling/generate_mesh`.
 
 Create Warp Deformer
 --------------------
@@ -158,7 +155,7 @@ See :doc:`/rigging/deformers` and :doc:`/files/runtime_targets`.
 Subdivide Lattice
 -----------------
 
-:guilabel:`Row Splits` and :guilabel:`Column Splits`: how many cells each row of cells and each column of cells is split into.  Changing the :guilabel:`Rows` and :guilabel:`Columns` of a lattice in the Properties editor shows a strip titled ``Lattice Resolution`` with those two rows instead.
+:guilabel:`Row Splits` and :guilabel:`Column Splits`: How many cells each row of cells and each column of cells is split into.  Changing the :guilabel:`Rows` and :guilabel:`Columns` of a lattice in the Properties editor shows a strip titled ``Lattice Resolution`` with those two rows instead.
 
 Keep in Place
 -------------
@@ -174,7 +171,7 @@ Import Artwork
 	* - Row
 	  - What it sets
 	* - :guilabel:`Align`
-	  - Where the added file's canvas sits on the puppet files's canvas: Top Left, Top, Top Right, Left, Center, Right, Bottom Left, Bottom, or Bottom Right.
+	  - Where the added file's canvas sits on the puppet file's canvas: Top Left, Top, Top Right, Left, Center, Right, Bottom Left, Bottom, or Bottom Right.
 	* - :guilabel:`Offset X`, :guilabel:`Offset Z`
 	  - Moves the art right and up from where Align puts it, in pixels.
 	* - :guilabel:`Alpha Threshold`

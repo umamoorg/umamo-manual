@@ -2,8 +2,7 @@
 Workspaces
 **********
 
-A workspace is a named arrangement of areas for one kind of work.  The tabs along the top of the window are the workspaces, and a click on one swaps the whole arrangement.  Umamo comes with three, and you can make as many more as you like.
-Workspaces belong to the editor and not to a specific puppet file: they are the same whichever puppet file is open.
+A workspace is a named arrangement of areas for one kind of work.  The tabs along the top of the window are the workspaces, and a click on one swaps the whole arrangement.  Umamo comes with three, and you can make as many more as you like.  Workspaces belong to the editor and not to a specific puppet file: they are the same whichever puppet file is open.
 
 Default Workspaces
 ==================
@@ -26,15 +25,14 @@ The workspace for the texture atlas and the artwork that feeds it:
 * The **2D Viewport** is in the middle.
 * The **Sources** editor, the **Outliner**, and the **Properties** editor are in a column on the right, from top to bottom.
 
+.. figure:: /images/interface/default_workspace.png
+
+	The Texture workspace.
+
 Physics
 -------
 
-A single **2D Viewport**.  It is a place held for the physics tools, which do not exist yet.  See :doc:`/rigging/physics`.
-
-.. image:: ./img/default_workspace.png
-   :width: 100%
-   :align: center
-   :alt: The default workspace layout for Textures.
+A single **2D Viewport**.  It is a placeholder for the physics tools, which do not exist yet.  See :doc:`/rigging/physics`.
 
 The Tab Strip
 =============
@@ -49,12 +47,11 @@ The tabs are at the top of the window, to the right of the menus.  The tab of th
 
 The menu of a tab has :guilabel:`Rename`, :guilabel:`Duplicate`, and :guilabel:`Delete`, and below them :guilabel:`Previous Workspace` and :guilabel:`Next Workspace` with their shortcuts.  :guilabel:`Duplicate` copies the workspace, with all of its areas, into a new tab right after it, named with ``copy``.  :guilabel:`Delete` removes the workspace.  The last workspace cannot be deleted, so the strip is never empty.
 
-The names of the three built-in workspaces follow the language of the interface.  Once you rename one, its name is yours and stays as you typed it.
+The names of the three built-in workspaces follow the language of the interface.  Once you rename one, it remembers the name that you entered.  User renamed workspaces will not automatically change language when switching the interface language.
 
-.. image:: ./img/workspace_tab_strip.png
-   :width: 100%
-   :align: center
-   :alt: The workspace tab, with options for new workspaces.
+.. figure:: /images/interface/workspace_tab_strip.png
+
+	The context menu of a workspace tab.
 
 Workspace Menu
 ==============
@@ -69,10 +66,10 @@ The Workspace menu has the commands that work on workspaces.  They are in the co
 	  - Does
 	* - :guilabel:`Previous Workspace`
 	  - :kbd:`Ctrl-PageUp`
-	  - Goes to the tab on the left.  From the first tab it wraps round to the last.
+	  - Goes to the tab on the left.  From the first tab it wraps around to the last.
 	* - :guilabel:`Next Workspace`
 	  - :kbd:`Ctrl-PageDown`
-	  - Goes to the tab on the right, and wraps round to the first.
+	  - Goes to the tab on the right, and wraps around to the first.
 	* - :guilabel:`New Workspace`
 	  - —
 	  - The same as the ``+`` button.
@@ -117,7 +114,7 @@ A layout can be saved to a file, to share it or to carry it to another computer.
 	Saves every workspace, with the order of the tabs, and the one that is active.  The suggested name is ``workspaces``.
 
 :menuselection:`Workspace --> Import Workspace…`
-	Reads one of those files.  Umamo tells which kind it is from what is in it:
+	Reads one of those files.  Umamo tells which kind it is from the contents of the file:
 
 	* A file with **one workspace** is added as a new tab after the others, and made active.  Its name is kept, and gets a number if you already have one of that name.
 	* A file with **all the workspaces** replaces every workspace you have.  Umamo asks first: ``Replace all workspaces with the imported file?``
@@ -128,7 +125,7 @@ An export saves the layout as it is on screen, including a change that you made 
 What a Workspace Remembers
 ==========================
 
-A workspace remembers how its area is divided: the splits, the size of each area, and which editor each area shows.  It also remembers its name, and the position of its tab.  Umamo saves all of that in your settings as you change it, so the next start has the same tabs.  See :doc:`/getting_started/configuration`.
+A workspace remembers how its areas are divided: The splits, the size of each area, and which editor each area shows.  It also remembers its name, and the position of its tab.  Umamo saves all of that in your settings as you change it, so the next start has the same tabs.  See :doc:`/getting_started/configuration`.
 
 A workspace does not remember what is in the editors.  The pan and zoom of a viewport, the open branches of the Outliner, the filters, and the other state of each area belong to the puppet file that you have open, and are saved in it.  See :doc:`/files/uma`.
 

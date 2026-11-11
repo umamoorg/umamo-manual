@@ -2,7 +2,7 @@
 Export Reports and Notices
 **************************
 
-Sometimes an export can't write out everything that was request of it.  When a CMO3 or MOC3 cannot export something from the open document, or when the export had to change something to fit the format, Umamo tells you in an export report.  Nothing is dropped silently.  This page explains how to read a report and what each line means.
+Sometimes an export can't write out everything that was request of it.  When a CMO3 or MOC3 cannot export something from the open puppet, or when the export had to change something to fit the format, Umamo tells you in an export report.  Nothing is dropped silently.  This page explains how to read a report and what each line means.
 
 Reading a Report
 ================
@@ -11,7 +11,7 @@ The report opens as an alert once the file has been written.  Its first line say
 
 .. code-block:: text
 
-	The file was exported, but the following could not be carried into MOC3:
+	The MOC3 was exported, but the following could not be carried into it:
 	• [Drawable] ArtMesh7: The drawable is hidden and the export options omit hidden drawables, so it was left out.
 	• Multiply Color is not available for the target runtime version, so it was removed from: ArtMesh3, ArtMesh9.
 
@@ -19,7 +19,7 @@ The report opens as an alert once the file has been written.  Its first line say
 
 	An export report.
 
-A notice about a single object starts with the category of the object in brackets, followed by its ID and then the reason.  For example, ``[Drawable] ArtMesh7: …``.  A notice about the whole document has no ID, and a notice about a sidecar file shows the name of the file in place of an ID.
+A notice about a single object starts with the category of the object in brackets, followed by its ID and then the reason.  For example, ``[Drawable] ArtMesh7: …``.  A notice about the whole puppet has no ID, and a notice about a sidecar file shows the name of the file in place of an ID.
 
 Three kinds of notices have no category:
 
@@ -29,11 +29,11 @@ Three kinds of notices have no category:
 	* - Notice
 	  - What it means
 	* - *Feature* is not available for the target runtime version, so it was removed from: *names*.
-	  - A MOC3 export stripped a feature from the file because the MOC3 format version of the Runtime Target does not support it.  The list shows up to eight names and then ``(+N more)``.  The document still has the feature.  See :doc:`/files/runtime_targets`.
+	  - A MOC3 export stripped a feature from the file because the MOC3 format version of the Runtime Target does not support it.  The list shows up to eight names and then ``(+N more)``.  The puppet still has the feature.  See :doc:`/files/runtime_targets`.
 	* - Base geometry or UVs were edited on: *drawables*.  The export keeps them as authored, but editing those meshes or their atlas in the Cubism Editor may re-derive and corrupt the UV mapping.
 	  - A CMO3 export.  Cubism ties the geometry and the UVs of a mesh together and you have edited them in a way that breaks that tie.  The export file contains what you made.  Avoid editing those meshes or their atlas in the Cubism Editor as it may cause it to break.
-	* - This model has no source artwork, such when a document was created from an imported MOC3, which stores only packed texture atlases.  A stand-in source document was rebuilt from the *N* atlas page(s), …
-	  - A CMO3 export from a document that came from a MOC3.  The file has the full rig and opens in the Cubism Editor, but every layer is a slice of a baked atlas page and not the artwork the puppet was drawn from.  To get real, editable layers, import the CMO3 and add the original layered artwork to it.  See :doc:`/artwork/relinking_and_reloading`.
+	* - This puppet has no source artwork, such when a puppet was created from an imported MOC3, which stores only packed texture atlases.  A stand-in source artwork was rebuilt from the *N* atlas page(s), …
+	  - A CMO3 export from a puppet that came from a MOC3.  The file has the full rig and opens in the Cubism Editor, but every layer is a slice of a baked atlas page and not the artwork the puppet was drawn from.  To get real, editable layers, import the CMO3 and add the original layered artwork to it.  See :doc:`/artwork/relinking_and_reloading`.
 
 Every notice is also written to the log, with the prefix ``export:``.  See :doc:`/editors/logs`.  The text of the alert can be selected and copied, so you can paste it into a bug report.  An export with nothing to report shows no alert.
 
@@ -126,10 +126,10 @@ The subject is the ID of a deformer.
 	  - A deformer's kind change is not lowered.
 	  - The deformer was changed between a warp and a rotation deformer.  The CMO3 keeps the kind that it had.
 	* - CMO3
-	  - The CMO3 source is not a warp deformer, so warp-only edits(bilinear mode, lattice, keyforms) were not written.
+	  - The CMO3 source is not a warp deformer, so warp-only edits (bilinear mode, lattice, keyforms) were not written.
 	  - You edited a property that only a warp deformer has, on a deformer that is not a warp in the original file.
 	* - CMO3
-	  - The CMO3 source is not a rotation deformer, so rotation-only edits(base angle, keyforms) were not written.
+	  - The CMO3 source is not a rotation deformer, so rotation-only edits (base angle, keyforms) were not written.
 	  - The same, for a property that only a rotation deformer has.
 	* - CMO3
 	  - There is no CMO3 part to move the deformer to, so its part was left unchanged.
@@ -161,7 +161,7 @@ The subject is the ID of a drawable.
 	  - The drawable is hidden and the export options omit hidden drawables, so it was left out.
 	  - Turn on :guilabel:`Export hidden drawables` to write it.
 	* - MOC3
-	  - The mesh has *N* vertices, past the 65536 limit of a 16-bit triangle, so it was left out.
+	  - The mesh has *N* vertices, more than the *limit* this format allows, so it was left out.
 	  - A MOC3 cannot address more than 65,536 vertices in one mesh.  Use a coarser mesh.
 	* - MOC3
 	  - No atlas page is bound to this drawable, so it was written pointing at page 0.
@@ -188,7 +188,7 @@ The subject is the ID of a drawable.
 	  - Keyforms without a base mesh cannot be bundled into CMO3.
 	  - The drawable has keyforms and no mesh.
 	* - CMO3
-	  - The mesh has *N* vertices, past the 32767 the editable mesh's edge table can index, so the edge table was not rebuilt.
+	  - The mesh has *N* vertices, past the *limit* the editable mesh's edge table can index, so the edge table was not rebuilt.
 	  - A mesh with more than 32,767 vertices cannot have its edges rebuilt in a CMO3.
 	* - CMO3
 	  - The created drawable has no texture source to clone, so it was not synthesized.
@@ -225,10 +225,10 @@ The subject is the ID of a glue.
 
 Also seen here: `No matching source`_, `Created in Umamo`_, `One grid for each object`_, and `Ids too long for a MOC3`_.
 
-Document
---------
+Puppet
+------
 
-A notice about the document as a whole has no ID.  A notice about a sidecar file has the name of the file.
+A notice about the puppet as a whole has no ID.  A notice about a sidecar file has the name of the file.
 
 .. list-table::
 	:header-rows: 1
@@ -237,34 +237,34 @@ A notice about the document as a whole has no ID.  A notice about a sidecar file
 	  - Message
 	  - What it means
 	* - MOC3
-	  - *File* names parameters this export does not contain (*ids*).  It was written unchanged, so a runtime finds nothing for those inputs and outputs.
+	  - *File* refers to parameters that are not in this export (*ids*).  It was exported unchanged, so software that plays the puppet will not find them.
 	  - A physics, expression, or motion file that was carried through names a parameter that you deleted, or one whose ID was shortened.
 	* - MOC3
-	  - *File* names parts this export does not contain (*ids*).  It was written unchanged, so a runtime finds nothing to switch or fade for them.
+	  - *File* refers to parts that are not in this export (*ids*).  It was exported unchanged, so software that plays the puppet will have nothing to show or hide for them.
 	  - The same, for parts.  The parts were deleted, are inside a guide image part that the export leaves out, or had their IDs shortened.
 	* - CMO3
-	  - CMO3 stores no authored world origin, so reopening the file derives it from the canvas center.
+	  - CMO3 stores no authored world origin, so reopening the CMO3 derives it from the canvas center.
 	  - If you moved the world origin, it returns to the center of the canvas.
 	* - CMO3
-	  - The model has no root parameter group, so the parameter tree was not rebuilt.
-	  - The model has no parameter group at the top to rebuild the parameters panel's tree from.
+	  - The puppet has no root parameter group, so the parameter tree was not rebuilt.
+	  - The puppet has no parameter group at the top to rebuild the parameters panel's tree from.
 	* - CMO3
-	  - The model has no root part, so the parts panel order was not rebuilt.
+	  - The puppet has no root part, so the parts panel order was not rebuilt.
 	  - The same, for the parts panel.
 	* - CMO3
-	  - The model has no parameter set, so the parameter order was not written.
+	  - The puppet has no parameter set, so the parameter order was not written.
 	  - The CMO3 has no list of parameters to hold the order.
 	* - CMO3
 	  - The parameter order was adjusted so the combined pair *a* + *b* stays adjacent.
 	  - CMO3 needs two linked parameters next to each other, so Umamo moved them.
 	* - CMO3
-	  - The model has no canvas, so the canvas size was not written.
-	  - The document has no canvas.
+	  - The puppet has no canvas, so the canvas size was not written.
+	  - The puppet has no canvas.
 	* - CMO3
 	  - CMO3 stores whole canvas pixels, so the fractional canvas size was not written.
 	  - Set the canvas to whole pixels.
 	* - CMO3
-	  - This document has no texture manager, so the source-artwork display mode could not be written.
+	  - This puppet has no texture manager, so the source-artwork display mode could not be written.
 	  - The CMO3 has no texture manager, which is what holds the Cubism Editor's source-artwork display mode.
 	* - CMO3
 	  - This artwork is not packed onto any atlas page, so there was no placement to update.
@@ -276,8 +276,8 @@ A notice about the document as a whole has no ID.  A notice about a sidecar file
 	  - This artwork's pixels, name, or size changed, which an atlas placement cannot carry; re-import the artwork instead.
 	  - Reload the artwork rather than repack it.  See :doc:`/artwork/relinking_and_reloading`.
 	* - CMO3
-	  - This artwork is bound to layer *layer* of *file*, which the document does not list, so the binding could not be written; the CMO3 carries the artwork as a flat image of its own.  Relink it in the Sources space to export the binding.
-	  - The art is bound to a layer of a file that is not in the Sources editor.  The art itself is written.  Relink it.  See :doc:`/editors/sources`.
+	  - This art is bound to layer *layer* of *file*, but the puppet does not list that artwork, so the binding could not be exported.  Relink it in the Sources space to export the binding.
+	  - The art is bound to a layer of an artwork file that is not in the Sources editor.  The art itself is written, as a flat image of its own.  Relink it.  See :doc:`/editors/sources`.
 
 Also seen here: `No matching source`_.
 
@@ -305,12 +305,12 @@ Common Reasons
 No matching source
 ------------------
 
-*There is no matching CMO3 source to reconcile against, so the change was not written.*  A CMO3 export from a document that came from a CMO3 applies your edits to the original file's own objects.  This notice means that the object you edited has no counterpart in the original, so there was nothing to apply the edit to.
+*There is no matching CMO3 source to reconcile against, so the change was not written.*  A CMO3 export from a puppet that came from a CMO3 applies your edits to the original file's own objects.  This notice means that the object you edited has no counterpart in the original, so there was nothing to apply the edit to.
 
 Created in Umamo
 ----------------
 
-*The CMO3 model has no set of this kind to create into*, *The newly created entity has no CMO3 source yet*, and the other messages that mention a created entity.  A CMO3 export from a document that came from a CMO3 builds new objects for the things that you made in Umamo.  When it cannot, because the original has no place for that kind of object, the object is not written or is written without a place in the panel order.
+*The CMO3 has no set of this kind to create into*, *The newly created entity has no CMO3 source yet*, and the other messages that mention a created entity.  A CMO3 export from a puppet that came from a CMO3 builds new objects for the things that you made in Umamo.  When it cannot, because the original has no place for that kind of object, the object is not written or is written without a place in the panel order.
 
 One grid for each object
 ------------------------
@@ -324,7 +324,7 @@ One grid for each object
 IDs too long for a MOC3
 -----------------------
 
-*The ID does not fit a moc's 64-byte id record, so it was written truncated to …*  A MOC3 stores IDs in records of 64 bytes.  A longer ID is cut to fit.  If the cut ID is the same as another object's, a suffix is added to keep them distinct.  The ``.cdi3.json`` file uses the new IDs.  A sidecar file that was carried through unchanged still has the old ones, and is reported under `Document`_.
+*The id does not fit a moc's 64-byte id record, so it was written truncated to …*  A MOC3 stores IDs in records of 64 bytes.  A longer ID is cut to fit.  If the cut ID is the same as another object's, a suffix is added to keep them distinct.  The ``.cdi3.json`` file uses the new IDs.  A sidecar file that was carried through unchanged still has the old ones, and is reported under `Puppet`_.
 
 Whole numbers only
 ------------------
