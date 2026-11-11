@@ -25,7 +25,7 @@ Umamo is in early development.  It is alpha level software that is available for
 
 .. warning::
 
-	Because Umamo is alpha level software, a project can be damaged or lost, and Umamo does not save your documents automatically.  Make regular backups of your files.  In fact, make second copies of your files explicitly for playing around with, and do not use the original copies.
+	Because Umamo is alpha level software, a project can be damaged or lost, and Umamo does not save your puppet files automatically.  Make regular backups of your files.  In fact, make second copies of your files explicitly for playing around with, and do not use the original copies.
 
 Some things are not available yet:
 
@@ -90,9 +90,9 @@ Umamo works with its own model format, with the Cubism formats, and with layered
 	  - —
 	  - Photoshop.
 	* - ``.clip``
-	  - Partial
+	  - Yes
 	  - —
-	  - Clip Studio Paint.  Has known blending issues.
+	  - Clip Studio Paint.
 
 :menuselection:`File --> Open…` and :menuselection:`File --> Save` work with UMA files.  Bring a CMO3 or MOC3 model in with :menuselection:`File --> Import`, and write one out with :menuselection:`File --> Export`.  Artwork is added with :menuselection:`File --> Import --> Artwork…`.  See :doc:`/files/format_support` for the full list.
 

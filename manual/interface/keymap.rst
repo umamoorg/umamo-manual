@@ -2,42 +2,42 @@
 Keymap
 ******
 
-The keymap is the list of keyboard shortcuts mapped tp a command.  Umamo comes with three, and you can change any binding.  Every command can be run without a key, from the menus or the command palette, so a keybind is a shortcut and never the only way.
+The keymap is the list of keyboard shortcuts mapped to commands.  Umamo comes with three presets and you can change any key binding.  Every command is also available from the :guilabel:`Command Palette` or menus if a shortcut is not set.
 
 How Bindings Work
 =================
 
-A binding connects a **chord** to a **command**.  A chord is a key and the modifier keys held down simultaneously : :kbd:`G`, :kbd:`Ctrl-S`, :kbd:`Shift-Alt-Z`.
+A binding connects a **chord** to a **command**.  A chord is a key and the modifier keys held down simultaneously: :kbd:`G`, :kbd:`Ctrl-S`, :kbd:`Shift-Alt-Z`.
 
 * **One chord runs one command.**  A command can have more than one chord, such as the two that open the command palette.
 * **A binding names a key by its position.**  The shortcut stays on the same physical key, whatever the layout of your keyboard.  The letters in this manual and in Umamo's menus name keys by their place on a US QWERTY keyboard.
-* **The primary modifier changes with the system.**  Where this manual writes :kbd:`Ctrl`, it means :kbd:`Ctrl` on Windows and Linux and :kbd:`Cmd` on macOS.  A binding can also ask for the Control key itself, which is how Toggle Pose Mode keeps :kbd:`Ctrl-Tab` on macOS, where :kbd:`Cmd-Tab` belongs to the system.
+* **The primary modifier changes with the system.**  Where this manual writes :kbd:`Ctrl`, it means :kbd:`Ctrl` on Windows and Linux and :kbd:`Cmd` on MacOS.  MacOS does have one exception to that rules, which is :kbd:`Ctrl-Tab` for Toggle Pose Mode.  This is because :kbd:`Cmd-Tab` belongs to the operating system.
 * **Shortcuts act where the pointer is.**  See `Context`_.
-* **A text field takes the keys.**  While you type into a field, such as the search box of the Outliner, the keys go to the field and no shortcut runs.
+* **A text field ignroes shortcuts.**  When typing into a text field, such as the search box of the Outliner, the vast majority of shortcuts will be ignored.
 
-The shortcut of a command is shown at the right end of its menu row, in the command palette, and in the hints of the status bar.
+The shortcut of a command is shown at the right end of its menu row, in the command palette, and in the hints on the status bar.
 
 Presets
 =======
 
-A preset is a complete keymap to start from.  Choose one in Quick Setup, or in the :guilabel:`Keybindings` category of Settings.  See :doc:`/interface/settings`.  Switching presets keeps the changes you have made to single bindings, because they are laid over whichever preset is chosen.
+A preset is a complete keymap to start from.  Choose one in Quick Setup or in the :guilabel:`Keybindings` category of Settings.  See :doc:`/interface/settings`.  Switching presets keeps the changes you have made to single bindings, because they are laid over whichever preset is chosen.
 
 Default
 -------
 
-A compact set, borrowed from Blender.  Tools have a key of their own: :kbd:`G` grabs, :kbd:`R` rotates, :kbd:`S` scales, :kbd:`Tab` toggles Edit Mode, and :kbd:`Ctrl-Tab` toggles Pose Mode.  :kbd:`A` selects all, :kbd:`H` hides, and :kbd:`1`, :kbd:`2`, and :kbd:`3` change the select mode.  The command palette is on :kbd:`Ctrl-P` and :kbd:`Space`, and zooming is on :kbd:`Ctrl-Equals` and :kbd:`Ctrl-Minus`.
+A compact set, similar to Blender.  Tools have a key of their own: :kbd:`G` grabs, :kbd:`R` rotates, :kbd:`S` scales, :kbd:`Tab` toggles Edit Mode, and :kbd:`Ctrl-Tab` toggles Pose Mode.  :kbd:`A` selects all, :kbd:`H` hides, and :kbd:`1`, :kbd:`2`, and :kbd:`3` change the select mode.  The command palette is on :kbd:`Ctrl-P` and :kbd:`Space`, and zooming is on :kbd:`Ctrl-Equals` and :kbd:`Ctrl-Minus`.
 
 This manual describes the default preset.  :doc:`/appendices/default_shortcuts` lists every binding of the three.
 
 Cubism
 ------
 
-For people who come from the Cubism Editor.  It is much smaller.  It keeps the shortcuts that work across the application: the file commands, undo and redo with both :kbd:`Ctrl-Shift-Z` and :kbd:`Ctrl-Y`, :kbd:`Ctrl-0` to fit the view, and the keying keys.  The command palette is on :kbd:`Ctrl-P` only, because Cubism uses :kbd:`Space` for panning.  It leaves the single-key tools and :kbd:`Tab` unassigned.  See :doc:`/getting_started/coming_from_cubism`.
+For people who come from the Cubism Editor and tt is fewer keys bound.  We recommend using the default keymap since that is what is used in this manual.  It keeps the shortcuts that work across the application: The file commands, undo and redo with both :kbd:`Ctrl-Shift-Z` and :kbd:`Ctrl-Y`, :kbd:`Ctrl-0` to fit the view, and the keying keys.  The command palette is on :kbd:`Ctrl-P` only, because Cubism uses :kbd:`Space` for panning.  It leaves the single-key tools and :kbd:`Tab` unassigned.  See :doc:`/getting_started/coming_from_cubism`.
 
 Blender
 -------
 
-For people who come from Blender.  It is the default preset with Blender's choices where they differ: the command palette is on :kbd:`F3`, :kbd:`Equals` and :kbd:`Minus` zoom without the modifier, and :kbd:`Home` frames everything.
+For people who come from Blender.  It is the default preset with Blender's choices where they differ: The command palette is on :kbd:`F3`, :kbd:`Equals` and :kbd:`Minus` zoom without the modifier, and :kbd:`Home` frames everything.
 
 The three differ like this:
 
@@ -82,16 +82,15 @@ Editing Bindings
 
 :guilabel:`Keybindings` in Settings lists every command that has a name, with its shortcut at the right.
 
-.. image:: ./img/keybind_window.png
-   :width: 100%
-   :align: center
-   :alt: A settings window that displays keybinds.
+.. figure:: /images/interface/keybind_window.png
+
+	The Keybindings category of Settings.
 
 To change a shortcut:
 
 #. Click the shortcut of the command.  It reads ``Press a shortcut…``.
 #. Press the keys you want.
-#. If the keys already run another command, Umamo asks: ``Ctrl+S is already bound to “Save Document”.  Reassign it?``  :guilabel:`Reassign` gives the keys to this command, and the other command loses them.  Cancel keeps things as they were.
+#. If the keys already run another command, Umamo asks: ``Ctrl+S is already bound to “Save Puppet”.  Reassign it?``  :guilabel:`Reassign` gives the keys to this command, and the other command loses them.  :guilabel:`Cancel` backs out of changing the shortcut.
 
 Press :kbd:`Escape` on its own to give up without a change.  A modifier key on its own is not a chord, so Umamo waits for the key that goes with it.
 
@@ -123,14 +122,14 @@ The preset is saved in your settings file as ``input.keybinding.preset``, and yo
 Keys That Cannot Be Rebound
 ===========================
 
-Some keys belong to Umamo while something is going on, and they do not follow the keymap then.  The keymap is consulted last.
+There are some keymap conventions that are global operating system conventions and can not be rebound.  There are also some keys that are hard coded for now, but intend to be rebindable in the future.
 
-* :kbd:`Escape` and :kbd:`Enter` answer dialogs, cancel and confirm a transform in progress, and close menus and windows.  See :doc:`/interface/window_system`.
-* :kbd:`X` and :kbd:`Z` lock the axis during a grab or a scale.
+* :kbd:`Escape` and :kbd:`Enter` answer dialogs, cancel and confirm a transform in progress, and close menus and windows.  Default operating system conventions.  See :doc:`/interface/window_system`.
+* :kbd:`X` and :kbd:`Z` lock the axis during a grab or a scale.  These and others like them will be rebindable in the future.
 * :kbd:`1` to :kbd:`8` pick from an open pie menu.  See :doc:`/interface/pie_menus`.
 * Every key goes to a shortcut that is being captured, to a text field that is being typed in, and to an open menu.
 
-You can bind these keys to commands, and they will work whenever none of the above is going on.  A bare :kbd:`Escape` cannot be captured in the Keybindings editor, because it cancels the capture.  A modifier on its own, and keys without a name in Umamo, such as media keys, cannot be bound.
+You can bind these keys to commands and they will work whenever none of the above is going on.  A bare :kbd:`Escape` cannot be captured in the Keybindings editor because it cancels the capture.  A modifier on its own and keys without a name in Umamo, such as media keys, cannot be bound.
 
 Context
 =======
@@ -139,9 +138,9 @@ A chord runs the same command everywhere, but the command may do different thing
 
 * **The area under the pointer.**  :kbd:`G` grabs vertices in the 2D Viewport and UVs in the UV Editor.  :kbd:`Shift-S` opens the Snap pie in one and the UV Snap pie in the other.  The zoom and framing keys work on the area that has the pointer.  See :doc:`/interface/window_system`.
 * **The mode.**  A command only runs when it applies.  The keys for vertex tools do nothing in Object Mode.
-* **What is in progress.**  A modal operation, an open pie menu, or an armed tool takes the keys first.
+* **An in progress command.**  A modal operation, an open pie menu, or an armed tool takes the keys first.
 
-The command palette, and the hints in the status bar, show the commands of the area under the pointer.  See :doc:`/interface/command_palette` and :doc:`/interface/status_bar`.
+The command palette and the hints in the status bar show the commands of the area under the pointer.  See :doc:`/interface/command_palette` and :doc:`/interface/status_bar`.
 
 .. seealso::
 

@@ -86,7 +86,7 @@ Output Files
 	The report of where every layer went, described below.
 
 ``preview.png``
-	With ``--preview``: the whole canvas, put together again from the packed pages.  Layers are stacked with the top layer last, using plain alpha blending.  Blend modes and layer opacity are ignored, so a document that relies on them will not look the same as it does in its own application.  That is expected and is not a fault in the packing.  A canvas of more than 128 million pixels is too large for a preview, and the command says so and skips it.
+	With ``--preview``: the whole canvas, put together again from the packed pages.  Layers are stacked with the top layer last, using plain alpha blending.  Blend modes and layer opacity are ignored, so artwork that relies on them will not look the same as it does in its own application.  That is expected and is not a fault in the packing.  A canvas of more than 128 million pixels is too large for a preview, and the command says so and skips it.
 
 The command prints a line for each file that it writes:
 
