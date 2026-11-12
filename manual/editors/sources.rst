@@ -230,7 +230,7 @@ Click a row to select the drawables it stands for, which also selects them in th
 * A **layer** row selects every drawable drawn from any tile bound to it.
 * A file or the :guilabel:`Unbound Art` group selects nothing, so a click folds it instead.
 
-This makes the table a way into the rig by the art it came from: find the layer, and click it.  The rows of the drawables that are selected are highlighted.
+The rows of the drawables that are selected are highlighted.
 
 Rest the pointer on a layer, a tile, or a drawable for a moment and a picture of its art pops up beside the row.  A layer previews the art of the tile that is bound to it, so an unbound layer, whose pixels live only in its file, has none.  A layer under review previews the old art that the review is about.
 

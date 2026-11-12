@@ -11,14 +11,9 @@ The UV Editor shows the texture of the model, and how the meshes lie on it.  It 
 	placement
 	editing
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
+.. figure:: /images/editors/uv_editor.png
 
-	:Show: The UV Editor in Object Mode with an atlas page, the islands of several meshes drawn over it with one selected, the header with the texture selector, the Find by Artwork button, the pivot, snap, and overlay controls, and the zoom readout.
-	:Setup: Open a model that has been packed into an atlas, select a drawable, and open the Texture workspace.
-	:Crop: The UV Editor area, with its header.
-	:Save as: ``images/editors/uv_editor.png``
-	:Caption: The UV Editor.
+	The UV Editor.
 
 What It Shows
 =============

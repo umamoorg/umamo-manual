@@ -16,7 +16,7 @@ The Object tab is about the item as a whole: where it is, and what it is bound t
 Transform
 =========
 
-The rows of :guilabel:`Transform` measure the item where it is **in the viewport**, at the pose that is shown, and not where it is in its own deformer.  Positions are measured from the world axes, in pixels, and a Z value measures up.  See :doc:`/editors/properties/document_tab` for the axes.  The names are the ones the sidebar uses, and the sidebar shows the same rows in Object Mode.  See :doc:`/editors/viewport_2d/sidebar`.
+The rows of :guilabel:`Transform` measure the item where it is in the viewport, at the pose that is shown, and not where it is in its own deformer.  Positions are measured from the world axes, in pixels, and a Z value measures up.  See :doc:`/editors/properties/document_tab` for the axes.  The names are the ones the sidebar uses, and the sidebar shows the same rows in Object Mode.  See :doc:`/editors/viewport_2d/sidebar`.
 
 Which rows an item has:
 
@@ -53,7 +53,7 @@ A drawable without a mesh has no place, and the section is left out.
 Warp Deformer
 -------------
 
-The rows measure the box of the lattice.  Editing them moves or resizes the **whole** deformer, every form it carries, and everything it moves follows.  A committed edit shows the same operation strip as a drawable does.  If the pose does not draw the warp, the section says ``This item has no placement to show.``
+The rows measure the box of the lattice.  Editing them moves or resizes the whole deformer, every form it carries, and everything it moves follows.  A committed edit shows the same operation strip as a drawable does.  If the pose does not draw the warp, the section says ``This item has no placement to show.``
 
 Rotation Deformer
 -----------------

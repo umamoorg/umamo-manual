@@ -64,7 +64,7 @@ How the drawable is stacked and composited.
 	The drawables that clip this one, so that it shows only where they have art.  See `Masks`_.
 
 :guilabel:`Invert Mask`
-	A checkbox.  Shows the mesh only where its masks have **no** art.  It is only there for runtime targets of Cubism 4.0 and later.
+	A checkbox.  Shows the mesh only where its masks have no art.  It is only there for runtime targets of Cubism 4.0 and later.
 
 Each edit is one undo step, and History names it, such as ``Set Blend Mode`` or ``Set Opacity``.  See :doc:`/modeling/blending_and_masking`.
 
@@ -91,7 +91,7 @@ Warp Deformer
 The :guilabel:`Deformer` section of a warp.
 
 :guilabel:`Opacity`, :guilabel:`Multiply Color`, and :guilabel:`Screen Color`
-	Scale and tint **everything the deformer moves**, deformers nested in it included.  Opacity goes from 0 to 1, and 1 leaves it as it is.  The two colors follow the same rules as those of a drawable.  All three are keyable.
+	Scale and tint everything the deformer moves, deformers nested in it included.  Opacity goes from 0 to 1, and 1 leaves it as it is.  The two colors follow the same rules as those of a drawable.  All three are keyable.
 
 :guilabel:`Lattice`
 	Not a value.  It names the parameters that the lattice is keyed on, such as ``Keyed on Angle X, Angle Y``, or says ``Not keyed``.  The tint shows whether the pose is on a key, between keys, or holds a shape that you made in Pose Mode and have not keyed.  Point at the row and press :kbd:`I` to key the lattice at the pose.  See :doc:`/editors/keyform_sheet` and :doc:`/rigging/posing_warps`.

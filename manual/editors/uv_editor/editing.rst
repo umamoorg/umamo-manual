@@ -6,19 +6,14 @@ In Edit Mode the UV Editor changes the **texture coordinates** of a mesh: the UV
 
 Edit Mode is shared by all the editors.  Enter it on a drawable that has a mesh with :kbd:`Tab` in the 2D Viewport, and the UV Editor shows the meshes you are editing.  See :doc:`/modeling/modes` and :doc:`/editors/uv_editor/index`.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
+.. figure:: /images/editors/uv_editing.png
 
-	:Show: The UV Editor in Edit Mode, with the wireframe of two meshes over an atlas page, some vertices selected in the accent color, the UV cursor, and the badge at the top while a Grab is in progress with the proportional circle shown.
-	:Setup: Enter Edit Mode on two drawables, select some vertices, turn on proportional editing, and press G over the UV Editor.
-	:Crop: The UV Editor area, with its header.
-	:Save as: ``images/editors/uv_editing.png``
-	:Caption: Editing UVs.
+	Editing an UV mesh, rotating with proportional editing turned on.
 
 Selecting and Editing Elements
 ==============================
 
-The selection is **one selection** for the UV Editor and the 2D Viewport.  A vertex selected in one is selected in the other, and the select mode is shared too: choose :guilabel:`Face Select Mode` in the UV Editor and the 2D Viewport switches with it.  The mode buttons are in the header of the UV Editor in Edit Mode.
+The UV Editor and the 2D Viewport share one selection.  A vertex selected in one is selected in the other, and the select mode is shared too: choose :guilabel:`Face Select Mode` in the UV Editor and the 2D Viewport switches with it.  The mode buttons are in the header of the UV Editor in Edit Mode.
 
 * **Click**, **box select** (:kbd:`B`), **circle select** (:kbd:`C`), and **select linked** (:kbd:`L` under the pointer, :kbd:`Ctrl-L` for the selection) work as they do over a mesh.  See :doc:`/modeling/selecting`.  A UV island is a part of the mesh that is joined together, so select linked takes the whole island.
 * :kbd:`G`, :kbd:`R`, and :kbd:`S` move, turn, and scale the selected texture coordinates in a modal gesture.  An axis lock and the pivot work as they do in the viewport.  Confirm with a click or :kbd:`Enter`, cancel with :kbd:`Escape` or a right-click.  The gesture streams to the 2D Viewport, so you see the art slide as you move.  See :doc:`/modeling/transforming`.
@@ -27,7 +22,7 @@ The selection is **one selection** for the UV Editor and the 2D Viewport.  A ver
 
 Each confirmed gesture is one undo step: ``Move UVs``, ``Rotate UVs``, or ``Scale UVs``.  It also shows an operation strip with the numbers.  See :doc:`/interface/operation_strip`.
 
-Only the meshes that are **on the shown picture** can be edited.  Over a page, these are the meshes drawn from that page.  Over a source layer, these are the drawables that share that layer.  If none of the meshes you are editing is on it, the commands say ``Nothing to edit here.  None of the meshes you are editing are on the page or layer being shown.``  Pick the page of the mesh with the texture selector.  See :doc:`/editors/uv_editor/texture_selector`.
+Only the meshes that are on the shown picture can be edited.  Over a page, these are the meshes drawn from that page.  Over a source layer, these are the drawables that share that layer.  If none of the meshes you are editing is on it, the commands say ``Nothing to edit here.  None of the meshes you are editing are on the page or layer being shown.``  Pick the page of the mesh with the texture selector.  See :doc:`/editors/uv_editor/texture_selector`.
 
 If the selection has no texture coordinates to edit, a gesture says ``The selection has no editable UVs.``
 

@@ -142,7 +142,7 @@ Moving Keys
 
 Drag a mark left or right to move its key to a new value.  A key moves along its own track.
 
-* Dragging a selected mark moves the **whole selection** by the same fraction of each key's own range, so keys of two axes with unlike ranges stay together on the screen.
+* Dragging a selected mark moves the whole selection by the same fraction of each key's own range, so keys of two axes with unlike ranges stay together on the screen.
 * Dragging a mark that is not selected selects it first.
 * A key stops at the ends of the range, and a group stops when its first key reaches an end.  The preview does not run past the point where the drag will stop.
 * A key can be moved past its neighbors.  The keys are numbered again, and the selection follows the keys that you moved.

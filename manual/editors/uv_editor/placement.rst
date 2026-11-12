@@ -6,14 +6,9 @@ When Umamo packs artwork into an atlas, each piece of art lands on a page at a p
 
 Moving the art moves its pixels on the page, and every mesh that samples the art goes with them.  The way the mesh maps onto the art does not change, so the model looks the same in the 2D Viewport.  What changes is where the art sits on the page, and so how the pages are filled.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
+.. figure:: /images/editors/uv_placement.png
 
-	:Show: The UV Editor over an atlas page in Object Mode while a Grab is in progress: the badge at the top with the word Placement and the shift in pixels, one island moved by the pointer, and the outline of a piece of art that overlaps another with the word Overlapping in the badge.
-	:Setup: Open a model with an atlas page, select a drawable, hover the UV Editor, press G, and move the pointer until the art overlaps its neighbor.
-	:Crop: The UV Editor area.
-	:Save as: ``images/editors/uv_placement.png``
-	:Caption: Moving art on its page.
+	Moving art on its page.
 
 Picking Islands
 ===============
