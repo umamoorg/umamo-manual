@@ -11,9 +11,9 @@ A binding connects a **chord** to a **command**.  A chord is a key and the modif
 
 * **One chord runs one command.**  A command can have more than one chord, such as the two that open the command palette.
 * **A binding names a key by its position.**  The shortcut stays on the same physical key, whatever the layout of your keyboard.  The letters in this manual and in Umamo's menus name keys by their place on a US QWERTY keyboard.
-* **The primary modifier changes with the system.**  Where this manual writes :kbd:`Ctrl`, it means :kbd:`Ctrl` on Windows and Linux and :kbd:`Cmd` on MacOS.  MacOS does have one exception to that rules, which is :kbd:`Ctrl-Tab` for Toggle Pose Mode.  This is because :kbd:`Cmd-Tab` belongs to the operating system.
+* **The primary modifier changes with the system.**  Where this manual writes :kbd:`Ctrl`, it means :kbd:`Ctrl` on Windows and Linux and :kbd:`Cmd` on MacOS.  MacOS does have one exception to that rule, which is :kbd:`Ctrl-Tab` for Toggle Pose Mode.  This is because :kbd:`Cmd-Tab` belongs to the operating system.
 * **Shortcuts act where the pointer is.**  See `Context`_.
-* **A text field ignroes shortcuts.**  When typing into a text field, such as the search box of the Outliner, the vast majority of shortcuts will be ignored.
+* **A text field ignores shortcuts.**  When typing into a text field, such as the search box of the Outliner, the vast majority of shortcuts will be ignored.
 
 The shortcut of a command is shown at the right end of its menu row, in the command palette, and in the hints on the status bar.
 
@@ -32,7 +32,7 @@ This manual describes the default preset.  :doc:`/appendices/default_shortcuts` 
 Cubism
 ------
 
-For people who come from the Cubism Editor and tt is fewer keys bound.  We recommend using the default keymap since that is what is used in this manual.  It keeps the shortcuts that work across the application: The file commands, undo and redo with both :kbd:`Ctrl-Shift-Z` and :kbd:`Ctrl-Y`, :kbd:`Ctrl-0` to fit the view, and the keying keys.  The command palette is on :kbd:`Ctrl-P` only, because Cubism uses :kbd:`Space` for panning.  It leaves the single-key tools and :kbd:`Tab` unassigned.  See :doc:`/getting_started/coming_from_cubism`.
+For people who come from the Cubism Editor and it has fewer keys bound.  We recommend using the default keymap since that is what is used in this manual.  It keeps the shortcuts that work across the application: The file commands, undo and redo with both :kbd:`Ctrl-Shift-Z` and :kbd:`Ctrl-Y`, :kbd:`Ctrl-0` to fit the view, and the keying keys.  The command palette is on :kbd:`Ctrl-P` only, because Cubism uses :kbd:`Space` for panning.  It leaves the single-key tools and :kbd:`Tab` unassigned.  See :doc:`/getting_started/coming_from_cubism`.
 
 Blender
 -------
