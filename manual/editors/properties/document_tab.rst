@@ -32,11 +32,11 @@ Display
 =======
 
 :guilabel:`Show source artwork`
-	Draws each mesh in the viewports from its original artwork layer, instead of from the packed atlas.  A mesh whose layer the puppet does not keep is still drawn from the atlas.  History labels the step ``Change Texture Display``.  The command palette has the same switch as :guilabel:`Toggle Source Artwork Display`, which has no shortcut.
+	Draws each mesh in the viewports from its original artwork layer, instead of the packed atlas.  A mesh whose layer the puppet does not keep is still drawn from the atlas.  History labels the step ``Change Texture Display``.  The command palette has the same switch as :guilabel:`Toggle Source Artwork Display`, which has no shortcut.
 
-This is a property of the puppet and not a preference of the application.  It is saved with the file and it round-trips through a CMO3, and the checkbox is there for every open puppet, even one that has no source artwork to draw from.  The setting then records what you want, and it takes effect when the artwork is there.  A model opened from a MOC3 keeps no source artwork.
+This is a property of the puppet and not a preference of the application.  It is saved with the file and it round-trips through a CMO3, the checkbox is there for every open puppet, even one with no source artwork to draw from.  The setting then records what you want, and it takes effect when the artwork is there.  A model opened from a MOC3 keeps no source artwork.
 
-The setting is about what the model is drawn from.  It does not change what the UV Editor shows, which has a choice of its own for each area.  See :doc:`/editors/uv_editor/texture_selector`.
+The setting is about a model's source artwork.  It does not change what the UV Editor shows, which has a choice of its own for each area.  See :doc:`/editors/uv_editor/texture_selector`.
 
 Runtime
 =======
@@ -44,9 +44,9 @@ Runtime
 :guilabel:`Target`
 	The Cubism runtime that the model is made for.  The list has :guilabel:`No Target (All Features)`, Ayagami, and the Cubism versions from 3.0 to 5.3.  Changing it is one undo step, and History labels it ``Set Runtime Target``.
 
-Under the list, Umamo says which features the target restricts, or ``All features are available.``  A feature that your puppet already uses is followed by ``CURRENTLY IN USE``, so that you can see what a MOC3 export would leave out.
+Under the list, Umamo says which features the target restricts, or ``All features are available.``  A feature that your puppet already uses is followed by ``CURRENTLY IN USE``, so that you can see what a MOC3 export would exclude.
 
-The target hides and limits the controls of the other tabs.  It removes nothing from the puppet.  See :doc:`/editors/properties/index` for how the controls follow the target, and :doc:`/files/runtime_targets` for the targets, the features, and what each one changes.
+The target hides and limits the controls of the other tabs.   See :doc:`/editors/properties/index` for how the controls follow the target, and :doc:`/files/runtime_targets` for the targets, the features, and what each one changes.
 
 .. seealso::
 

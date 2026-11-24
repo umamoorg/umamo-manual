@@ -2,7 +2,7 @@
 Object Tab
 **********
 
-The Object tab is about the item as a whole: where it is, and what it is bound to.  It has two sections, :guilabel:`Transform` and :guilabel:`Relations`.  What is inside depends on the kind of item.  See :doc:`/editors/properties/index` for which item the tab shows.
+The Object tab is about the item as a whole: it's position, and relations.  It has two sections, :guilabel:`Transform` and :guilabel:`Relations`.  See :doc:`/editors/properties/index` for which item the tab shows.
 
 .. admonition:: Screenshot needed
 	:class: screenshot-needed

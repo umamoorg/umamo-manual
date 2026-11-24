@@ -2,7 +2,7 @@
 Data Tab
 ********
 
-The Data tab is about what the item is made of.  The tab, and its icon, change with the kind of item: a drawable gets its mesh, its texture, and the way it is blended; a deformer gets its colors and its lattice or its angle; a part gets its grouping.  See :doc:`/editors/properties/index` for the item the tab shows and for the fields that can be keyed.
+The Data tab is about what the item consists.  The tab, and its icon, change with each component: a drawable gets its mesh, its texture, and the way it is blended; a deformer gets its colors and its lattice or its angle; a part gets its grouping.  See :doc:`/editors/properties/index` for the item the tab shows and for the fields that can be keyed.
 
 .. admonition:: Screenshot needed
 	:class: screenshot-needed
@@ -19,12 +19,12 @@ Drawable
 Mesh
 ----
 
-One line, ``Mesh: 128 verts, 214 tris``, which counts the vertices and triangles, or ``No mesh``.  A drawable that has a mesh also has two buttons:
+The line, ``Mesh: 128 verts, 214 tris``, counts the vertices and triangles, or ``No mesh``.  A drawable that has a mesh also has two buttons:
 
 * :guilabel:`Generate Mesh from Art` makes a new mesh from the drawable's artwork.
 * :guilabel:`Generate Quad Mesh` makes a plain quad mesh in its place.
 
-The buttons run the commands of the same names, over the selection, and they are dimmed when the command is not available.  See :doc:`/modeling/generate_mesh`.
+The buttons run the commands with the same names, over the selected drawable, and they are greyed out when the command is not available.  See :doc:`/modeling/generate_mesh`.
 
 Texture
 -------
@@ -35,7 +35,7 @@ Which art the drawable is drawn from.
 * ``Texture Source: ArtMesh12`` means that it shares the binding of another drawable, as a copy made by Duplicate does.  Deleting that drawable does not take the art from the copy.
 
 :guilabel:`Pinned`
-	A checkbox, which is there when Umamo has placed the art on its atlas page.  It holds the art in place: moving it by hand in the UV Editor is refused, and a repack leaves it where it is unless :guilabel:`Keep Pinned Tiles` is turned off.  This is the same flag that :guilabel:`Pin Art Placement` sets.  See :doc:`/editors/uv_editor/placement` and :doc:`/artwork/atlas_packing`.
+	A checkbox, which holds the art in place on it's atlas page: moving it manually in the UV Editor is refused, and a repack leaves it where it is unless :guilabel:`Keep Pinned Tiles` is turned off.  This is the same flag that :guilabel:`Pin Art Placement` sets.  See :doc:`/editors/uv_editor/placement` and :doc:`/artwork/atlas_packing`.
 
 Blend
 -----
@@ -55,7 +55,7 @@ How the drawable is stacked and composited.
 	How the transparency of the mesh combines with what is behind it.  The row is left out when the blend mode ignores alpha, and when the runtime target has no alpha modes and the drawable uses the plain one, :guilabel:`Over`.
 
 :guilabel:`Multiply Color` and :guilabel:`Screen Color`
-	Two colors that tint the mesh.  :guilabel:`Multiply Color` multiplies the colors of the mesh by its color, to darken or tint it, and white leaves it as it is.  :guilabel:`Screen Color` screens its color over the mesh, to lighten it, and black leaves it as it is.  Both are keyable, and both are only there for runtime targets of Cubism 4.2 and later.
+	Two colors that tint the mesh.  :guilabel:`Multiply Color` multiplies the colors of the mesh by its color values, to darken or tint it, and white leaves it as it is.  :guilabel:`Screen Color` screens its color over the mesh, to lighten it, and black leaves it as it is.  Both are keyable, and both are only there for runtime targets of Cubism 4.2 and later.
 
 :guilabel:`Cull Back Faces`
 	A checkbox.  Hides any part of the mesh that a deformation has flipped over, instead of drawing it mirrored.
@@ -83,7 +83,7 @@ Any drawable can be a mask except the drawable itself.  A drawable is listed onc
 Blend Shapes
 ------------
 
-A read-only line for every blend shape the drawable has, such as ``Smile: 3 key(s)``, with the name of the parameter that drives it and the number of keys.  The section is left out for a drawable that has none.  A blend shape is made and keyed elsewhere.  See :doc:`/rigging/blend_shapes`.
+A read-only line for every blend shape the drawable has, such as ``Smile: 3 key(s)``, with the name of the parameter that drives it and the number of keys.  The section is missing for a drawable that has none. See :doc:`/rigging/blend_shapes`.
 
 Warp Deformer
 =============
@@ -117,7 +117,7 @@ Part
 The :guilabel:`Part` section.
 
 :guilabel:`Guide Image`
-	A checkbox.  Marks the part as a guide image, such as a reference sketch.  It shows in the editor, and a MOC3 export leaves it and everything in it out.  Its row in the Outliner is dimmed.  History names it ``Toggle Guide Image``.
+	A checkbox.  Marks the part as a guide image, such as a reference sketch.  It shows in the editor, and a MOC3 export skips the guide images.  Its row in the Outliner is dimmed.  History names it ``Toggle Guide Image``.
 
 :guilabel:`Draw Order`
 	Where the whole part stacks, a whole number from 0 to 1000.  Higher draws in front.  It counts only when :guilabel:`Group Mode` is :guilabel:`Grouped` or :guilabel:`Isolated`.  It is keyable.
@@ -125,7 +125,7 @@ The :guilabel:`Part` section.
 :guilabel:`Group Mode`
 	How the contents of the part stack with the rest of the model.
 
-	* :guilabel:`Pass Through`: each drawable stacks by its own draw order.
+	* :guilabel:`Pass Through`: each drawable stacks by its draw order.
 	* :guilabel:`Grouped`: the whole part stacks at the draw order of the part.
 	* :guilabel:`Isolated`: like :guilabel:`Grouped`, and the part is also drawn as one layer with its own opacity, blend, colors, and masks.
 
@@ -162,7 +162,7 @@ The two modes named *Legacy* are the Add and Multiply modes that Cubism had befo
 The :guilabel:`Alpha` list has five modes.
 
 :guilabel:`Over`
-	Stacks normally.  Every earlier version of Cubism behaves like this.
+	Stacks normally. This is legacy behaviour from older cubism versions.
 
 :guilabel:`Atop`
 	Draws only over art that is already there.
