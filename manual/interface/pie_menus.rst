@@ -2,7 +2,7 @@
 Pie Menus
 *********
 
-A pie menu is a ring of choices that opens under the pointer.  You pick one by the direction in which you move, not by aiming at a button, so a flick of the hand is enough, with the mouse as much as with a pen.  The menu choices can also be selected by the number shown next to the choice label.  Umamo has several pie mnues for choices that you make often: The pivot point, snapping, the target of a merge, and which values to key.
+A pie menu is a ring of choices that opens under the pointer.  You pick one by the direction in which you move, not by aiming at a button, so a flick of the hand is enough, with the mouse as much as with a pen.  The menu choices can also be selected by the number shown next to the choice label.  Umamo has several pie menus for choices that you make often: The pivot point, snapping, the target of a merge, and which values to key.
 
 Using a Pie
 ===========
