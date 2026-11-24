@@ -2,7 +2,7 @@
 Editors
 *******
 
-An editor is what an area of the window shows.  Umamo has ten of them, and every area can be switched to any of them, so you build the layout that suits the work.  This chapter describes each editor on its own: what it shows, what its controls do, and what you can change with it.  How areas are made, split, and joined is in :doc:`/interface/window_system`, and the layouts that come with Umamo are in :doc:`/interface/workspaces`.
+An editor is what an area of the window shows.  Umamo has ten of them, and every area can be switched to any of them, so you build the layout that suits the work.  This chapter describes each editor on its own.  How areas are made, split, and joined is in :doc:`/interface/window_system`, and the layouts that come with Umamo are in :doc:`/interface/workspaces`.
 
 .. toctree::
 	:maxdepth: 1
@@ -107,7 +107,7 @@ The state of an editor belongs to its area, and it is saved with the puppet file
 	* - Sources
 	  - The rows that are open, and the kinds of rows that are listed
 
-The **text of a search**, a name being edited, and the proportional size of the UV Editor are not saved, because a file that reopened with last week's search typed in would look broken.  The History and Logs editors have nothing to save.  Which keys are selected in the Keyform Sheet is kept by the session, not by the area, and Undo takes a change of it back.
+The text of a search, a name being edited, and the proportional size of the UV Editor are not saved, because a file that reopened with last week's search typed in would look broken.  The History and Logs editors have nothing to save.  Which keys are selected in the Keyform Sheet is kept by the session, not by the area, and Undo takes a change of it back.
 
 Commands Act on the Area Under the Pointer
 ==========================================

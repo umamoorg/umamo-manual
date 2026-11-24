@@ -4,14 +4,9 @@ Texture Selector
 
 The UV Editor draws the texture coordinates of the meshes over a picture: a page of the atlas, or the artwork the page was packed from.  Two controls at the left of its header choose the picture.  The **texture selector** chooses by kind, and **Find by Artwork** chooses by looking for a layer by name.  The choice belongs to each UV Editor, so two of them can show two pages side by side.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
+.. figure:: /images/editors/uv_texture_selector.png
 
-	:Show: The UV Editor header with the texture selector open: the rows Follow Selection and Source Layer, and under them two rows for atlas pages such as ``Page 1 · 2048 × 2048 · 14 meshes``.  The Find by Artwork button beside it.
-	:Setup: Open a model that has two atlas pages and source artwork, and click the texture selector.
-	:Crop: The header and the open list.
-	:Save as: ``images/editors/uv_texture_selector.png``
-	:Caption: The texture selector.
+	The texture selector.
 
 Pages and Source Layers
 =======================
@@ -42,7 +37,7 @@ A drawable that has no place on any page has no picture to show.  The area then 
 
 The **Source Layer** view follows in the same way, and shows the artwork of the same drawable.
 
-What is drawn over the picture depends on the mode.  In Object Mode, it is the islands of **every visible mesh** whose art is on the page, because those are the things you click.  In Edit Mode, it is only the meshes you are editing, because those are the ones whose texture coordinates can move.  A hidden mesh is neither drawn nor picked.  See :doc:`/editors/uv_editor/index`.
+What is drawn over the picture depends on the mode.  In Object Mode, it is the islands of every visible mesh whose art is on the page, because those are the things you click.  In Edit Mode, it is only the meshes you are editing, because those are the ones whose texture coordinates can move.  A hidden mesh is neither drawn nor picked.  See :doc:`/editors/uv_editor/index`.
 
 Find by Artwork
 ===============

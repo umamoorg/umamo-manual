@@ -17,14 +17,9 @@ Whether the sidebar is open, how wide it is, which tab it shows, and which panel
 
 The sidebar floats over the viewport and does not take any room from it, and the pointer does not reach the viewport through its panels.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
+.. figure:: /images/editors/viewport_sidebar.png
 
-	:Show: A 2D Viewport with the sidebar open at its right edge: the stack of panels, with the Transform panel of the Item tab open, and the rail of three tabs, Item, Tool, and View, beside them.
-	:Setup: Open a model, select a drawable, and press N over the viewport.
-	:Crop: The 2D Viewport area.
-	:Save as: ``images/editors/viewport_sidebar.png``
-	:Caption: The sidebar of the 2D Viewport.
+	The sidebar of the 2D Viewport.
 
 Tabs and Panels
 ===============

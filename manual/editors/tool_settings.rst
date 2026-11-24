@@ -12,7 +12,7 @@ The Tool Settings editor is set aside for the settings of the active tool, to be
 Current Status
 ==============
 
-An area switched to :guilabel:`Tool Settings` shows its own name in the middle and nothing else.  It reads no settings and offers no controls.  It can be added to a workspace, and a workspace that has one keeps it, but it does no work.
+An area switched to :guilabel:`Tool Settings` shows its own name in the middle and nothing else.  It reads no settings and offers no controls.  It can be added to a workspace and a workspace that has one keeps it.
 
 The settings that such an editor would hold are shown in two other places today.
 

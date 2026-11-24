@@ -24,7 +24,7 @@ The oldest step is at the top.  The first one, ``Open``, is the puppet as it was
 * The steps **below** it are dimmed.  They are steps you took back, and can do again.
 * A **dot** at the right end of a row marks the step that was saved last.  The title of the window shows a ``*`` when you are at any other step.
 
-Doing something new while you are at an earlier step throws the dimmed steps away.  The history is a straight line, with no branches.
+Doing something new while you are at an earlier step throws the dimmed steps away, so the history is a straight line with no branches.
 
 A long list scrolls so that the current step stays in view when you undo or redo from the keyboard.
 
@@ -72,7 +72,7 @@ Lowering the number trims the history of the open puppet at once.  It never remo
 Step Label Reference
 ====================
 
-The label of a step is the name of the operation, and it is the same name that the operation strip uses as its title.  These are the labels, in groups.
+The label of a step is the name of the operation, and it is the same name that the operation strip uses as its title.
 
 .. list-table::
 	:header-rows: 1

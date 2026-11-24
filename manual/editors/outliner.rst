@@ -133,7 +133,7 @@ Create Warp Deformer
 
 Wraps the selection in a new warp deformer.  It takes the selected drawables that have a mesh, every drawable inside a selected part, and the selected deformers, and it leaves out whatever a selected deformer already carries.  The operation strip then adjusts the number of rows and columns and the margin.  See :doc:`/rigging/deformers` and :doc:`/interface/operation_strip`.
 
-The command works on the **selection**, not on the row you right-clicked, so select what you want to wrap first.  The entry is only in the menu in Object Mode, and it is dimmed when nothing in the selection can be wrapped.
+The command works on the selection, not on the row you right-clicked, so select what you want to wrap first.  The entry is only in the menu in Object Mode, and it is dimmed when nothing in the selection can be wrapped.
 
 Delete
 ------

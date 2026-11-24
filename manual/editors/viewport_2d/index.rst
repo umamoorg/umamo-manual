@@ -2,7 +2,7 @@
 2D Viewport
 ***********
 
-The 2D Viewport shows the model, and it is where you work on it.  You select objects and move them, edit the vertices of a mesh, shape the lattice of a warp deformer, and pose and key the rig.  The model is drawn here by the graphics card, at the pose the parameters give it.  See :doc:`/troubleshooting/platform_notes` if the viewport stays empty.
+The 2D Viewport shows the puppet model and is where all the primary editing interaction occurs.  You can select objects and move them, edit the vertices of a mesh, shape the lattice of a warp deformer, and pose the rig.
 
 .. toctree::
 	:maxdepth: 1
@@ -22,14 +22,9 @@ The viewport fills its area.  Over the model it has:
 * **The HUD**: a chip at the top left that names the active object, a percentage at the bottom left that is the zoom, and a badge at the top center while a transform is in progress.  See `HUD`_.
 * **The operation strip**, at the bottom left, after an operation has run.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
+.. figure:: /images/editors/viewport_layout.png
 
-	:Show: A 2D Viewport with a model in it, with labels or arrows (added in an image editor) for the header, the toolbar, the sidebar pull tab, the active object chip, the zoom readout, the grid, and the axes.
-	:Setup: Open a model, select a drawable, and take the picture with the sidebar closed.
-	:Crop: The whole 2D Viewport area.
-	:Save as: ``images/editors/viewport_layout.png``
-	:Caption: The parts of the 2D Viewport.
+	The parts of the 2D Viewport with labels.
 
 Header Controls
 ===============
@@ -127,14 +122,9 @@ Context Menu
 
 A right-click on the viewport, when no gesture is in progress, opens a menu of the common commands of the mode, each with its shortcut.  A menu entry that cannot be used right now is greyed out.  Entries that open a pie show its choices as a submenu.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
+.. figure:: /images/editors/viewport_context_menu.png
 
-	:Show: The context menu of the 2D Viewport in Edit Mode, with the Merge Vertices submenu open.
-	:Setup: Enter Edit Mode, select two vertices, and right-click.
-	:Crop: The menu, with a little of the viewport around it.
-	:Save as: ``images/editors/viewport_context_menu.png``
-	:Caption: The context menu in Edit Mode.
+	The context menu in Edit Mode.
 
 Object Mode
 -----------

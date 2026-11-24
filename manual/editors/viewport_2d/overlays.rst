@@ -14,14 +14,9 @@ At the end of the header of a 2D Viewport, and of a UV Editor, is one button in 
 
 Hold the pointer over a section, a row, or a field of the list for a description.
 
-.. admonition:: Screenshot needed
-	:class: screenshot-needed
+.. figure:: /images/editors/viewport_overlays.png
 
-	:Show: The Viewport Overlays list open, with the Guides, Text, Objects, and Geometry sections, the Grid row with its Scale and Subdivisions fields, and the two Opacity fields.
-	:Setup: Open a model, click the arrow at the end of the 2D Viewport's header.
-	:Crop: The list and the end of the header.
-	:Save as: ``images/editors/viewport_overlays.png``
-	:Caption: The Viewport Overlays list.
+	The context menu in Edit Mode.
 
 Guides
 ======
